@@ -1,4 +1,6 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
+const isDev = process.env.NODE_ENV !== 'production'
+
 export default defineNuxtConfig({
   devtools: { enabled: false },
   
@@ -7,24 +9,22 @@ export default defineNuxtConfig({
   
   // GitHub Pages用の設定
   nitro: {
+    preset: 'static',
     prerender: {
       routes: ['/'],
       failOnError: false
-    }
-  },
-  
-  // Vite設定
-  vite: {
-    server: {
-      hmr: {
-        overlay: false
+    },
+    publicAssets: [
+      {
+        baseURL: '/data',
+        dir: 'public/data'
       }
-    }
+    ]
   },
   
   // ベースURL設定（GitHub Pagesのリポジトリ名に応じて設定）
   app: {
-    baseURL: '/OsakaUniv_ThemeMatch_Public/',
+    baseURL: isDev ? '/' : '/OsakaUniv_ThemeMatch_Public/',
     head: {
       title: '大阪大学研究マッチングシステム',
       meta: [
@@ -49,7 +49,16 @@ export default defineNuxtConfig({
   // ランタイム設定
   runtimeConfig: {
     public: {
-      baseURL: '/OsakaUniv_ThemeMatch_Public/'
+      baseURL: isDev ? '/' : '/OsakaUniv_ThemeMatch_Public/'
+    }
+  },
+  
+  // Vite設定
+  vite: {
+    server: {
+      hmr: {
+        overlay: false
+      }
     }
   }
 })

@@ -1,0 +1,24 @@
+{
+  "target_researcher": {
+    "name": "秋草直大",
+    "name_en": "Akikusa Naota",
+    "affiliation": "浜松ホトニクス株式会社",
+    "keywords": [
+      "半導体レーザー"
+    ],
+    "abstract": "企業の開発部に所属し、医療フォトニクスの次世代光源およびセンサの開発テーマの探索を行っている。",
+    "research_interests": {
+      "collaboration": "この分野の勉強を始めたばかりで、研究トレンドや主要プレイヤ、業界のエコシステムやバリューチェーンが良く分からない。どこに顔を出せばよいのか。",
+      "technology": "レーザを用いた診断技術",
+      "market": "医療品製造のプロセス分析技術、生体コンポジット材料の開発"
+    }
+  },
+  "matches": [],
+  "analysis_summary": {
+    "target_researcher_keywords_count": 1,
+    "average_similarity_score": 0.6228944992025695,
+    "max_similarity_score": 0.6759939163923265,
+    "total_candidates_analyzed": 6,
+    "analysis_method": "embedding_similarity + keyword_overlap"
+  }
+}

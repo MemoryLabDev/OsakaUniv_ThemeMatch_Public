@@ -4,8 +4,8 @@
   "description": "大阪大学研究マッチングシステム - フロントエンド",
   "scripts": {
     "build": "nuxt build",
-    "dev": "nuxt dev",
-    "generate": "nuxt generate",
+    "dev": "NODE_OPTIONS='--max-old-space-size=4096' nuxt dev",
+    "generate": "NODE_ENV=production nuxt generate",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare"
   },
