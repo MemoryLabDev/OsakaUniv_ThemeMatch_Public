@@ -169,9 +169,9 @@ const sortBy = ref('name')
 const loadData = async () => {
   try {
     loading.value = true
-    const config = useRuntimeConfig()
-    const baseURL = config.public.baseURL || '/'
-    const dataUrl = `${baseURL}data/researchers_index.json`.replace('//', '/')
+    const { $fetch } = useNuxtApp()
+    // GitHub Pagesの絶対パスを使用
+    const dataUrl = '/OsakaUniv_ThemeMatch_Public/data/researchers_index.json'
     console.log('Loading data from:', dataUrl)
     const data = await $fetch(dataUrl)
     indexData.value = data

@@ -271,13 +271,13 @@ const loadResearcherData = async () => {
     console.log('Starting data load for ID:', researcherId)
     loading.value = true
     
-    const config = useRuntimeConfig()
-    const baseURL = config.public.baseURL || '/'
+    const { $fetch } = useNuxtApp()
     
     // IDを3桁ゼロパディングしてファイル名を構築
     const paddedId = String(researcherId).padStart(3, '0')
     const filename = `researcher_${paddedId}`
-    const requestUrl = `${baseURL}data/researchers/${filename}.json`.replace('//', '/')
+    // GitHub Pagesの絶対パスを使用
+    const requestUrl = `/OsakaUniv_ThemeMatch_Public/data/researchers/${filename}.json`
     
     console.log('Request URL:', requestUrl)
     const data = await $fetch(requestUrl)
