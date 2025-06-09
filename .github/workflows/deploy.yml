@@ -48,10 +48,16 @@ jobs:
       - name: Static HTML export with Nuxt
         run: npm run generate
 
+      - name: Create clean build directory
+        run: |
+          mkdir -p deploy
+          rsync -av --exclude='node_modules' --exclude='*.log' --exclude='.git' .output/public/ deploy/
+          ls -la deploy/
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./.output/public
+          path: ./deploy
 
   deploy:
     environment:
