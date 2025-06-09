@@ -85,15 +85,15 @@
                 <dl class="space-y-3">
                   <div>
                     <dt class="text-sm text-gray-600">マッチング数</dt>
-                    <dd class="text-2xl font-bold text-gray-900">{{ researcherData?.analysis_summary?.total_matches || 0 }}</dd>
+                    <dd class="text-2xl font-bold text-gray-900">{{ researcherData?.analysis_summary?.total_candidates_analyzed || researcherData?.matches?.length || 0 }}</dd>
                   </div>
                   <div>
-                    <dt class="text-sm text-gray-600">最高類似度</dt>
-                    <dd class="text-2xl font-bold text-green-600">{{ Math.round((researcherData?.analysis_summary?.max_similarity || 0) * 100) }}%</dd>
+                    <dt class="text-sm text-gray-600">最高マッチ度</dt>
+                    <dd class="text-2xl font-bold text-green-600">{{ Math.round((researcherData?.analysis_summary?.max_similarity_score || 0) * 100) }}%</dd>
                   </div>
                   <div>
-                    <dt class="text-sm text-gray-600">平均類似度</dt>
-                    <dd class="text-lg font-semibold text-gray-700">{{ Math.round((researcherData?.analysis_summary?.avg_similarity || 0) * 100) }}%</dd>
+                    <dt class="text-sm text-gray-600">平均マッチ度</dt>
+                    <dd class="text-lg font-semibold text-gray-700">{{ Math.round((researcherData?.analysis_summary?.average_similarity_score || 0) * 100) }}%</dd>
                   </div>
                 </dl>
               </div>
@@ -170,12 +170,12 @@
                 </div>
               </div>
               
-              <!-- 類似度スコア -->
+              <!-- マッチ度スコア -->
               <div class="flex-shrink-0 text-right">
                 <div class="text-2xl font-bold text-green-600">
                   {{ Math.round(match.researcher.similarity_score * 100) }}%
                 </div>
-                <div class="text-sm text-gray-500">類似度</div>
+                <div class="text-sm text-gray-500">マッチ度</div>
               </div>
             </div>
 

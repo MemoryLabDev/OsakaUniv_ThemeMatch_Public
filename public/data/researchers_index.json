@@ -7,42 +7,14 @@
       "name_en": "Akikusa Naota",
       "affiliation": "浜松ホトニクス株式会社",
       "keywords": [
-        "半導体レーザー"
+        "浜松ホトニクス株式会社"
       ],
       "total_matches": 6,
-      "max_similarity": 0.43596819192171093,
+      "max_similarity": 0.6759939163923265,
       "has_data": true,
       "filename": "researcher_001"
-    },
-    {
-      "researcher_id": 2,
-      "openalex_id": null,
-      "name": "飯塚 崇文",
-      "name_en": "IIZUKA Takafumi",
-      "affiliation": "ナルックス株式会社",
-      "keywords": [
-        "神経科学・超精密加工"
-      ],
-      "total_matches": 6,
-      "max_similarity": 0.6672757863998413,
-      "has_data": true,
-      "filename": "researcher_002"
-    },
-    {
-      "researcher_id": 3,
-      "openalex_id": "a5062709079",
-      "name": "池田和司",
-      "name_en": "Kazushi Ikeda",
-      "affiliation": "奈良先端科学技術大学院大学",
-      "keywords": [
-        "数理情報学"
-      ],
-      "total_matches": 6,
-      "max_similarity": 0.39060077369213103,
-      "has_data": true,
-      "filename": "researcher_003"
     }
   ],
-  "last_updated": "2025-06-09T20:45:08.371999",
-  "total_researchers": 3
+  "last_updated": "2025-06-10T00:21:15.327797",
+  "total_researchers": 1
 }

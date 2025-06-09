@@ -22,7 +22,7 @@
           </div>
           <div class="bg-white/20 backdrop-blur-sm rounded-lg p-6 text-white fade-in-up" style="animation-delay: 0.8s">
             <div class="text-3xl font-bold">{{ avgSimilarity }}%</div>
-            <div class="text-blue-100">平均類似度</div>
+            <div class="text-blue-100">平均マッチ度</div>
           </div>
         </div>
       </div>
@@ -54,7 +54,7 @@
             class="px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
           >
             <option value="name">名前順</option>
-            <option value="similarity">類似度順</option>
+            <option value="similarity">マッチ度順</option>
             <option value="matches">マッチング数順</option>
           </select>
         </div>
@@ -131,7 +131,7 @@
           <div class="flex justify-between items-center text-sm text-gray-600">
             <span>マッチング: {{ researcher.total_matches }}件</span>
             <span v-if="researcher.max_similarity">
-              最高類似度: {{ Math.round(researcher.max_similarity * 100) }}%
+              最高マッチ度: {{ Math.round(researcher.max_similarity * 100) }}%
             </span>
           </div>
         </div>
