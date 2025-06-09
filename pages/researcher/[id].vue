@@ -271,10 +271,13 @@ const loadResearcherData = async () => {
     console.log('Starting data load for ID:', researcherId)
     loading.value = true
     
+    const config = useRuntimeConfig()
+    const baseURL = config.public.baseURL || '/'
+    
     // IDを3桁ゼロパディングしてファイル名を構築
     const paddedId = String(researcherId).padStart(3, '0')
     const filename = `researcher_${paddedId}`
-    const requestUrl = `/data/researchers/${filename}.json`
+    const requestUrl = `${baseURL}data/researchers/${filename}.json`.replace('//', '/')
     
     console.log('Request URL:', requestUrl)
     const data = await $fetch(requestUrl)

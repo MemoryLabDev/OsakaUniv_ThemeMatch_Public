@@ -169,9 +169,14 @@ const sortBy = ref('name')
 const loadData = async () => {
   try {
     loading.value = true
-    const data = await $fetch('/data/researchers_index.json')
+    const config = useRuntimeConfig()
+    const baseURL = config.public.baseURL || '/'
+    const dataUrl = `${baseURL}data/researchers_index.json`.replace('//', '/')
+    console.log('Loading data from:', dataUrl)
+    const data = await $fetch(dataUrl)
     indexData.value = data
   } catch (err) {
+    console.error('Data loading error:', err)
     error.value = 'データの読み込みに失敗しました: ' + err.message
   } finally {
     loading.value = false

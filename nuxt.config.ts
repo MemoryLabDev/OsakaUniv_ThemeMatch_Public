@@ -9,16 +9,20 @@ export default defineNuxtConfig({
     },
     output: {
       publicDir: 'public'
+    },
+    experimental: {
+      payloadExtraction: false
     }
   },
   
   // 静的サイト生成（SSG）モード
   ssr: false,
+  target: 'static',
   
   // ベースURL設定（GitHub Pagesのリポジトリ名に応じて設定）
   app: {
     baseURL: process.env.NODE_ENV === 'production' ? '/OsakaUniv_ThemeMatch_Public/' : '/',
-    buildAssetsDir: '/assets/',
+    buildAssetsDir: 'assets/',
     head: {
       title: '大阪大学研究マッチングシステム',
       meta: [
@@ -28,7 +32,7 @@ export default defineNuxtConfig({
         { name: 'keywords', content: '研究マッチング,大阪大学,AI,研究者,コラボレーション' }
       ],
       link: [
-        { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+        { rel: 'icon', type: 'image/x-icon', href: (process.env.NODE_ENV === 'production' ? '/OsakaUniv_ThemeMatch_Public/' : '/') + 'favicon.ico' }
       ]
     }
   },
