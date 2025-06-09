@@ -1,153 +1,18 @@
 export default {
-  "_Bk_1DB5o.js": {
-    "resourceType": "script",
-    "module": true,
+  "@vite/client": {
     "prefetch": true,
-    "preload": true,
-    "file": "Bk_1DB5o.js",
-    "name": "v3",
-    "imports": [
-      "node_modules/nuxt/dist/app/entry.js"
-    ]
-  },
-  "_uoLUJHOV.js": {
-    "resourceType": "script",
-    "module": true,
-    "prefetch": true,
-    "preload": true,
-    "file": "uoLUJHOV.js",
-    "name": "nuxt-link",
-    "imports": [
-      "node_modules/nuxt/dist/app/entry.js"
-    ]
-  },
-  "layouts/default.vue": {
-    "resourceType": "script",
-    "module": true,
-    "prefetch": true,
-    "preload": true,
-    "file": "DaIDQAkk.js",
-    "name": "default",
-    "src": "layouts/default.vue",
-    "isDynamicEntry": true,
-    "imports": [
-      "_uoLUJHOV.js",
-      "node_modules/nuxt/dist/app/entry.js",
-      "_Bk_1DB5o.js"
-    ]
-  },
-  "node_modules/nuxt/dist/app/components/error-404.vue": {
-    "resourceType": "script",
-    "module": true,
-    "prefetch": true,
-    "preload": true,
-    "file": "5WmHLEkV.js",
-    "name": "error-404",
-    "src": "node_modules/nuxt/dist/app/components/error-404.vue",
-    "isDynamicEntry": true,
-    "imports": [
-      "_uoLUJHOV.js",
-      "node_modules/nuxt/dist/app/entry.js",
-      "_Bk_1DB5o.js"
-    ],
-    "css": [
-      "error-404.4oxyXxx0.css"
-    ]
-  },
-  "error-404.4oxyXxx0.css": {
-    "file": "error-404.4oxyXxx0.css",
-    "resourceType": "style",
-    "prefetch": true,
-    "preload": true
-  },
-  "node_modules/nuxt/dist/app/components/error-500.vue": {
-    "resourceType": "script",
-    "module": true,
-    "prefetch": true,
-    "preload": true,
-    "file": "BWFz3qS_.js",
-    "name": "error-500",
-    "src": "node_modules/nuxt/dist/app/components/error-500.vue",
-    "isDynamicEntry": true,
-    "imports": [
-      "node_modules/nuxt/dist/app/entry.js",
-      "_Bk_1DB5o.js"
-    ],
-    "css": [
-      "error-500.CZqNkBuR.css"
-    ]
-  },
-  "error-500.CZqNkBuR.css": {
-    "file": "error-500.CZqNkBuR.css",
-    "resourceType": "style",
-    "prefetch": true,
-    "preload": true
-  },
-  "node_modules/nuxt/dist/app/entry.js": {
-    "resourceType": "script",
-    "module": true,
-    "prefetch": true,
-    "preload": true,
-    "file": "B_BLpSNh.js",
-    "name": "entry",
-    "src": "node_modules/nuxt/dist/app/entry.js",
     "isEntry": true,
-    "dynamicImports": [
-      "layouts/default.vue",
-      "node_modules/nuxt/dist/app/components/error-404.vue",
-      "node_modules/nuxt/dist/app/components/error-500.vue"
-    ],
-    "css": [
-      "entry.CGuW10Cn.css"
-    ]
+    "file": "@vite/client",
+    "css": [],
+    "module": true,
+    "resourceType": "script"
   },
-  "entry.CGuW10Cn.css": {
-    "file": "entry.CGuW10Cn.css",
-    "resourceType": "style",
-    "prefetch": true,
-    "preload": true
-  },
-  "pages/index.vue": {
+  "/Users/yuyasato/Documents/devs/OsakaUniv_ThemeMatch/OsakaUniv_ThemeMatch_Public/node_modules/nuxt/dist/app/entry.js": {
     "resourceType": "script",
     "module": true,
     "prefetch": true,
     "preload": true,
-    "file": "D2ApesHA.js",
-    "name": "index",
-    "src": "pages/index.vue",
-    "isDynamicEntry": true,
-    "imports": [
-      "node_modules/nuxt/dist/app/entry.js",
-      "_Bk_1DB5o.js"
-    ]
-  },
-  "pages/researcher/[id].vue": {
-    "resourceType": "script",
-    "module": true,
-    "prefetch": true,
-    "preload": true,
-    "file": "Bh9SLFnL.js",
-    "name": "_id_",
-    "src": "pages/researcher/[id].vue",
-    "isDynamicEntry": true,
-    "imports": [
-      "_uoLUJHOV.js",
-      "node_modules/nuxt/dist/app/entry.js",
-      "_Bk_1DB5o.js"
-    ]
-  },
-  "pages/stats.vue": {
-    "resourceType": "script",
-    "module": true,
-    "prefetch": true,
-    "preload": true,
-    "file": "cmrZJIUc.js",
-    "name": "stats",
-    "src": "pages/stats.vue",
-    "isDynamicEntry": true,
-    "imports": [
-      "_Bk_1DB5o.js",
-      "node_modules/nuxt/dist/app/entry.js"
-    ]
+    "isEntry": true,
+    "file": "/Users/yuyasato/Documents/devs/OsakaUniv_ThemeMatch/OsakaUniv_ThemeMatch_Public/node_modules/nuxt/dist/app/entry.js"
   }
 }

@@ -8,7 +8,17 @@ export default defineNuxtConfig({
   // GitHub Pages用の設定
   nitro: {
     prerender: {
-      routes: ['/']
+      routes: ['/'],
+      failOnError: false
+    }
+  },
+  
+  // Vite設定
+  vite: {
+    server: {
+      hmr: {
+        overlay: false
+      }
     }
   },
   
