@@ -15,21 +15,7 @@ export default defineNuxtConfig({
   // ベースURL設定（GitHub Pagesのリポジトリ名に応じて設定）
   app: {
     baseURL: process.env.NODE_ENV === 'production' ? '/OsakaUniv_ThemeMatch_Public/' : '/',
-    buildAssetsDir: '/assets/'
-  },
-  
-  // Modules
-  modules: [
-    '@nuxtjs/tailwindcss'
-  ],
-  
-  // CSS設定
-  css: [
-    '~/assets/css/main.css'
-  ],
-  
-  // メタデータ
-  app: {
+    buildAssetsDir: '/assets/',
     head: {
       title: '大阪大学研究マッチングシステム',
       meta: [
@@ -43,6 +29,17 @@ export default defineNuxtConfig({
       ]
     }
   },
+  
+  // Modules
+  modules: [
+    '@nuxtjs/tailwindcss'
+  ],
+  
+  // CSS設定
+  css: [
+    '~/assets/css/main.css'
+  ],
+  
   
   // 静的ファイルの処理
   runtimeConfig: {
