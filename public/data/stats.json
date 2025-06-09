@@ -1,0 +1,34 @@
+{
+  "total_researchers": 3,
+  "total_proposals": 18,
+  "similarity_scores": {
+    "mean": 0.470798278082576,
+    "median": 0.3979795053601265,
+    "std": 0.11743657588160993,
+    "min": 0.369466108083725,
+    "max": 0.6672757863998413
+  },
+  "top_keywords": {
+    "Ro-vibrational band": 1,
+    "Quantum cascade laser": 1,
+    "Self-pressure-shift coefficients": 1,
+    "Saturated-absorption sub-Doppler spectroscopy": 1,
+    "半導体レーザー": 1,
+    "Optical frequency comb synthesizer": 1,
+    "神経科学・超精密加工": 1,
+    "Π-type structures": 1,
+    "Augmented sample generation": 1,
+    "Myotube contractile function": 1,
+    "Parameter estimation": 1,
+    "Complete cross-triplet loss": 1,
+    "Concordance Index": 1,
+    "Feature selection methods": 1,
+    "Switching algorithm": 1,
+    "PLATO-2 model": 1,
+    "Hereditary muscular disease analysis": 1,
+    "Audio-visual embedding space": 1,
+    "Frontier-based search": 1,
+    "Rho GTPase activities": 1
+  },
+  "last_build": "2025-06-09T20:45:08.375434"
+}
