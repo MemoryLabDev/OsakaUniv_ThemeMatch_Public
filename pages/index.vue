@@ -171,8 +171,8 @@ const loadData = async () => {
     loading.value = true
     const config = useRuntimeConfig()
     const baseURL = config.public.baseURL || '/'
-    // 環境に応じたパスを使用
-    const dataUrl = `${baseURL}data/researchers_index.json`.replace(/\/\//g, '/')
+    // baseURLを含む絶対パスを構築
+    const dataUrl = baseURL + 'data/researchers_index.json'
     console.log('Loading data from:', dataUrl)
     const data = await $fetch(dataUrl)
     indexData.value = data

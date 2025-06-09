@@ -13,13 +13,7 @@ export default defineNuxtConfig({
     prerender: {
       routes: ['/'],
       failOnError: false
-    },
-    publicAssets: [
-      {
-        baseURL: '/data',
-        dir: 'public/data'
-      }
-    ]
+    }
   },
   
   // ベースURL設定（GitHub Pagesのリポジトリ名に応じて設定）

@@ -277,8 +277,8 @@ const loadResearcherData = async () => {
     // IDを3桁ゼロパディングしてファイル名を構築
     const paddedId = String(researcherId).padStart(3, '0')
     const filename = `researcher_${paddedId}`
-    // 環境に応じたパスを使用
-    const requestUrl = `${baseURL}data/researchers/${filename}.json`.replace(/\/\//g, '/')
+    // baseURLを含む絶対パスを構築
+    const requestUrl = baseURL + `data/researchers/${filename}.json`
     
     console.log('Request URL:', requestUrl)
     const data = await $fetch(requestUrl)
