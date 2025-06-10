@@ -14,11 +14,17 @@
     "nuxt": "^3.8.0"
   },
   "dependencies": {
-    "@nuxtjs/tailwindcss": "^6.8.4",
     "@headlessui/vue": "^1.7.16",
-    "@heroicons/vue": "^2.0.18"
+    "@heroicons/vue": "^2.0.18",
+    "@nuxtjs/tailwindcss": "^6.8.4",
+    "firebase": "^11.9.0"
   },
-  "keywords": ["research", "matching", "osaka-university", "nuxt"],
+  "keywords": [
+    "research",
+    "matching",
+    "osaka-university",
+    "nuxt"
+  ],
   "author": "Osaka University",
   "license": "MIT"
 }
