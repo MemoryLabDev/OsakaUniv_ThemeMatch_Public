@@ -2,19 +2,33 @@
   "researchers": [
     {
       "researcher_id": 1,
-      "openalex_id": "a5020194069",
-      "name": "藤田 克昌",
-      "name_en": "Katsumasa Fujita",
-      "affiliation": "大阪大学",
+      "openalex_id": "a5040995389",
+      "name": "秋草直大",
+      "name_en": "Akikusa Naota",
+      "affiliation": "浜松ホトニクス株式会社",
       "keywords": [
-        "大阪大学"
+        "浜松ホトニクス株式会社"
       ],
       "total_matches": 6,
-      "max_similarity": 0.49413095116615297,
+      "max_similarity": 0.6759939163923265,
       "has_data": true,
       "filename": "researcher_001"
+    },
+    {
+      "researcher_id": 2,
+      "openalex_id": null,
+      "name": "飯塚 崇文",
+      "name_en": "IIZUKA Takafumi",
+      "affiliation": "ナルックス株式会社",
+      "keywords": [
+        "ナルックス株式会社"
+      ],
+      "total_matches": 6,
+      "max_similarity": 0.6672757863998413,
+      "has_data": true,
+      "filename": "researcher_002"
     }
   ],
-  "last_updated": "2025-06-10T10:32:19.660780",
-  "total_researchers": 1
+  "last_updated": "2025-06-10T11:22:34.098296",
+  "total_researchers": 2
 }

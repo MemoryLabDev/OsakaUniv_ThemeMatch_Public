@@ -1,48 +1,48 @@
 <template>
   <div>
     <!-- ヒーローセクション -->
-    <section class="gradient-bg py-16">
+    <section class="gradient-bg py-12 sm:py-16">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <h1 class="text-4xl font-bold text-white mb-4 fade-in-up">
+        <h1 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-white mb-3 sm:mb-4 fade-in-up">
           研究マッチングシステム
         </h1>
-        <p class="text-xl text-blue-100 mb-8 fade-in-up" style="animation-delay: 0.2s">
+        <p class="text-lg sm:text-xl text-blue-100 mb-6 sm:mb-8 px-4 fade-in-up" style="animation-delay: 0.2s">
           AI技術を活用した研究者間のコラボレーション提案
         </p>
         
         <!-- 統計サマリー -->
-        <div v-if="indexData" class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-3xl mx-auto">
-          <div class="bg-white/20 backdrop-blur-sm rounded-lg p-6 text-white fade-in-up" style="animation-delay: 0.4s">
-            <div class="text-3xl font-bold">{{ indexData.total_researchers }}</div>
-            <div class="text-blue-100">研究者</div>
+        <div v-if="indexData" class="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 max-w-3xl mx-auto">
+          <div class="bg-white/20 backdrop-blur-sm rounded-lg p-4 sm:p-6 text-white fade-in-up" style="animation-delay: 0.4s">
+            <div class="text-2xl sm:text-3xl font-bold">{{ indexData.total_researchers }}</div>
+            <div class="text-blue-100 text-sm sm:text-base">研究者</div>
           </div>
-          <div class="bg-white/20 backdrop-blur-sm rounded-lg p-6 text-white fade-in-up" style="animation-delay: 0.6s">
-            <div class="text-3xl font-bold">{{ totalMatches }}</div>
-            <div class="text-blue-100">マッチング結果</div>
+          <div class="bg-white/20 backdrop-blur-sm rounded-lg p-4 sm:p-6 text-white fade-in-up" style="animation-delay: 0.6s">
+            <div class="text-2xl sm:text-3xl font-bold">{{ totalMatches }}</div>
+            <div class="text-blue-100 text-sm sm:text-base">マッチング結果</div>
           </div>
-          <div class="bg-white/20 backdrop-blur-sm rounded-lg p-6 text-white fade-in-up" style="animation-delay: 0.8s">
-            <div class="text-3xl font-bold">{{ avgSimilarity }}%</div>
-            <div class="text-blue-100">平均マッチ度</div>
+          <div class="bg-white/20 backdrop-blur-sm rounded-lg p-4 sm:p-6 text-white fade-in-up" style="animation-delay: 0.8s">
+            <div class="text-2xl sm:text-3xl font-bold">{{ avgSimilarity }}%</div>
+            <div class="text-blue-100 text-sm sm:text-base">平均マッチ度</div>
           </div>
         </div>
       </div>
     </section>
 
     <!-- メインコンテンツ -->
-    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
       <!-- 検索・フィルター -->
-      <div class="mb-8">
-        <div class="flex flex-col md:flex-row gap-4 mb-6">
+      <div class="mb-6 sm:mb-8">
+        <div class="flex flex-col sm:flex-row gap-3 sm:gap-4 mb-4 sm:mb-6">
           <!-- 検索ボックス -->
           <div class="flex-1 relative">
             <input
               v-model="searchQuery"
               type="text"
               placeholder="研究者名、所属、キーワードで検索..."
-              class="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+              class="w-full pl-10 pr-4 py-2.5 sm:py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent text-sm sm:text-base"
             >
             <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-              <svg class="h-5 w-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg class="h-4 w-4 sm:h-5 sm:w-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
               </svg>
             </div>
@@ -51,7 +51,7 @@
           <!-- ソート -->
           <select
             v-model="sortBy"
-            class="px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+            class="px-3 sm:px-4 py-2.5 sm:py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent text-sm sm:text-base min-w-0 sm:min-w-[140px]"
           >
             <option value="name">名前順</option>
             <option value="similarity">マッチ度順</option>
@@ -60,7 +60,7 @@
         </div>
         
         <!-- 結果件数 -->
-        <p class="text-gray-600">
+        <p class="text-gray-600 text-sm sm:text-base">
           {{ filteredResearchers.length }}件の研究者が見つかりました
         </p>
       </div>
@@ -81,7 +81,7 @@
         </div>
       </div>
 
-      <div v-else class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div v-else class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
         <div
           v-for="researcher in filteredResearchers"
           :key="researcher.name"
@@ -89,48 +89,48 @@
           @click="navigateToResearcher(researcher)"
         >
           <!-- 研究者情報 -->
-          <div class="flex items-start justify-between mb-4">
-            <div class="flex-1">
-              <h3 class="text-lg font-semibold text-gray-900 mb-1">
+          <div class="flex items-start justify-between mb-3 sm:mb-4">
+            <div class="flex-1 min-w-0">
+              <h3 class="text-base sm:text-lg font-semibold text-gray-900 mb-1 truncate">
                 {{ researcher.name }}
               </h3>
-              <p v-if="researcher.name_en" class="text-sm text-gray-500 mb-2">
+              <p v-if="researcher.name_en" class="text-xs sm:text-sm text-gray-500 mb-1 sm:mb-2 truncate">
                 {{ researcher.name_en }}
               </p>
-              <p v-if="researcher.affiliation" class="text-sm text-gray-600">
+              <p v-if="researcher.affiliation" class="text-xs sm:text-sm text-gray-600 line-clamp-2">
                 {{ researcher.affiliation }}
               </p>
             </div>
             
             <!-- ステータスアイコン -->
-            <div v-if="researcher.has_data" class="flex-shrink-0">
-              <div class="w-3 h-3 bg-green-400 rounded-full"></div>
+            <div v-if="researcher.has_data" class="flex-shrink-0 ml-2">
+              <div class="w-2.5 h-2.5 sm:w-3 sm:h-3 bg-green-400 rounded-full"></div>
             </div>
           </div>
 
           <!-- キーワード -->
-          <div v-if="researcher.keywords && researcher.keywords.length" class="mb-4">
+          <div v-if="researcher.keywords && researcher.keywords.length" class="mb-3 sm:mb-4">
             <div class="flex flex-wrap gap-1">
               <span
-                v-for="keyword in researcher.keywords.slice(0, 5)"
+                v-for="keyword in researcher.keywords.slice(0, isMobile ? 3 : 5)"
                 :key="keyword"
-                class="inline-block px-2 py-1 text-xs bg-blue-100 text-blue-800 rounded-full"
+                class="inline-block px-2 py-0.5 sm:py-1 text-xs bg-blue-100 text-blue-800 rounded-full truncate max-w-[100px] sm:max-w-none"
               >
                 {{ keyword }}
               </span>
               <span
-                v-if="researcher.keywords.length > 5"
-                class="inline-block px-2 py-1 text-xs bg-gray-100 text-gray-600 rounded-full"
+                v-if="researcher.keywords.length > (isMobile ? 3 : 5)"
+                class="inline-block px-2 py-0.5 sm:py-1 text-xs bg-gray-100 text-gray-600 rounded-full"
               >
-                +{{ researcher.keywords.length - 5 }}個
+                +{{ researcher.keywords.length - (isMobile ? 3 : 5) }}個
               </span>
             </div>
           </div>
 
           <!-- 統計情報 -->
-          <div class="flex justify-between items-center text-sm text-gray-600">
-            <span>マッチング: {{ researcher.total_matches }}件</span>
-            <span v-if="researcher.max_similarity">
+          <div class="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-1 sm:gap-0 text-xs sm:text-sm text-gray-600">
+            <span class="truncate">マッチング: {{ researcher.total_matches }}件</span>
+            <span v-if="researcher.max_similarity" class="truncate">
               最高マッチ度: {{ Math.round(researcher.max_similarity * 100) }}%
             </span>
           </div>
@@ -164,6 +164,14 @@ const loading = ref(true)
 const error = ref(null)
 const searchQuery = ref('')
 const sortBy = ref('name')
+const isMobile = ref(false)
+
+// モバイル検知
+const checkMobile = () => {
+  if (process.client) {
+    isMobile.value = window.innerWidth < 640
+  }
+}
 
 // データ読み込み
 const loadData = async () => {
@@ -240,6 +248,14 @@ const navigateToResearcher = (researcher) => {
 
 // 初期化
 onMounted(() => {
+  checkMobile()
+  window.addEventListener('resize', checkMobile)
   loadData()
+})
+
+onUnmounted(() => {
+  if (process.client) {
+    window.removeEventListener('resize', checkMobile)
+  }
 })
 </script>

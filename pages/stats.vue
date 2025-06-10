@@ -2,9 +2,9 @@
   <div>
     <!-- ヘッダーセクション -->
     <section class="bg-white border-b">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        <h1 class="text-3xl font-bold text-gray-900 mb-2">統計情報</h1>
-        <p class="text-gray-600">研究マッチングシステムの全体統計とデータ分析結果</p>
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-8">
+        <h1 class="text-2xl sm:text-3xl font-bold text-gray-900 mb-2">統計情報</h1>
+        <p class="text-sm sm:text-base text-gray-600">研究マッチングシステムの全体統計とデータ分析結果</p>
       </div>
     </section>
 
@@ -30,99 +30,99 @@
     </div>
 
     <!-- メインコンテンツ -->
-    <div v-else-if="statsData" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <div v-else-if="statsData" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
       <!-- 全体統計 -->
-      <section class="mb-12">
-        <h2 class="text-2xl font-bold text-gray-900 mb-6">全体サマリー</h2>
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          <div class="card text-center">
-            <div class="text-3xl font-bold text-blue-600 mb-2">{{ statsData.total_researchers }}</div>
-            <div class="text-gray-600">登録研究者数</div>
+      <section class="mb-8 sm:mb-12">
+        <h2 class="text-xl sm:text-2xl font-bold text-gray-900 mb-4 sm:mb-6">全体サマリー</h2>
+        <div class="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-6">
+          <div class="card text-center p-4 sm:p-6">
+            <div class="text-2xl sm:text-3xl font-bold text-blue-600 mb-1 sm:mb-2">{{ statsData.total_researchers }}</div>
+            <div class="text-xs sm:text-sm text-gray-600">登録研究者数</div>
           </div>
-          <div class="card text-center">
-            <div class="text-3xl font-bold text-green-600 mb-2">{{ statsData.total_proposals }}</div>
-            <div class="text-gray-600">研究テーマ提案数</div>
+          <div class="card text-center p-4 sm:p-6">
+            <div class="text-2xl sm:text-3xl font-bold text-green-600 mb-1 sm:mb-2">{{ statsData.total_proposals }}</div>
+            <div class="text-xs sm:text-sm text-gray-600">研究テーマ提案数</div>
           </div>
-          <div class="card text-center">
-            <div class="text-3xl font-bold text-purple-600 mb-2">{{ Math.round(statsData.similarity_scores.mean * 100) }}%</div>
-            <div class="text-gray-600">平均類似度</div>
+          <div class="card text-center p-4 sm:p-6">
+            <div class="text-2xl sm:text-3xl font-bold text-purple-600 mb-1 sm:mb-2">{{ Math.round(statsData.similarity_scores.mean * 100) }}%</div>
+            <div class="text-xs sm:text-sm text-gray-600">平均類似度</div>
           </div>
-          <div class="card text-center">
-            <div class="text-3xl font-bold text-orange-600 mb-2">{{ Object.keys(statsData.top_keywords).length }}</div>
-            <div class="text-gray-600">ユニークキーワード数</div>
+          <div class="card text-center p-4 sm:p-6">
+            <div class="text-2xl sm:text-3xl font-bold text-orange-600 mb-1 sm:mb-2">{{ Object.keys(statsData.top_keywords).length }}</div>
+            <div class="text-xs sm:text-sm text-gray-600">ユニークキーワード数</div>
           </div>
         </div>
       </section>
 
       <!-- 類似度統計 -->
-      <section class="mb-12">
-        <h2 class="text-2xl font-bold text-gray-900 mb-6">類似度スコア分析</h2>
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+      <section class="mb-8 sm:mb-12">
+        <h2 class="text-xl sm:text-2xl font-bold text-gray-900 mb-4 sm:mb-6">類似度スコア分析</h2>
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-8">
           <!-- 統計値 -->
           <div class="card">
-            <h3 class="text-lg font-semibold text-gray-900 mb-4">統計値</h3>
-            <dl class="space-y-3">
+            <h3 class="text-base sm:text-lg font-semibold text-gray-900 mb-3 sm:mb-4">統計値</h3>
+            <dl class="space-y-2 sm:space-y-3">
               <div class="flex justify-between">
-                <dt class="text-gray-600">平均値</dt>
-                <dd class="font-semibold">{{ (statsData.similarity_scores.mean * 100).toFixed(2) }}%</dd>
+                <dt class="text-sm sm:text-base text-gray-600">平均値</dt>
+                <dd class="text-sm sm:text-base font-semibold">{{ (statsData.similarity_scores.mean * 100).toFixed(2) }}%</dd>
               </div>
               <div class="flex justify-between">
-                <dt class="text-gray-600">中央値</dt>
-                <dd class="font-semibold">{{ (statsData.similarity_scores.median * 100).toFixed(2) }}%</dd>
+                <dt class="text-sm sm:text-base text-gray-600">中央値</dt>
+                <dd class="text-sm sm:text-base font-semibold">{{ (statsData.similarity_scores.median * 100).toFixed(2) }}%</dd>
               </div>
               <div class="flex justify-between">
-                <dt class="text-gray-600">標準偏差</dt>
-                <dd class="font-semibold">{{ (statsData.similarity_scores.std * 100).toFixed(2) }}%</dd>
+                <dt class="text-sm sm:text-base text-gray-600">標準偏差</dt>
+                <dd class="text-sm sm:text-base font-semibold">{{ (statsData.similarity_scores.std * 100).toFixed(2) }}%</dd>
               </div>
               <div class="flex justify-between">
-                <dt class="text-gray-600">最小値</dt>
-                <dd class="font-semibold">{{ (statsData.similarity_scores.min * 100).toFixed(2) }}%</dd>
+                <dt class="text-sm sm:text-base text-gray-600">最小値</dt>
+                <dd class="text-sm sm:text-base font-semibold">{{ (statsData.similarity_scores.min * 100).toFixed(2) }}%</dd>
               </div>
               <div class="flex justify-between">
-                <dt class="text-gray-600">最大値</dt>
-                <dd class="font-semibold text-green-600">{{ (statsData.similarity_scores.max * 100).toFixed(2) }}%</dd>
+                <dt class="text-sm sm:text-base text-gray-600">最大値</dt>
+                <dd class="text-sm sm:text-base font-semibold text-green-600">{{ (statsData.similarity_scores.max * 100).toFixed(2) }}%</dd>
               </div>
             </dl>
           </div>
 
           <!-- 分布可視化（簡易版） -->
           <div class="card">
-            <h3 class="text-lg font-semibold text-gray-900 mb-4">類似度分布</h3>
-            <div class="space-y-3">
+            <h3 class="text-base sm:text-lg font-semibold text-gray-900 mb-3 sm:mb-4">類似度分布</h3>
+            <div class="space-y-2 sm:space-y-3">
               <div class="flex items-center">
-                <div class="w-20 text-sm text-gray-600">90-100%</div>
-                <div class="flex-1 bg-gray-200 rounded-full h-4 ml-3">
-                  <div class="bg-green-500 h-4 rounded-full" :style="{ width: '15%' }"></div>
+                <div class="w-16 sm:w-20 text-xs sm:text-sm text-gray-600">90-100%</div>
+                <div class="flex-1 bg-gray-200 rounded-full h-3 sm:h-4 ml-2 sm:ml-3">
+                  <div class="bg-green-500 h-3 sm:h-4 rounded-full" :style="{ width: '15%' }"></div>
                 </div>
-                <div class="w-12 text-sm text-gray-600 text-right">15%</div>
+                <div class="w-8 sm:w-12 text-xs sm:text-sm text-gray-600 text-right">15%</div>
               </div>
               <div class="flex items-center">
-                <div class="w-20 text-sm text-gray-600">80-90%</div>
-                <div class="flex-1 bg-gray-200 rounded-full h-4 ml-3">
-                  <div class="bg-blue-500 h-4 rounded-full" :style="{ width: '25%' }"></div>
+                <div class="w-16 sm:w-20 text-xs sm:text-sm text-gray-600">80-90%</div>
+                <div class="flex-1 bg-gray-200 rounded-full h-3 sm:h-4 ml-2 sm:ml-3">
+                  <div class="bg-blue-500 h-3 sm:h-4 rounded-full" :style="{ width: '25%' }"></div>
                 </div>
-                <div class="w-12 text-sm text-gray-600 text-right">25%</div>
+                <div class="w-8 sm:w-12 text-xs sm:text-sm text-gray-600 text-right">25%</div>
               </div>
               <div class="flex items-center">
-                <div class="w-20 text-sm text-gray-600">70-80%</div>
-                <div class="flex-1 bg-gray-200 rounded-full h-4 ml-3">
-                  <div class="bg-yellow-500 h-4 rounded-full" :style="{ width: '35%' }"></div>
+                <div class="w-16 sm:w-20 text-xs sm:text-sm text-gray-600">70-80%</div>
+                <div class="flex-1 bg-gray-200 rounded-full h-3 sm:h-4 ml-2 sm:ml-3">
+                  <div class="bg-yellow-500 h-3 sm:h-4 rounded-full" :style="{ width: '35%' }"></div>
                 </div>
-                <div class="w-12 text-sm text-gray-600 text-right">35%</div>
+                <div class="w-8 sm:w-12 text-xs sm:text-sm text-gray-600 text-right">35%</div>
               </div>
               <div class="flex items-center">
-                <div class="w-20 text-sm text-gray-600">60-70%</div>
-                <div class="flex-1 bg-gray-200 rounded-full h-4 ml-3">
-                  <div class="bg-orange-500 h-4 rounded-full" :style="{ width: '20%' }"></div>
+                <div class="w-16 sm:w-20 text-xs sm:text-sm text-gray-600">60-70%</div>
+                <div class="flex-1 bg-gray-200 rounded-full h-3 sm:h-4 ml-2 sm:ml-3">
+                  <div class="bg-orange-500 h-3 sm:h-4 rounded-full" :style="{ width: '20%' }"></div>
                 </div>
-                <div class="w-12 text-sm text-gray-600 text-right">20%</div>
+                <div class="w-8 sm:w-12 text-xs sm:text-sm text-gray-600 text-right">20%</div>
               </div>
               <div class="flex items-center">
-                <div class="w-20 text-sm text-gray-600">50-60%</div>
-                <div class="flex-1 bg-gray-200 rounded-full h-4 ml-3">
-                  <div class="bg-red-500 h-4 rounded-full" :style="{ width: '5%' }"></div>
+                <div class="w-16 sm:w-20 text-xs sm:text-sm text-gray-600">50-60%</div>
+                <div class="flex-1 bg-gray-200 rounded-full h-3 sm:h-4 ml-2 sm:ml-3">
+                  <div class="bg-red-500 h-3 sm:h-4 rounded-full" :style="{ width: '5%' }"></div>
                 </div>
-                <div class="w-12 text-sm text-gray-600 text-right">5%</div>
+                <div class="w-8 sm:w-12 text-xs sm:text-sm text-gray-600 text-right">5%</div>
               </div>
             </div>
           </div>
@@ -130,21 +130,21 @@
       </section>
 
       <!-- 人気キーワード -->
-      <section class="mb-12">
-        <h2 class="text-2xl font-bold text-gray-900 mb-6">人気研究キーワード</h2>
+      <section class="mb-8 sm:mb-12">
+        <h2 class="text-xl sm:text-2xl font-bold text-gray-900 mb-4 sm:mb-6">人気研究キーワード</h2>
         <div class="card">
-          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4">
             <div
               v-for="[keyword, count] in topKeywordsList"
               :key="keyword"
-              class="flex items-center justify-between p-3 bg-gray-50 rounded-lg"
+              class="flex items-center justify-between p-2 sm:p-3 bg-gray-50 rounded-lg"
             >
-              <span class="font-medium text-gray-900">{{ keyword }}</span>
-              <div class="flex items-center">
-                <span class="text-sm text-gray-600 mr-2">{{ count }}件</span>
-                <div class="w-16 bg-gray-200 rounded-full h-2">
+              <span class="text-sm sm:text-base font-medium text-gray-900 truncate flex-1 mr-2">{{ keyword }}</span>
+              <div class="flex items-center flex-shrink-0">
+                <span class="text-xs sm:text-sm text-gray-600 mr-1 sm:mr-2">{{ count }}件</span>
+                <div class="w-12 sm:w-16 bg-gray-200 rounded-full h-1.5 sm:h-2">
                   <div 
-                    class="bg-blue-600 h-2 rounded-full" 
+                    class="bg-blue-600 h-1.5 sm:h-2 rounded-full" 
                     :style="{ width: (count / maxKeywordCount * 100) + '%' }"
                   ></div>
                 </div>
@@ -156,44 +156,44 @@
 
       <!-- システム情報 -->
       <section>
-        <h2 class="text-2xl font-bold text-gray-900 mb-6">システム情報</h2>
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        <h2 class="text-xl sm:text-2xl font-bold text-gray-900 mb-4 sm:mb-6">システム情報</h2>
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-8">
           <div class="card">
-            <h3 class="text-lg font-semibold text-gray-900 mb-4">データ更新情報</h3>
-            <dl class="space-y-3">
+            <h3 class="text-base sm:text-lg font-semibold text-gray-900 mb-3 sm:mb-4">データ更新情報</h3>
+            <dl class="space-y-2 sm:space-y-3">
               <div>
-                <dt class="text-sm text-gray-600">最終ビルド日時</dt>
-                <dd class="font-medium">{{ formatDate(statsData.last_build) }}</dd>
+                <dt class="text-xs sm:text-sm text-gray-600">最終ビルド日時</dt>
+                <dd class="text-sm sm:text-base font-medium break-words">{{ formatDate(statsData.last_build) }}</dd>
               </div>
               <div>
-                <dt class="text-sm text-gray-600">データ処理方式</dt>
-                <dd class="font-medium">AI埋め込みベクトル + キーワード重複分析</dd>
+                <dt class="text-xs sm:text-sm text-gray-600">データ処理方式</dt>
+                <dd class="text-sm sm:text-base font-medium break-words">AI埋め込みベクトル + キーワード重複分析</dd>
               </div>
               <div>
-                <dt class="text-sm text-gray-600">システムバージョン</dt>
-                <dd class="font-medium">v2.0.0</dd>
+                <dt class="text-xs sm:text-sm text-gray-600">システムバージョン</dt>
+                <dd class="text-sm sm:text-base font-medium">v2.0.0</dd>
               </div>
             </dl>
           </div>
 
           <div class="card">
-            <h3 class="text-lg font-semibold text-gray-900 mb-4">技術スタック</h3>
+            <h3 class="text-base sm:text-lg font-semibold text-gray-900 mb-3 sm:mb-4">技術スタック</h3>
             <div class="space-y-2">
-              <div class="flex items-center">
-                <span class="text-sm bg-blue-100 text-blue-800 px-2 py-1 rounded mr-2">Frontend</span>
-                <span class="text-sm text-gray-700">Nuxt.js 3 + Tailwind CSS</span>
+              <div class="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-0">
+                <span class="text-xs bg-blue-100 text-blue-800 px-2 py-1 rounded self-start sm:mr-2">Frontend</span>
+                <span class="text-xs sm:text-sm text-gray-700 break-words">Nuxt.js 3 + Tailwind CSS</span>
               </div>
-              <div class="flex items-center">
-                <span class="text-sm bg-green-100 text-green-800 px-2 py-1 rounded mr-2">Backend</span>
-                <span class="text-sm text-gray-700">Python + OpenAI API</span>
+              <div class="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-0">
+                <span class="text-xs bg-green-100 text-green-800 px-2 py-1 rounded self-start sm:mr-2">Backend</span>
+                <span class="text-xs sm:text-sm text-gray-700 break-words">Python + OpenAI API</span>
               </div>
-              <div class="flex items-center">
-                <span class="text-sm bg-purple-100 text-purple-800 px-2 py-1 rounded mr-2">Deploy</span>
-                <span class="text-sm text-gray-700">GitHub Pages (静的サイト)</span>
+              <div class="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-0">
+                <span class="text-xs bg-purple-100 text-purple-800 px-2 py-1 rounded self-start sm:mr-2">Deploy</span>
+                <span class="text-xs sm:text-sm text-gray-700 break-words">GitHub Pages (静的サイト)</span>
               </div>
-              <div class="flex items-center">
-                <span class="text-sm bg-orange-100 text-orange-800 px-2 py-1 rounded mr-2">Data</span>
-                <span class="text-sm text-gray-700">OpenAlex Research API</span>
+              <div class="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-0">
+                <span class="text-xs bg-orange-100 text-orange-800 px-2 py-1 rounded self-start sm:mr-2">Data</span>
+                <span class="text-xs sm:text-sm text-gray-700 break-words">OpenAlex Research API</span>
               </div>
             </div>
           </div>
@@ -216,6 +216,7 @@ useHead({
 const statsData = ref(null)
 const loading = ref(true)
 const error = ref(null)
+const isMobile = ref(false)
 
 // データ読み込み
 const loadStatsData = async () => {
@@ -255,8 +256,23 @@ const formatDate = (dateString) => {
   })
 }
 
+// モバイル検知
+const checkMobile = () => {
+  if (process.client) {
+    isMobile.value = window.innerWidth < 640
+  }
+}
+
 // 初期化
 onMounted(() => {
+  checkMobile()
+  window.addEventListener('resize', checkMobile)
   loadStatsData()
+})
+
+onUnmounted(() => {
+  if (process.client) {
+    window.removeEventListener('resize', checkMobile)
+  }
 })
 </script>

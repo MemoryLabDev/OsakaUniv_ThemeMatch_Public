@@ -56,3 +56,60 @@
 .highlight {
   @apply bg-yellow-200 px-1 rounded;
 }
+
+/* モバイル対応 */
+@layer utilities {
+  .line-clamp-2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  
+  .line-clamp-3 {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  
+  .break-all {
+    word-break: break-all;
+  }
+  
+  .break-words {
+    word-break: break-words;
+  }
+}
+
+/* タッチターゲット改善 */
+@media (max-width: 640px) {
+  .card-hover {
+    @apply active:scale-[0.98] active:shadow-md transition-transform duration-100;
+  }
+  
+  button, .btn-primary, .btn-secondary {
+    @apply min-h-[44px] min-w-[44px];
+  }
+  
+  /* スクロール改善 */
+  .overflow-x-auto {
+    -webkit-overflow-scrolling: touch;
+  }
+}
+
+/* モバイルナビゲーション */
+.mobile-nav-enter-active,
+.mobile-nav-leave-active {
+  transition: all 0.3s ease;
+}
+
+.mobile-nav-enter-from {
+  opacity: 0;
+  transform: translateY(-10px);
+}
+
+.mobile-nav-leave-to {
+  opacity: 0;
+  transform: translateY(-10px);
+}

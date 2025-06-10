@@ -20555,5 +20555,7 @@
     "max_similarity_score": 0.6672757863998413,
     "total_candidates_analyzed": 6,
     "analysis_method": "embedding_similarity + keyword_overlap"
-  }
+  },
+  "kaken_info": [],
+  "kaken_trend_analysis": {}
 }
