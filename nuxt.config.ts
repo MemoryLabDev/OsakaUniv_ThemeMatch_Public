@@ -12,7 +12,8 @@ export default defineNuxtConfig({
     preset: 'static',
     prerender: {
       routes: ['/'],
-      failOnError: false
+      failOnError: false,
+      crawlLinks: true
     }
   },
   

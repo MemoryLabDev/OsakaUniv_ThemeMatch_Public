@@ -24,14 +24,11 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '18'
+          node-version: '20'
           cache: 'npm'
 
-      # Setup Pagesをコメントアウト（自前でbaseURL設定済み）
-      # - name: Setup Pages
-      #   uses: actions/configure-pages@v4
-      #   with:
-      #     static_site_generator: nuxt
+      - name: Setup Pages
+        uses: actions/configure-pages@v4
 
       - name: Restore cache
         uses: actions/cache@v4
@@ -39,7 +36,8 @@ jobs:
           path: |
             .output
             .nuxt
-          key: ${{ runner.os }}-nuxt-build-${{ hashFiles('.output') }}
+            node_modules
+          key: ${{ runner.os }}-nuxt-build-${{ hashFiles('package-lock.json') }}
           restore-keys: |
             ${{ runner.os }}-nuxt-build-
 
@@ -47,24 +45,39 @@ jobs:
         run: npm ci
 
       - name: Static HTML export with Nuxt
-        run: npm run generate
-
-      - name: Disable Jekyll
-        run: touch .output/public/.nojekyll
-
-      - name: De-link hard links for GitHub Pages
         run: |
-          # Copy all files, resolving hard links to actual file copies
-          rsync -aL .output/public/ public-no-links/
-          # Verify no hard links remain
-          echo "Checking for remaining hard links..."
-          find public-no-links -type f -links +1 | wc -l
-          echo "Hard link removal completed"
+          echo "Building with NODE_ENV=production"
+          npm run generate
+        env:
+          NODE_ENV: production
+          NODE_OPTIONS: --max-old-space-size=4096
+
+      - name: List build output
+        run: |
+          echo "Build output contents:"
+          ls -la .output/
+          if [ -d ".output/public" ]; then
+            echo "Public directory contents:"
+            ls -la .output/public/
+          else
+            echo "ERROR: .output/public directory not found"
+            exit 1
+          fi
+
+      - name: Prepare for upload
+        run: |
+          # Create a clean directory for upload
+          mkdir -p upload
+          # Copy all files to avoid hard link issues
+          cp -r .output/public/* upload/ 2>/dev/null || cp -r .output/public/. upload/
+          # Add .nojekyll to disable Jekyll processing
+          touch upload/.nojekyll
+          echo "Upload directory prepared successfully"
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./public-no-links
+          path: ./upload
 
   deploy:
     environment:

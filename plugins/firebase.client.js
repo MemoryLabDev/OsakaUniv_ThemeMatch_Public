@@ -4,13 +4,17 @@ import { getDatabase } from 'firebase/database'
 import { getAuth } from 'firebase/auth'
 
 export default defineNuxtPlugin(() => {
-  console.log('🔥 Firebase plugin: Starting initialization...')
-  console.log('🔥 Firebase plugin: process.server =', process.server)
-  console.log('🔥 Firebase plugin: process.client =', process.client)
+  // プリレンダリング時のログを削減
+  const isDev = process.env.NODE_ENV !== 'production'
+  const log = isDev ? console.log : () => {}
   
-  // クライアント側のみで実行
+  log('🔥 Firebase plugin: Starting initialization...')
+  log('🔥 Firebase plugin: process.server =', process.server)
+  log('🔥 Firebase plugin: process.client =', process.client)
+  
+  // サーバーサイドまたはプリレンダリング時はスキップ
   if (process.server) {
-    console.log('🔥 Firebase plugin: Skipping server-side initialization')
+    log('🔥 Firebase plugin: Skipping server-side initialization')
     return {
       provide: {
         firebase: null,
@@ -21,11 +25,11 @@ export default defineNuxtPlugin(() => {
   }
 
   try {
-    console.log('🔥 Firebase plugin: Getting runtime config...')
+    log('🔥 Firebase plugin: Getting runtime config...')
     const config = useRuntimeConfig()
-    console.log('🔥 Firebase plugin: Runtime config loaded:', !!config)
-    console.log('🔥 Firebase plugin: Public config:', !!config.public)
-    console.log('🔥 Firebase plugin: Firebase config:', !!config.public?.firebaseConfig)
+    log('🔥 Firebase plugin: Runtime config loaded:', !!config)
+    log('🔥 Firebase plugin: Public config:', !!config.public)
+    log('🔥 Firebase plugin: Firebase config:', !!config.public?.firebaseConfig)
     
     // Firebase設定の検証
     if (!config.public?.firebaseConfig || !config.public.firebaseConfig.apiKey) {
@@ -40,29 +44,29 @@ export default defineNuxtPlugin(() => {
       }
     }
     
-    console.log('🔥 Firebase plugin: Initializing Firebase app...', config.public.firebaseConfig.projectId)
+    log('🔥 Firebase plugin: Initializing Firebase app...', config.public.firebaseConfig.projectId)
     
     // Firebase初期化
     const firebaseApp = initializeApp(config.public.firebaseConfig)
-    console.log('🔥 Firebase plugin: Firebase app created:', !!firebaseApp)
+    log('🔥 Firebase plugin: Firebase app created:', !!firebaseApp)
     
     // Firebase services
-    console.log('🔥 Firebase plugin: Creating database service...')
+    log('🔥 Firebase plugin: Creating database service...')
     const database = getDatabase(firebaseApp)
-    console.log('🔥 Firebase plugin: Database service created:', !!database)
+    log('🔥 Firebase plugin: Database service created:', !!database)
     
-    console.log('🔥 Firebase plugin: Creating auth service...')
+    log('🔥 Firebase plugin: Creating auth service...')
     const auth = getAuth(firebaseApp)
-    console.log('🔥 Firebase plugin: Auth service created:', !!auth)
+    log('🔥 Firebase plugin: Auth service created:', !!auth)
     
-    console.log('🔥 Firebase plugin: All services initialized successfully')
+    log('🔥 Firebase plugin: All services initialized successfully')
     
     // 認証状態監視
     try {
       auth.onAuthStateChanged((user) => {
-        console.log('🔥 Firebase plugin: Auth state changed:', user?.email || 'No user')
+        log('🔥 Firebase plugin: Auth state changed:', user?.email || 'No user')
       })
-      console.log('🔥 Firebase plugin: Auth state listener attached')
+      log('🔥 Firebase plugin: Auth state listener attached')
     } catch (authError) {
       console.error('🔥 Firebase plugin: Auth listener error:', authError)
     }
@@ -75,7 +79,7 @@ export default defineNuxtPlugin(() => {
       }
     }
     
-    console.log('🔥 Firebase plugin: Returning services:', {
+    log('🔥 Firebase plugin: Returning services:', {
       firebase: !!result.provide.firebase,
       firebaseDB: !!result.provide.firebaseDB,
       firebaseAuth: !!result.provide.firebaseAuth
