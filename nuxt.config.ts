@@ -12,7 +12,8 @@ export default defineNuxtConfig({
     preset: 'static',
     prerender: {
       routes: ['/'],
-      failOnError: false
+      failOnError: false,
+      crawlLinks: true
     }
   },
   
@@ -35,17 +36,27 @@ export default defineNuxtConfig({
     '@nuxtjs/tailwindcss'
   ],
   
+  // Firebase設定のための環境変数
+  runtimeConfig: {
+    public: {
+      baseURL: isDev ? '/' : '/OsakaUniv_ThemeMatch_Public/',
+      firebaseConfig: {
+        apiKey: "AIzaSyAlmViV0hbksyW_jxnjZ5cdDVN2txrsDhc",
+        authDomain: "osaka-univ.firebaseapp.com", 
+        databaseURL: "https://osaka-univ-default-rtdb.firebaseio.com/",
+        projectId: "osaka-univ",
+        storageBucket: "osaka-univ.firebasestorage.app",
+        messagingSenderId: "657330737802",
+        appId: "1:657330737802:web:31ca9eeff3a56c0be25373"
+      }
+    }
+  },
+  
   // CSS設定
   css: [
     '~/assets/css/main.css'
   ],
   
-  // ランタイム設定
-  runtimeConfig: {
-    public: {
-      baseURL: isDev ? '/' : '/OsakaUniv_ThemeMatch_Public/'
-    }
-  },
   
   // Vite設定
   vite: {

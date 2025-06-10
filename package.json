@@ -3,9 +3,9 @@
   "version": "1.0.0",
   "description": "大阪大学研究マッチングシステム - フロントエンド",
   "scripts": {
-    "build": "nuxt build",
+    "build": "NODE_OPTIONS='--max-old-space-size=4096' nuxt build",
     "dev": "NODE_OPTIONS='--max-old-space-size=4096' nuxt dev",
-    "generate": "NODE_ENV=production nuxt generate",
+    "generate": "NODE_OPTIONS='--max-old-space-size=4096' NODE_ENV=production nuxt generate",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare"
   },
@@ -14,11 +14,17 @@
     "nuxt": "^3.8.0"
   },
   "dependencies": {
-    "@nuxtjs/tailwindcss": "^6.8.4",
     "@headlessui/vue": "^1.7.16",
-    "@heroicons/vue": "^2.0.18"
+    "@heroicons/vue": "^2.0.18",
+    "@nuxtjs/tailwindcss": "^6.8.4",
+    "firebase": "^11.9.0"
   },
-  "keywords": ["research", "matching", "osaka-university", "nuxt"],
+  "keywords": [
+    "research",
+    "matching",
+    "osaka-university",
+    "nuxt"
+  ],
   "author": "Osaka University",
   "license": "MIT"
 }

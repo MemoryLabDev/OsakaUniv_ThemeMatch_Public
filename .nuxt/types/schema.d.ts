@@ -65,6 +65,22 @@ declare module 'nuxt/schema' {
   }
   interface PublicRuntimeConfig {
    baseURL: string,
+
+   firebaseConfig: {
+      apiKey: string,
+
+      authDomain: string,
+
+      databaseURL: string,
+
+      projectId: string,
+
+      storageBucket: string,
+
+      messagingSenderId: string,
+
+      appId: string,
+   },
   }
 }
 declare module 'vue' {

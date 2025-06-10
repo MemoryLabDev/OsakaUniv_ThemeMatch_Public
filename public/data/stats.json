@@ -1,16 +1,15 @@
 {
-  "total_researchers": 2,
-  "total_proposals": 12,
+  "total_researchers": 1,
+  "total_proposals": 6,
   "similarity_scores": {
-    "mean": 0.6716348513960839,
-    "median": 0.6759939163923265,
+    "mean": 0.7974648535251617,
+    "median": 0.7974648535251617,
     "std": 0,
-    "min": 0.6672757863998413,
-    "max": 0.6759939163923265
+    "min": 0.7974648535251617,
+    "max": 0.7974648535251617
   },
   "top_keywords": {
-    "keyword_秋草直大": 1,
-    "keyword_飯塚 崇文": 1
+    "keyword_藤田 克昌": 1
   },
-  "last_build": "2025-06-10T11:22:34.191130"
+  "last_build": "2025-06-10T16:55:35.610675"
 }
