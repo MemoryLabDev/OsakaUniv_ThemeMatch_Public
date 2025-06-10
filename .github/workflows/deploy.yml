@@ -52,10 +52,19 @@ jobs:
       - name: Disable Jekyll
         run: touch .output/public/.nojekyll
 
+      - name: De-link hard links for GitHub Pages
+        run: |
+          # Copy all files, resolving hard links to actual file copies
+          rsync -aL .output/public/ public-no-links/
+          # Verify no hard links remain
+          echo "Checking for remaining hard links..."
+          find public-no-links -type f -links +1 | wc -l
+          echo "Hard link removal completed"
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./.output/public
+          path: ./public-no-links
 
   deploy:
     environment:
