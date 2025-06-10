@@ -108,6 +108,100 @@
             </p>
           </div>
 
+          <!-- 最新の科研費動向 -->
+          <div v-if="researcherData?.kaken_trend_analysis?.summary" class="mt-6">
+            <h3 class="text-lg font-medium text-gray-900 mb-3">
+              <span class="inline-flex items-center">
+                <svg class="w-5 h-5 text-blue-600 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                </svg>
+                最新の科研費動向
+              </span>
+            </h3>
+            
+            <div class="bg-gradient-to-r from-blue-50 to-indigo-50 border border-blue-200 rounded-lg p-6">
+              <!-- 統計サマリー -->
+              <div class="flex items-center justify-between mb-4">
+                <div class="flex items-center space-x-4">
+                  <div class="text-center">
+                    <div class="text-2xl font-bold text-blue-600">{{ researcherData.kaken_trend_analysis.grant_count }}</div>
+                    <div class="text-xs text-gray-600">助成金件数</div>
+                  </div>
+                  <div v-if="researcherData.kaken_trend_analysis.total_funding > 0" class="text-center">
+                    <div class="text-2xl font-bold text-green-600">{{ formatFunding(researcherData.kaken_trend_analysis.total_funding) }}</div>
+                    <div class="text-xs text-gray-600">総配分額</div>
+                  </div>
+                </div>
+                <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-blue-100 text-blue-800">
+                  <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
+                  </svg>
+                  AI要約済み
+                </span>
+              </div>
+              
+              <!-- 動向要約 -->
+              <div class="bg-white bg-opacity-70 rounded-lg p-4 mb-4">
+                <h4 class="text-sm font-medium text-gray-800 mb-2">研究動向分析</h4>
+                <p class="text-gray-700 leading-relaxed">{{ researcherData.kaken_trend_analysis.summary }}</p>
+              </div>
+              
+              <!-- 主要テーマ -->
+              <div v-if="researcherData.kaken_trend_analysis.key_themes?.length" class="mb-4">
+                <h4 class="text-sm font-medium text-gray-800 mb-2">主要研究テーマ</h4>
+                <div class="flex flex-wrap gap-2">
+                  <span
+                    v-for="theme in researcherData.kaken_trend_analysis.key_themes.slice(0, 5)"
+                    :key="theme"
+                    class="inline-block px-3 py-1 text-xs bg-white bg-opacity-80 text-blue-800 rounded-full border border-blue-200"
+                  >
+                    {{ theme }}
+                  </span>
+                </div>
+              </div>
+              
+              <!-- 詳細展開ボタン（オプション） -->
+              <div class="mt-4 pt-3 border-t border-blue-200">
+                <button 
+                  @click="showKakenDetails = !showKakenDetails"
+                  class="text-sm text-blue-600 hover:text-blue-800 font-medium flex items-center"
+                >
+                  <span>{{ showKakenDetails ? '詳細を閉じる' : '助成金詳細を表示' }}</span>
+                  <svg class="w-4 h-4 ml-1 transform transition-transform" :class="{ 'rotate-180': showKakenDetails }" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                  </svg>
+                </button>
+              </div>
+            </div>
+            
+            <!-- 詳細情報（展開時のみ表示） -->
+            <div v-if="showKakenDetails && researcherData?.kaken_info?.length" class="mt-4 space-y-3">
+              <div 
+                v-for="(grant, index) in researcherData.kaken_info.slice(0, 3)"
+                :key="index"
+                class="bg-gray-50 border border-gray-200 rounded-lg p-4"
+              >
+                <div class="flex items-center space-x-2 mb-2">
+                  <span class="inline-flex items-center px-2 py-1 rounded text-xs font-medium bg-gray-200 text-gray-700">
+                    助成金 {{ index + 1 }}
+                  </span>
+                  <span v-if="grant.period" class="text-sm text-gray-600">{{ grant.period }}</span>
+                  <span v-if="grant.amount" class="text-sm text-gray-600">{{ grant.amount }}</span>
+                </div>
+                
+                <div v-if="grant.keywords" class="mb-2">
+                  <span class="text-sm font-medium text-gray-700">キーワード:</span>
+                  <span class="text-sm text-gray-600 ml-1">{{ grant.keywords }}</span>
+                </div>
+                
+                <div v-if="grant.research_overview" class="text-sm text-gray-700">
+                  <span class="font-medium">研究概要:</span>
+                  <span class="ml-1">{{ grant.research_overview.length > 200 ? grant.research_overview.substring(0, 200) + '...' : grant.research_overview }}</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
           <!-- 研究関心事 -->
           <div v-if="hasResearchInterests" class="mt-6">
             <h3 class="text-lg font-medium text-gray-900 mb-3">研究関心事</h3>
@@ -133,9 +227,17 @@
       <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div class="mb-8">
           <h2 class="text-2xl font-bold text-gray-900 mb-2">研究マッチング結果</h2>
-          <p class="text-gray-600">
-            AI分析により推薦された{{ researcherData?.matches?.length || 0 }}件の研究コラボレーション提案
-          </p>
+          <div class="flex items-center space-x-3">
+            <p class="text-gray-600">
+              AI分析により推薦された{{ researcherData?.matches?.length || 0 }}件の研究コラボレーション提案
+            </p>
+            <span v-if="researcherData?.kaken_trend_analysis?.summary" class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-blue-100 text-blue-800">
+              <svg class="w-3 h-3 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+              KAKEN情報活用済み
+            </span>
+          </div>
         </div>
 
         <!-- マッチング結果一覧 -->
@@ -264,6 +366,7 @@ useHead({
 const researcherData = ref(null)
 const loading = ref(true)
 const error = ref(null)
+const showKakenDetails = ref(false)
 
 // データ読み込み
 const loadResearcherData = async () => {
@@ -311,6 +414,14 @@ const hasResearchInterests = computed(() => {
   const interests = researcherData.value.target_researcher.research_interests
   return interests.collaboration || interests.technology || interests.market
 })
+
+// ユーティリティ関数
+const formatFunding = (amount) => {
+  if (amount >= 1000) {
+    return Math.round(amount / 100) / 10 + '万円'
+  }
+  return Math.round(amount) + '千円'
+}
 
 // 初期化
 onMounted(() => {
