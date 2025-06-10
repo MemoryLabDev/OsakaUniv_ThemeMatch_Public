@@ -104,7 +104,9 @@ useHead({
 watch(authInitialized, (initialized) => {
   if (initialized && isAuthenticated.value) {
     console.log('📱 Login: Auth initialized and user authenticated, redirecting to home')
-    router.push('/')
+    const config = useRuntimeConfig()
+    const baseURL = config.public.baseURL || '/'
+    router.push(baseURL)
   }
 }, { immediate: true })
 
@@ -131,7 +133,9 @@ const handleLogin = async () => {
       // 少し待ってからリフレッシュ（認証状態が確実に更新されるように）
       setTimeout(() => {
         if (process.client) {
-          window.location.href = '/'
+          const config = useRuntimeConfig()
+          const baseURL = config.public.baseURL || '/'
+          window.location.href = baseURL
         }
       }, 500)
     } else {

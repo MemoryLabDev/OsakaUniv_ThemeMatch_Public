@@ -11,13 +11,6 @@
             <span class="text-xs sm:text-sm text-gray-600 hidden sm:block truncate max-w-32 sm:max-w-none">{{ currentUser?.displayName || currentUser?.email }}</span>
             <span class="text-xs text-gray-600 sm:hidden">{{ (currentUser?.displayName || currentUser?.email || '').split('@')[0] }}</span>
             <button
-              @click="showDebug = !showDebug"
-              class="bg-gray-600 text-white px-2 py-1.5 rounded-md text-xs hover:bg-gray-700 transition-colors"
-              title="デバッグ情報を表示"
-            >
-              🐛
-            </button>
-            <button
               @click="handleLogout"
               class="bg-red-600 text-white px-2 sm:px-4 py-1.5 sm:py-2 rounded-md text-xs sm:text-sm hover:bg-red-700 transition-colors"
             >
@@ -29,46 +22,6 @@
       </div>
     </header>
     
-    <!-- デバッグ情報パネル -->
-    <div v-if="showDebug" class="bg-gray-900 text-white p-4 border-b">
-      <div class="max-w-7xl mx-auto">
-        <div class="flex justify-between items-center mb-4">
-          <h3 class="text-lg font-bold">🐛 デバッグ情報</h3>
-          <button @click="showDebug = false" class="text-gray-400 hover:text-white">✕</button>
-        </div>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
-          <div>
-            <h4 class="font-bold text-yellow-400 mb-2">認証状態</h4>
-            <div class="space-y-1">
-              <div>認証初期化: {{ authInitialized ? '✅' : '❌' }}</div>
-              <div>認証済み: {{ isAuthenticated ? '✅' : '❌' }}</div>
-              <div>Firebase準備: {{ firebaseReady ? '✅' : '❌' }}</div>
-              <div>現在のユーザー: {{ debugInfo.currentUserEmail || 'なし' }}</div>
-            </div>
-          </div>
-          <div>
-            <h4 class="font-bold text-blue-400 mb-2">データ読み込み</h4>
-            <div class="space-y-1">
-              <div>現在のステップ: <span class="text-green-400">{{ debugInfo.step }}</span></div>
-              <div>プロフィール読み込み: {{ debugInfo.profileLoaded ? '✅' : '❌' }}</div>
-              <div>マッピング名: {{ debugInfo.mappedName || 'なし' }}</div>
-              <div>リクエストURL: <span class="text-xs break-all">{{ debugInfo.requestUrl || 'なし' }}</span></div>
-            </div>
-          </div>
-        </div>
-        <div v-if="debugInfo.dataLoadError" class="mt-4 p-3 bg-red-900 rounded">
-          <h4 class="font-bold text-red-400 mb-1">エラー詳細</h4>
-          <div class="text-red-200 text-xs">{{ debugInfo.dataLoadError }}</div>
-          <div v-if="debugInfo.availableMappings" class="mt-2">
-            <div class="text-red-400 text-xs">利用可能なマッピング:</div>
-            <div class="text-red-200 text-xs">{{ debugInfo.availableMappings?.slice(0, 5).join(', ') }}{{ debugInfo.availableMappings?.length > 5 ? '...' : '' }}</div>
-          </div>
-        </div>
-        <div class="mt-4 text-xs text-gray-400">
-          最終更新: {{ debugInfo.timestamp }}
-        </div>
-      </div>
-    </div>
 
     <!-- メインコンテンツ -->
     <main class="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 py-4 sm:py-8">
@@ -469,29 +422,6 @@ const showKakenDetails = ref(false)
 const showAllProposalKeywords = ref({})
 const isMobile = ref(false)
 
-// デバッグ関連
-const debugInfo = ref({
-  step: 'initialization',
-  authInitialized: false,
-  currentUserEmail: null,
-  firebaseReady: false,
-  profileLoaded: false,
-  mappedName: null,
-  requestUrl: null,
-  dataLoadError: null,
-  timestamp: new Date().toISOString()
-})
-const showDebug = ref(false)
-
-// デバッグ用ヘルパー
-const updateDebugInfo = (updates) => {
-  debugInfo.value = {
-    ...debugInfo.value,
-    ...updates,
-    timestamp: new Date().toISOString()
-  }
-  console.log('🐛 DEBUG UPDATE:', debugInfo.value)
-}
 
 // ページメタ設定
 useHead({
@@ -500,15 +430,9 @@ useHead({
 
 // 未認証ユーザーをログインページにリダイレクト（認証初期化後）
 watch(authInitialized, (initialized) => {
-  updateDebugInfo({ 
-    step: 'auth_check',
-    authInitialized: initialized,
-    isAuthenticated: isAuthenticated.value
-  })
   
   if (initialized && !isAuthenticated.value) {
     console.log('🏠 Home: Auth initialized but user not authenticated, redirecting to login')
-    updateDebugInfo({ step: 'redirecting_to_login' })
     router.push('/auth/login')
   }
 }, { immediate: true })
@@ -516,15 +440,9 @@ watch(authInitialized, (initialized) => {
 // ユーザー情報読み込み
 watch(currentUser, async (user) => {
   console.log('🏠 Dashboard: User changed:', user?.email || 'null')
-  updateDebugInfo({ 
-    step: 'user_changed',
-    currentUserEmail: user?.email || null,
-    firebaseReady: firebaseReady.value
-  })
   
   if (user) {
     try {
-      updateDebugInfo({ step: 'loading_profile' })
       console.log('🏠 Dashboard: Loading user profile...')
       console.log('🏠 Dashboard: User UID:', user.uid)
       console.log('🏠 Dashboard: User email:', user.email)
@@ -541,12 +459,6 @@ watch(currentUser, async (user) => {
           privacy_settings: profile.privacy_settings
         })
         userProfile.value = profile
-        updateDebugInfo({ 
-          step: 'profile_loaded',
-          profileLoaded: true,
-          profileName: profile.name || profile.display_name,
-          profileData: profile
-        })
       } else {
         console.log('🏠 Dashboard: No user profile found - profile is null/undefined')
         console.log('🏠 Dashboard: Attempting to create default profile...')
@@ -573,50 +485,24 @@ watch(currentUser, async (user) => {
           if (createResult.success) {
             console.log('🏠 Dashboard: Default profile created successfully')
             userProfile.value = defaultProfile
-            updateDebugInfo({ 
-              step: 'profile_created',
-              profileLoaded: true,
-              profileName: defaultProfile.display_name,
-              profileData: defaultProfile
-            })
           } else {
             console.log('🏠 Dashboard: Failed to create default profile:', createResult.error)
-            updateDebugInfo({ 
-              step: 'profile_creation_failed',
-              profileLoaded: false,
-              profileResult: 'creation_failed',
-              error: createResult.error
-            })
           }
         } catch (createError) {
           console.error('🏠 Dashboard: Error creating default profile:', createError)
-          updateDebugInfo({ 
-            step: 'profile_creation_error',
-            profileLoaded: false,
-            profileResult: 'creation_error',
-            error: createError.message
-          })
         }
       }
       
       // マッチングデータも読み込み
       console.log('🏠 Dashboard: Starting matching data load...')
-      updateDebugInfo({ step: 'loading_matching_data' })
       await loadMatchingData(user)
       console.log('🏠 Dashboard: Matching data load completed')
-      updateDebugInfo({ step: 'matching_data_completed' })
     } catch (error) {
       console.error('🏠 Dashboard: Error in user data loading:', error)
       console.error('🏠 Dashboard: Error details:', {
         message: error.message,
         stack: error.stack,
         name: error.name
-      })
-      updateDebugInfo({ 
-        step: 'error',
-        dataLoadError: error.message,
-        errorType: error.name,
-        errorStack: error.stack
       })
     }
   }
@@ -677,19 +563,11 @@ const emailToNameMapping = {
 // マッチングデータ読み込み関数
 const loadMatchingData = async (user) => {
   if (!user?.email) {
-    updateDebugInfo({ 
-      step: 'matching_data_no_email',
-      dataLoadError: 'No user email provided'
-    })
     return
   }
   
   try {
     console.log('🔍 Loading matching data for:', user.email)
-    updateDebugInfo({ 
-      step: 'matching_data_start',
-      currentUserEmail: user.email 
-    })
     matchingDataError.value = false
     
     const config = useRuntimeConfig()
@@ -698,19 +576,10 @@ const loadMatchingData = async (user) => {
     // メールアドレスから日本語名を取得
     const japaneseName = emailToNameMapping[user.email]
     
-    updateDebugInfo({ 
-      step: 'email_mapping',
-      mappedName: japaneseName || 'NOT_FOUND'
-    })
     
     if (!japaneseName) {
       console.log('❌ Email not found in mapping:', user.email)
       console.log('❌ Available mappings:', Object.keys(emailToNameMapping))
-      updateDebugInfo({ 
-        step: 'mapping_not_found',
-        dataLoadError: `Email ${user.email} not found in mapping`,
-        availableMappings: Object.keys(emailToNameMapping)
-      })
       matchingDataError.value = true
       return
     }
@@ -719,11 +588,6 @@ const loadMatchingData = async (user) => {
     const filename = `matching_results_${japaneseName}`
     const requestUrl = baseURL + `data/${filename}.json`
     
-    updateDebugInfo({ 
-      step: 'fetch_attempt',
-      requestUrl: requestUrl,
-      filename: filename
-    })
     
     console.log('🔍 Attempting to load:', requestUrl)
     console.log('🔍 Japanese name mapping:', user.email, '->', japaneseName)
@@ -738,12 +602,6 @@ const loadMatchingData = async (user) => {
     })
     
     matchingData.value = data
-    updateDebugInfo({ 
-      step: 'matching_data_success',
-      dataLoaded: true,
-      hasTargetResearcher: !!data?.target_researcher,
-      matchCount: data?.matches?.length || 0
-    })
     
   } catch (err) {
     console.error('❌ Matching data loading error:', err)
@@ -754,12 +612,6 @@ const loadMatchingData = async (user) => {
       url: err.url
     })
     
-    updateDebugInfo({ 
-      step: 'matching_data_error',
-      dataLoadError: `${err.status || 'Unknown'}: ${err.message}`,
-      errorStatus: err.status,
-      errorUrl: err.url
-    })
     
     if (err.status === 404) {
       console.log('📄 Matching data file not found, showing error message')
