@@ -156,6 +156,26 @@
             </div>
           </div>
 
+          <!-- 分類タグ -->
+          <div v-if="researcher.field_tag || researcher.affiliation_tag" class="mb-3 sm:mb-4">
+            <div class="flex flex-wrap gap-1">
+              <span
+                v-if="researcher.field_tag"
+                :class="getFieldTagClass(researcher.field_tag)"
+                class="inline-block px-2 py-0.5 sm:py-1 text-xs rounded-full font-medium"
+              >
+                {{ researcher.field_tag }}
+              </span>
+              <span
+                v-if="researcher.affiliation_tag"
+                :class="getAffiliationTagClass(researcher.affiliation_tag)"
+                class="inline-block px-2 py-0.5 sm:py-1 text-xs rounded-full font-medium"
+              >
+                {{ researcher.affiliation_tag }}
+              </span>
+            </div>
+          </div>
+
           <!-- キーワード -->
           <div v-if="researcher.keywords && researcher.keywords.length" class="mb-3 sm:mb-4">
             <div class="flex flex-wrap gap-1">
@@ -248,33 +268,186 @@ const checkMobile = () => {
 // Firebase composable
 const { getPublicUsers, firebaseReady } = useFirebase()
 
-// データ読み込み
+// データ読み込み (UID管理システム使用)
 const loadData = async () => {
   try {
     loading.value = true
+    updateDebugInfo({ step: 'data_loading_start' })
+    
     const config = useRuntimeConfig()
     const baseURL = config.public.baseURL || '/'
-    // baseURLを含む絶対パスを構築
-    const dataUrl = baseURL + 'data/researchers_index.json'
-    console.log('Loading data from:', dataUrl)
-    const data = await $fetch(dataUrl)
-    indexData.value = data
     
-    // Firebase公開ユーザー情報も読み込み
+    // 1. まず公開ユーザー設定を読み込み（必須）
+    console.log('📋 Step 1: Loading public users first...')
     await loadPublicUsers()
+    
+    if (publicUsers.value.length === 0) {
+      console.warn('📋 No public users found, but continuing with empty data')
+      updateDebugInfo({ 
+        step: 'no_public_users_warning',
+        firebaseReady: firebaseReady.value,
+        publicUsersCount: 0 
+      })
+    }
+    
+    // 2. UID インデックスを読み込み
+    console.log('📋 Step 2: Loading UID index...')
+    const uidIndexUrl = baseURL + 'data/uid_index.json'
+    console.log('Loading UID index from:', uidIndexUrl)
+    const uidData = await $fetch(uidIndexUrl)
+    
+    // 3. 公開ユーザーの研究者データのみ読み込み（最適化）
+    console.log('📋 Step 3: Loading researcher data for public users only...')
+    await loadResearcherDataFromUIDs(uidData)
+    
+    updateDebugInfo({ 
+      step: 'data_loading_completed',
+      finalResearcherCount: indexData.value?.researchers?.length || 0
+    })
+    
   } catch (err) {
     console.error('Data loading error:', err)
     error.value = 'データの読み込みに失敗しました: ' + err.message
+    updateDebugInfo({ 
+      step: 'data_loading_error',
+      error: err.message
+    })
   } finally {
     loading.value = false
   }
 }
 
-// 公開ユーザー設定読み込み
+// UID から研究者データを読み込み（最適化版：公開ユーザーのみ）
+const loadResearcherDataFromUIDs = async (uidData) => {
+  try {
+    const config = useRuntimeConfig()
+    const baseURL = config.public.baseURL || '/'
+    const researchers = []
+    
+    console.log('📋 Loading researcher data from UIDs:', Object.keys(uidData).length)
+    console.log('📋 Public users for filtering:', publicUsers.value.length)
+    
+    // 公開ユーザーのメールアドレスセットを作成
+    const publicEmails = new Set(publicUsers.value.map(user => user.email))
+    console.log('📋 Public emails set:', [...publicEmails])
+    
+    // 各UIDについて、公開設定のユーザーのみ処理
+    for (const [uid, userData] of Object.entries(uidData)) {
+      try {
+        // 最適化：公開ユーザーでない場合はスキップ
+        if (!publicEmails.has(userData.email)) {
+          console.log(`📋 Skipping non-public user: ${uid} (${userData.name}) - ${userData.email}`)
+          continue
+        }
+        
+        console.log(`📋 Loading data for public UID: ${uid} (${userData.name})`)
+        
+        // UIDベースのマッチング結果ファイルを読み込み
+        const matchingResultsUrl = `${baseURL}data/matching_results_${uid}.json`
+        const matchingData = await $fetch(matchingResultsUrl)
+        
+        if (matchingData && matchingData.target_researcher) {
+          const researcher = {
+            uid: uid,
+            researcher_id: matchingData.target_researcher.researcher_id || uid,
+            openalex_id: matchingData.target_researcher.openalex_id || '',
+            name: userData.name || matchingData.target_researcher.name,
+            name_en: matchingData.target_researcher.name_en || userData.name,
+            affiliation: matchingData.target_researcher.affiliation || userData.affiliation || '',
+            keywords: matchingData.target_researcher.keywords || [],
+            field_tag: matchingData.target_researcher.field_tag || userData.field_tag || '工学',
+            affiliation_tag: matchingData.target_researcher.affiliation_tag || userData.affiliation_tag || 'アカデミア',
+            total_matches: matchingData.matched_researchers?.length || 0,
+            max_similarity: Math.max(...(matchingData.matched_researchers?.map(r => r.similarity_score) || [0])),
+            has_data: true,
+            email: userData.email || '',
+            matching_data: matchingData
+          }
+          
+          researchers.push(researcher)
+          console.log(`✅ Loaded public data for ${researcher.name}`)
+        }
+      } catch (fileErr) {
+        console.warn(`⚠️ Could not load data for UID ${uid}:`, fileErr.message)
+        // 公開ユーザーの場合、UIDデータのみでも追加
+        if (publicEmails.has(userData.email)) {
+          researchers.push({
+            uid: uid,
+            researcher_id: uid,
+            name: userData.name,
+            name_en: userData.name,
+            affiliation: userData.affiliation || '',
+            email: userData.email || '',
+            field_tag: userData.field_tag || '工学',
+            affiliation_tag: userData.affiliation_tag || 'アカデミア',
+            keywords: [],
+            total_matches: 0,
+            max_similarity: 0,
+            has_data: false
+          })
+        }
+      }
+    }
+    
+    // 古い indexData 形式に合わせる
+    indexData.value = {
+      researchers: researchers,
+      last_updated: new Date().toISOString(),
+      total_researchers: researchers.length,
+      public_count: researchers.length
+    }
+    
+    console.log(`📋 Loaded ${researchers.length} public researchers from UID system`)
+    
+  } catch (err) {
+    console.error('Error loading researcher data from UIDs:', err)
+  }
+}
+
+// 公開ユーザー設定読み込み (キャッシュ機能付き)
 const loadPublicUsers = async () => {
   try {
     updateDebugInfo({ step: 'loading_public_users' })
     
+    // まず静的ファイルから読み込み (高速)
+    try {
+      const config = useRuntimeConfig()
+      const baseURL = config.public.baseURL || '/'
+      const userProfilesUrl = baseURL + 'auth/user_profiles.json'
+      
+      console.log('📋 Researchers: Loading from static file:', userProfilesUrl)
+      const userProfiles = await $fetch(userProfilesUrl)
+      
+      // 公開設定のユーザーをフィルタ
+      const users = []
+      for (const [uid, userData] of Object.entries(userProfiles)) {
+        if (userData.privacy_settings?.public_profile && userData.privacy_settings?.show_in_search) {
+          users.push({
+            uid,
+            email: userData.email,
+            display_name: userData.display_name,
+            privacy_settings: userData.privacy_settings
+          })
+        }
+      }
+      
+      publicUsers.value = users
+      
+      console.log('📋 Researchers: Loaded public users from static file:', users.length)
+      updateDebugInfo({ 
+        step: 'public_users_loaded_static',
+        publicUsersLoaded: true,
+        publicUsersCount: users.length,
+        publicUsersEmails: users.map(u => u.email)
+      })
+      
+      return // 静的ファイルから読み込み成功
+      
+    } catch (staticError) {
+      console.warn('📋 Researchers: Static file loading failed, falling back to Firebase:', staticError)
+    }
+    
+    // フォールバック: Firebase から読み込み
     if (firebaseReady.value) {
       console.log('📋 Researchers: Loading public users from Firebase...')
       updateDebugInfo({ 
@@ -285,24 +458,15 @@ const loadPublicUsers = async () => {
       const users = await getPublicUsers()
       publicUsers.value = users
       
-      console.log('📋 Researchers: Loaded public users:', users.length)
-      console.log('📋 Researchers: Public users details:', users.map(u => ({ 
-        email: u.email, 
-        display_name: u.display_name,
-        public_profile: u.privacy_settings?.public_profile,
-        show_in_search: u.privacy_settings?.show_in_search,
-        allow_collaboration: u.privacy_settings?.allow_collaboration
-      })))
-      console.log('📋 Researchers: Users with show_in_search=true:', users.filter(u => u.privacy_settings?.show_in_search).map(u => u.email))
-      
+      console.log('📋 Researchers: Loaded public users from Firebase:', users.length)
       updateDebugInfo({ 
-        step: 'public_users_loaded',
+        step: 'public_users_loaded_firebase',
         publicUsersLoaded: true,
         publicUsersCount: users.length,
         publicUsersEmails: users.map(u => u.email)
       })
     } else {
-      console.log('📋 Researchers: Firebase not ready, skipping public users load')
+      console.log('📋 Researchers: Firebase not ready, no public users loaded')
       updateDebugInfo({ 
         step: 'firebase_not_ready',
         firebaseReady: false 
@@ -344,64 +508,15 @@ const filteredResearchers = computed(() => {
   const originalCount = filtered.length
   
   console.log('🔍 Starting filteredResearchers computation...')
-  console.log('🔍 Original researchers count:', originalCount)
-  console.log('🔍 Public users count:', publicUsers.value.length)
-  
-  // プライバシー設定でフィルタリング（show_in_searchがfalseの研究者を除外）
-  // ★重要: プライバシーフィルターは常に適用する
-  const publicEmails = new Set(publicUsers.value.map(user => user.email))
-  console.log('🔍 Public emails set:', [...publicEmails])
-  console.log('🔍 Public users loaded count:', publicUsers.value.length)
-  
-  const beforePrivacyFilter = filtered.length
-  
-  filtered = filtered.filter(researcher => {
-    // メールアドレスマッピングをチェック
-    const emailMapping = {
-      '池田和司': 'kazushi_ikeda@memorylab.handai.jp',
-      '泉　真祐子': 'mayuko_izumi@memorylab.handai.jp', 
-      '秋草直大': 'akikusa_naota@memorylab.handai.jp',
-      '藤田 克昌': 'katsumasa_fujita@memorylab.handai.jp',
-      '飯塚 崇文': 'iizuka_takafumi@memorylab.handai.jp',
-      '石川　篤': 'atsushi_ishikawa@memorylab.handai.jp'
-      // 他の研究者も必要に応じて追加
-    }
-    
-    const email = emailMapping[researcher.name]
-    const hasEmail = !!email
-    const isPublic = email ? publicEmails.has(email) : false  // ★変更: デフォルトをfalseに
-    
-    console.log('🔍 Researcher:', researcher.name, '-> Email:', email, 'HasEmail:', hasEmail, 'IsPublic:', isPublic)
-    
-    if (email) {
-      // メールマッピングがある場合は、公開ユーザーリストに含まれている場合のみ表示
-      return publicEmails.has(email)
-    }
-    
-    // ★変更: メールマッピングがない場合は表示しない（プライバシー保護のため）
-    console.log('🔍 No email mapping found for researcher:', researcher.name, '-> HIDDEN')
-    return false
-  })
-  
-  console.log('🔍 After privacy filter:', beforePrivacyFilter, '->', filtered.length)
+  console.log('🔍 Public researchers loaded:', originalCount)
   
   updateDebugInfo({ 
-    step: 'privacy_filtering_applied',
+    step: 'optimized_filtering_start',
     originalCount: originalCount,
-    afterPrivacyFilter: filtered.length,
-    publicUsersCount: publicUsers.value.length,
-    publicEmails: [...publicEmails],
-    emailMappingUsed: Object.keys({
-      '池田和司': 'kazushi_ikeda@memorylab.handai.jp',
-      '泉　真祐子': 'mayuko_izumi@memorylab.handai.jp', 
-      '秋草直大': 'akikusa_naota@memorylab.handai.jp',
-      '藤田 克昌': 'katsumasa_fujita@memorylab.handai.jp',
-      '飯塚 崇文': 'iizuka_takafumi@memorylab.handai.jp',
-      '石川　篤': 'atsushi_ishikawa@memorylab.handai.jp'
-    })
+    publicUsersCount: publicUsers.value.length
   })
   
-  // 検索フィルター
+  // 検索フィルター（プライバシーフィルターは既に適用済み）
   if (searchQuery.value) {
     const query = searchQuery.value.toLowerCase()
     const beforeSearchFilter = filtered.length
@@ -449,6 +564,25 @@ const navigateToResearcher = (researcher) => {
   if (!researcher.has_data) return
   console.log('Navigating to researcher ID:', researcher.researcher_id)
   navigateTo(`/researcher/${researcher.researcher_id}`)
+}
+
+// タグのスタイリング関数
+const getFieldTagClass = (fieldTag) => {
+  if (fieldTag === '医学') {
+    return 'bg-red-100 text-red-800'
+  } else if (fieldTag === '工学') {
+    return 'bg-blue-100 text-blue-800'
+  }
+  return 'bg-gray-100 text-gray-800'
+}
+
+const getAffiliationTagClass = (affiliationTag) => {
+  if (affiliationTag === 'アカデミア') {
+    return 'bg-green-100 text-green-800'
+  } else if (affiliationTag === '企業') {
+    return 'bg-purple-100 text-purple-800'
+  }
+  return 'bg-gray-100 text-gray-800'
 }
 
 // Firebase準備待ち

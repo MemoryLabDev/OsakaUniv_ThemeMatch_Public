@@ -36,19 +36,19 @@
         <h2 class="text-xl sm:text-2xl font-bold text-gray-900 mb-4 sm:mb-6">全体サマリー</h2>
         <div class="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-6">
           <div class="card text-center p-4 sm:p-6">
-            <div class="text-2xl sm:text-3xl font-bold text-blue-600 mb-1 sm:mb-2">{{ statsData.total_researchers }}</div>
+            <div class="text-2xl sm:text-3xl font-bold text-blue-600 mb-1 sm:mb-2">{{ statsData.total_researchers || 0 }}</div>
             <div class="text-xs sm:text-sm text-gray-600">登録研究者数</div>
           </div>
           <div class="card text-center p-4 sm:p-6">
-            <div class="text-2xl sm:text-3xl font-bold text-green-600 mb-1 sm:mb-2">{{ statsData.total_proposals }}</div>
+            <div class="text-2xl sm:text-3xl font-bold text-green-600 mb-1 sm:mb-2">{{ statsData.total_proposals || 0 }}</div>
             <div class="text-xs sm:text-sm text-gray-600">研究テーマ提案数</div>
           </div>
           <div class="card text-center p-4 sm:p-6">
-            <div class="text-2xl sm:text-3xl font-bold text-purple-600 mb-1 sm:mb-2">{{ Math.round(statsData.similarity_scores.mean * 100) }}%</div>
+            <div class="text-2xl sm:text-3xl font-bold text-purple-600 mb-1 sm:mb-2">{{ Math.round((statsData.similarity_scores?.mean || 0) * 100) }}%</div>
             <div class="text-xs sm:text-sm text-gray-600">平均類似度</div>
           </div>
           <div class="card text-center p-4 sm:p-6">
-            <div class="text-2xl sm:text-3xl font-bold text-orange-600 mb-1 sm:mb-2">{{ Object.keys(statsData.top_keywords).length }}</div>
+            <div class="text-2xl sm:text-3xl font-bold text-orange-600 mb-1 sm:mb-2">{{ Object.keys(statsData.top_keywords || {}).length }}</div>
             <div class="text-xs sm:text-sm text-gray-600">ユニークキーワード数</div>
           </div>
         </div>
@@ -64,23 +64,23 @@
             <dl class="space-y-2 sm:space-y-3">
               <div class="flex justify-between">
                 <dt class="text-sm sm:text-base text-gray-600">平均値</dt>
-                <dd class="text-sm sm:text-base font-semibold">{{ (statsData.similarity_scores.mean * 100).toFixed(2) }}%</dd>
+                <dd class="text-sm sm:text-base font-semibold">{{ ((statsData.similarity_scores?.mean || 0) * 100).toFixed(2) }}%</dd>
               </div>
               <div class="flex justify-between">
                 <dt class="text-sm sm:text-base text-gray-600">中央値</dt>
-                <dd class="text-sm sm:text-base font-semibold">{{ (statsData.similarity_scores.median * 100).toFixed(2) }}%</dd>
+                <dd class="text-sm sm:text-base font-semibold">{{ ((statsData.similarity_scores?.median || 0) * 100).toFixed(2) }}%</dd>
               </div>
               <div class="flex justify-between">
                 <dt class="text-sm sm:text-base text-gray-600">標準偏差</dt>
-                <dd class="text-sm sm:text-base font-semibold">{{ (statsData.similarity_scores.std * 100).toFixed(2) }}%</dd>
+                <dd class="text-sm sm:text-base font-semibold">{{ ((statsData.similarity_scores?.std || 0) * 100).toFixed(2) }}%</dd>
               </div>
               <div class="flex justify-between">
                 <dt class="text-sm sm:text-base text-gray-600">最小値</dt>
-                <dd class="text-sm sm:text-base font-semibold">{{ (statsData.similarity_scores.min * 100).toFixed(2) }}%</dd>
+                <dd class="text-sm sm:text-base font-semibold">{{ ((statsData.similarity_scores?.min || 0) * 100).toFixed(2) }}%</dd>
               </div>
               <div class="flex justify-between">
                 <dt class="text-sm sm:text-base text-gray-600">最大値</dt>
-                <dd class="text-sm sm:text-base font-semibold text-green-600">{{ (statsData.similarity_scores.max * 100).toFixed(2) }}%</dd>
+                <dd class="text-sm sm:text-base font-semibold text-green-600">{{ ((statsData.similarity_scores?.max || 0) * 100).toFixed(2) }}%</dd>
               </div>
             </dl>
           </div>
@@ -129,76 +129,74 @@
         </div>
       </section>
 
-      <!-- 人気キーワード -->
+
+      <!-- コミュニティ可視化 -->
       <section class="mb-8 sm:mb-12">
-        <h2 class="text-xl sm:text-2xl font-bold text-gray-900 mb-4 sm:mb-6">人気研究キーワード</h2>
+        <h2 class="text-xl sm:text-2xl font-bold text-gray-900 mb-4 sm:mb-6">研究者コミュニティ可視化</h2>
         <div class="card">
-          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4">
-            <div
-              v-for="[keyword, count] in topKeywordsList"
-              :key="keyword"
-              class="flex items-center justify-between p-2 sm:p-3 bg-gray-50 rounded-lg"
-            >
-              <span class="text-sm sm:text-base font-medium text-gray-900 truncate flex-1 mr-2">{{ keyword }}</span>
-              <div class="flex items-center flex-shrink-0">
-                <span class="text-xs sm:text-sm text-gray-600 mr-1 sm:mr-2">{{ count }}件</span>
-                <div class="w-12 sm:w-16 bg-gray-200 rounded-full h-1.5 sm:h-2">
-                  <div 
-                    class="bg-blue-600 h-1.5 sm:h-2 rounded-full" 
-                    :style="{ width: (count / maxKeywordCount * 100) + '%' }"
-                  ></div>
+          <div class="mb-4">
+            <p class="text-sm text-gray-600 mb-4">
+              研究者間の関係性とコミュニティ構造をインタラクティブに可視化します。
+            </p>
+            <div class="bg-yellow-50 border border-yellow-200 rounded-lg p-4">
+              <div class="flex">
+                <div class="flex-shrink-0">
+                  <svg class="h-5 w-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z" clip-rule="evenodd" />
+                  </svg>
+                </div>
+                <div class="ml-3">
+                  <h3 class="text-sm font-medium text-yellow-800">
+                    大容量ファイルの読み込み注意
+                  </h3>
+                  <div class="mt-2 text-sm text-yellow-700">
+                    <p>コミュニティ可視化ファイルは約4.7MBと大容量です。読み込みに時間がかかる場合があります。</p>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
-      </section>
-
-      <!-- システム情報 -->
-      <section>
-        <h2 class="text-xl sm:text-2xl font-bold text-gray-900 mb-4 sm:mb-6">システム情報</h2>
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-8">
-          <div class="card">
-            <h3 class="text-base sm:text-lg font-semibold text-gray-900 mb-3 sm:mb-4">データ更新情報</h3>
-            <dl class="space-y-2 sm:space-y-3">
-              <div>
-                <dt class="text-xs sm:text-sm text-gray-600">最終ビルド日時</dt>
-                <dd class="text-sm sm:text-base font-medium break-words">{{ formatDate(statsData.last_build) }}</dd>
-              </div>
-              <div>
-                <dt class="text-xs sm:text-sm text-gray-600">データ処理方式</dt>
-                <dd class="text-sm sm:text-base font-medium break-words">AI埋め込みベクトル + キーワード重複分析</dd>
-              </div>
-              <div>
-                <dt class="text-xs sm:text-sm text-gray-600">システムバージョン</dt>
-                <dd class="text-sm sm:text-base font-medium">v2.0.0</dd>
-              </div>
-            </dl>
+          
+          <div class="text-center">
+            <button 
+              @click="loadCommunityVisualization"
+              :disabled="isLoadingVisualization"
+              class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 disabled:opacity-50 disabled:cursor-not-allowed"
+            >
+              <svg v-if="isLoadingVisualization" class="animate-spin -ml-1 mr-3 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+              </svg>
+              {{ isLoadingVisualization ? '読み込み中...' : 'コミュニティ可視化を表示' }}
+            </button>
           </div>
 
-          <div class="card">
-            <h3 class="text-base sm:text-lg font-semibold text-gray-900 mb-3 sm:mb-4">技術スタック</h3>
-            <div class="space-y-2">
-              <div class="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-0">
-                <span class="text-xs bg-blue-100 text-blue-800 px-2 py-1 rounded self-start sm:mr-2">Frontend</span>
-                <span class="text-xs sm:text-sm text-gray-700 break-words">Nuxt.js 3 + Tailwind CSS</span>
-              </div>
-              <div class="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-0">
-                <span class="text-xs bg-green-100 text-green-800 px-2 py-1 rounded self-start sm:mr-2">Backend</span>
-                <span class="text-xs sm:text-sm text-gray-700 break-words">Python + OpenAI API</span>
-              </div>
-              <div class="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-0">
-                <span class="text-xs bg-purple-100 text-purple-800 px-2 py-1 rounded self-start sm:mr-2">Deploy</span>
-                <span class="text-xs sm:text-sm text-gray-700 break-words">GitHub Pages (静的サイト)</span>
-              </div>
-              <div class="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-0">
-                <span class="text-xs bg-orange-100 text-orange-800 px-2 py-1 rounded self-start sm:mr-2">Data</span>
-                <span class="text-xs sm:text-sm text-gray-700 break-words">OpenAlex Research API</span>
-              </div>
+          <!-- 可視化コンテンツ -->
+          <div v-if="showVisualization" class="mt-6">
+            <div class="border rounded-lg overflow-hidden">
+              <iframe 
+                ref="visualizationFrame"
+                src="/data/community_visualization.html"
+                class="w-full h-96 md:h-[600px] lg:h-[800px]"
+                frameborder="0"
+                @load="onVisualizationLoad"
+              ></iframe>
+            </div>
+            <div class="mt-4 text-center">
+              <button 
+                @click="openVisualizationFullscreen"
+                class="inline-flex items-center px-3 py-2 border border-gray-300 shadow-sm text-sm leading-4 font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
+              >
+                <svg class="mr-2 h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4"></path>
+                </svg>
+                フルスクリーンで表示
+              </button>
             </div>
           </div>
         </div>
       </section>
+
     </div>
   </div>
 </template>
@@ -217,6 +215,9 @@ const statsData = ref(null)
 const loading = ref(true)
 const error = ref(null)
 const isMobile = ref(false)
+const showVisualization = ref(false)
+const isLoadingVisualization = ref(false)
+const visualizationFrame = ref(null)
 
 // データ読み込み
 const loadStatsData = async () => {
@@ -232,17 +233,6 @@ const loadStatsData = async () => {
 }
 
 // 計算プロパティ
-const topKeywordsList = computed(() => {
-  if (!statsData.value?.top_keywords) return []
-  return Object.entries(statsData.value.top_keywords)
-    .sort(([,a], [,b]) => b - a)
-    .slice(0, 20)
-})
-
-const maxKeywordCount = computed(() => {
-  if (topKeywordsList.value.length === 0) return 1
-  return Math.max(...topKeywordsList.value.map(([, count]) => count))
-})
 
 // メソッド
 const formatDate = (dateString) => {
@@ -260,6 +250,22 @@ const formatDate = (dateString) => {
 const checkMobile = () => {
   if (process.client) {
     isMobile.value = window.innerWidth < 640
+  }
+}
+
+// コミュニティ可視化関連メソッド
+const loadCommunityVisualization = () => {
+  isLoadingVisualization.value = true
+  showVisualization.value = true
+}
+
+const onVisualizationLoad = () => {
+  isLoadingVisualization.value = false
+}
+
+const openVisualizationFullscreen = () => {
+  if (process.client) {
+    window.open('/data/community_visualization.html', '_blank', 'fullscreen=yes')
   }
 }
 

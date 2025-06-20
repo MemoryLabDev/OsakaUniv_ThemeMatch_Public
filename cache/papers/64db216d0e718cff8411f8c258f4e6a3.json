@@ -1,0 +1,6164 @@
+{
+  "data": [
+    {
+      "id": "https://openalex.org/W4386882530",
+      "doi": "https://doi.org/10.1117/12.3007908",
+      "title": "Laser focusing and scanning by 1-bit control of spatial phase modulator for lens-less vascular endoscope",
+      "display_name": "Laser focusing and scanning by 1-bit control of spatial phase modulator for lens-less vascular endoscope",
+      "publication_year": 2023,
+      "publication_date": "2023-09-20",
+      "ids": {
+        "openalex": "https://openalex.org/W4386882530",
+        "doi": "https://doi.org/10.1117/12.3007908"
+      },
+      "language": "en",
+      "primary_location": {
+        "is_oa": false,
+        "landing_page_url": "https://doi.org/10.1117/12.3007908",
+        "pdf_url": null,
+        "source": null,
+        "license": null,
+        "license_id": null,
+        "version": null,
+        "is_accepted": false,
+        "is_published": false
+      },
+      "type": "article",
+      "type_crossref": "proceedings-article",
+      "indexed_in": [
+        "crossref"
+      ],
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null,
+        "any_repository_has_fulltext": false
+      },
+      "authorships": [
+        {
+          "author_position": "first",
+          "author": {
+            "id": "https://openalex.org/A5092907100",
+            "display_name": "Hibiki Kunii",
+            "orcid": null
+          },
+          "institutions": [
+            {
+              "id": "https://openalex.org/I189513530",
+              "display_name": "Osaka Electro-Communication University",
+              "ror": "https://ror.org/056bksm23",
+              "country_code": "JP",
+              "type": "education",
+              "lineage": [
+                "https://openalex.org/I189513530"
+              ]
+            }
+          ],
+          "countries": [
+            "JP"
+          ],
+          "is_corresponding": false,
+          "raw_author_name": "Hibiki Kunii",
+          "raw_affiliation_strings": [
+            "Osaka Electro-Communication Univ. (Japan)"
+          ],
+          "affiliations": [
+            {
+              "raw_affiliation_string": "Osaka Electro-Communication Univ. (Japan)",
+              "institution_ids": [
+                "https://openalex.org/I189513530"
+              ]
+            }
+          ]
+        },
+        {
+          "author_position": "last",
+          "author": {
+            "id": "https://openalex.org/A5034708867",
+            "display_name": "Masaki Hisaka",
+            "orcid": "https://orcid.org/0000-0001-8482-6675"
+          },
+          "institutions": [
+            {
+              "id": "https://openalex.org/I189513530",
+              "display_name": "Osaka Electro-Communication University",
+              "ror": "https://ror.org/056bksm23",
+              "country_code": "JP",
+              "type": "education",
+              "lineage": [
+                "https://openalex.org/I189513530"
+              ]
+            }
+          ],
+          "countries": [
+            "JP"
+          ],
+          "is_corresponding": false,
+          "raw_author_name": "Masaki Hisaka",
+          "raw_affiliation_strings": [
+            "Osaka Electro-Communication Univ. (Japan)"
+          ],
+          "affiliations": [
+            {
+              "raw_affiliation_string": "Osaka Electro-Communication Univ. (Japan)",
+              "institution_ids": [
+                "https://openalex.org/I189513530"
+              ]
+            }
+          ]
+        }
+      ],
+      "institution_assertions": [],
+      "countries_distinct_count": 1,
+      "institutions_distinct_count": 1,
+      "corresponding_author_ids": [],
+      "corresponding_institution_ids": [],
+      "apc_list": null,
+      "apc_paid": null,
+      "fwci": 0.0,
+      "has_fulltext": false,
+      "cited_by_count": 0,
+      "citation_normalized_percentile": {
+        "value": 0.0,
+        "is_in_top_1_percent": false,
+        "is_in_top_10_percent": false
+      },
+      "cited_by_percentile_year": {
+        "min": 0,
+        "max": 64
+      },
+      "biblio": {
+        "volume": null,
+        "issue": null,
+        "first_page": "27",
+        "last_page": "27"
+      },
+      "is_retracted": false,
+      "is_paratext": false,
+      "primary_topic": {
+        "id": "https://openalex.org/T12760",
+        "display_name": "Laser Design and Applications",
+        "score": 0.9726,
+        "subfield": {
+          "id": "https://openalex.org/subfields/2208",
+          "display_name": "Electrical and Electronic Engineering"
+        },
+        "field": {
+          "id": "https://openalex.org/fields/22",
+          "display_name": "Engineering"
+        },
+        "domain": {
+          "id": "https://openalex.org/domains/3",
+          "display_name": "Physical Sciences"
+        }
+      },
+      "topics": [
+        {
+          "id": "https://openalex.org/T12760",
+          "display_name": "Laser Design and Applications",
+          "score": 0.9726,
+          "subfield": {
+            "id": "https://openalex.org/subfields/2208",
+            "display_name": "Electrical and Electronic Engineering"
+          },
+          "field": {
+            "id": "https://openalex.org/fields/22",
+            "display_name": "Engineering"
+          },
+          "domain": {
+            "id": "https://openalex.org/domains/3",
+            "display_name": "Physical Sciences"
+          }
+        },
+        {
+          "id": "https://openalex.org/T11569",
+          "display_name": "Optical Coherence Tomography Applications",
+          "score": 0.9682,
+          "subfield": {
+            "id": "https://openalex.org/subfields/2204",
+            "display_name": "Biomedical Engineering"
+          },
+          "field": {
+            "id": "https://openalex.org/fields/22",
+            "display_name": "Engineering"
+          },
+          "domain": {
+            "id": "https://openalex.org/domains/3",
+            "display_name": "Physical Sciences"
+          }
+        },
+        {
+          "id": "https://openalex.org/T11127",
+          "display_name": "Solid State Laser Technologies",
+          "score": 0.9637,
+          "subfield": {
+            "id": "https://openalex.org/subfields/2208",
+            "display_name": "Electrical and Electronic Engineering"
+          },
+          "field": {
+            "id": "https://openalex.org/fields/22",
+            "display_name": "Engineering"
+          },
+          "domain": {
+            "id": "https://openalex.org/domains/3",
+            "display_name": "Physical Sciences"
+          }
+        }
+      ],
+      "keywords": [
+        {
+          "id": "https://openalex.org/keywords/spatial-light-modulator",
+          "display_name": "Spatial light modulator",
+          "score": 0.9195502
+        },
+        {
+          "id": "https://openalex.org/keywords/radius-of-curvature",
+          "display_name": "Radius of curvature",
+          "score": 0.43898717
+        }
+      ],
+      "concepts": [
+        {
+          "id": "https://openalex.org/C2777903624",
+          "wikidata": "https://www.wikidata.org/wiki/Q1477653",
+          "display_name": "Spatial light modulator",
+          "level": 2,
+          "score": 0.9195502
+        },
+        {
+          "id": "https://openalex.org/C120665830",
+          "wikidata": "https://www.wikidata.org/wiki/Q14620",
+          "display_name": "Optics",
+          "level": 1,
+          "score": 0.7768844
+        },
+        {
+          "id": "https://openalex.org/C165699331",
+          "wikidata": "https://www.wikidata.org/wiki/Q461533",
+          "display_name": "Wavefront",
+          "level": 2,
+          "score": 0.701832
+        },
+        {
+          "id": "https://openalex.org/C15336307",
+          "wikidata": "https://www.wikidata.org/wiki/Q1766051",
+          "display_name": "Lens (geology)",
+          "level": 2,
+          "score": 0.6076527
+        },
+        {
+          "id": "https://openalex.org/C44280652",
+          "wikidata": "https://www.wikidata.org/wiki/Q104837",
+          "display_name": "Phase (matter)",
+          "level": 2,
+          "score": 0.5230059
+        },
+        {
+          "id": "https://openalex.org/C168834538",
+          "wikidata": "https://www.wikidata.org/wiki/Q3705329",
+          "display_name": "Beam (structure)",
+          "level": 2,
+          "score": 0.5169236
+        },
+        {
+          "id": "https://openalex.org/C96834759",
+          "wikidata": "https://www.wikidata.org/wiki/Q750463",
+          "display_name": "Phase modulation",
+          "level": 3,
+          "score": 0.45892078
+        },
+        {
+          "id": "https://openalex.org/C11665553",
+          "wikidata": "https://www.wikidata.org/wiki/Q1136069",
+          "display_name": "Radius of curvature",
+          "level": 5,
+          "score": 0.43898717
+        },
+        {
+          "id": "https://openalex.org/C520434653",
+          "wikidata": "https://www.wikidata.org/wiki/Q38867",
+          "display_name": "Laser",
+          "level": 2,
+          "score": 0.4362561
+        },
+        {
+          "id": "https://openalex.org/C121332964",
+          "wikidata": "https://www.wikidata.org/wiki/Q413",
+          "display_name": "Physics",
+          "level": 0,
+          "score": 0.40162984
+        },
+        {
+          "id": "https://openalex.org/C192562407",
+          "wikidata": "https://www.wikidata.org/wiki/Q228736",
+          "display_name": "Materials science",
+          "level": 0,
+          "score": 0.36523294
+        },
+        {
+          "id": "https://openalex.org/C195065555",
+          "wikidata": "https://www.wikidata.org/wiki/Q214881",
+          "display_name": "Curvature",
+          "level": 2,
+          "score": 0.28813526
+        },
+        {
+          "id": "https://openalex.org/C33923547",
+          "wikidata": "https://www.wikidata.org/wiki/Q395",
+          "display_name": "Mathematics",
+          "level": 0,
+          "score": 0.09513849
+        },
+        {
+          "id": "https://openalex.org/C89631360",
+          "wikidata": "https://www.wikidata.org/wiki/Q1428766",
+          "display_name": "Phase noise",
+          "level": 2,
+          "score": 0.06434563
+        },
+        {
+          "id": "https://openalex.org/C175017881",
+          "wikidata": "https://www.wikidata.org/wiki/Q1318998",
+          "display_name": "Mean curvature",
+          "level": 3,
+          "score": 0.0
+        },
+        {
+          "id": "https://openalex.org/C2524010",
+          "wikidata": "https://www.wikidata.org/wiki/Q8087",
+          "display_name": "Geometry",
+          "level": 1,
+          "score": 0.0
+        },
+        {
+          "id": "https://openalex.org/C127813850",
+          "wikidata": "https://www.wikidata.org/wiki/Q6803617",
+          "display_name": "Mean curvature flow",
+          "level": 4,
+          "score": 0.0
+        },
+        {
+          "id": "https://openalex.org/C62520636",
+          "wikidata": "https://www.wikidata.org/wiki/Q944",
+          "display_name": "Quantum mechanics",
+          "level": 1,
+          "score": 0.0
+        }
+      ],
+      "mesh": [],
+      "locations_count": 1,
+      "locations": [
+        {
+          "is_oa": false,
+          "landing_page_url": "https://doi.org/10.1117/12.3007908",
+          "pdf_url": null,
+          "source": null,
+          "license": null,
+          "license_id": null,
+          "version": null,
+          "is_accepted": false,
+          "is_published": false
+        }
+      ],
+      "best_oa_location": null,
+      "sustainable_development_goals": [],
+      "grants": [],
+      "datasets": [],
+      "versions": [],
+      "referenced_works_count": 1,
+      "referenced_works": [
+        "https://openalex.org/W4252635396"
+      ],
+      "related_works": [
+        "https://openalex.org/W919570425",
+        "https://openalex.org/W2318856314",
+        "https://openalex.org/W2084450647",
+        "https://openalex.org/W2027525323",
+        "https://openalex.org/W2012687279",
+        "https://openalex.org/W2003927249",
+        "https://openalex.org/W1989625457",
+        "https://openalex.org/W1986437229",
+        "https://openalex.org/W1979273753",
+        "https://openalex.org/W1963692093"
+      ],
+      "abstract_inverted_index": {
+        "We": [
+          0
+        ],
+        "developed": [
+          1
+        ],
+        "a": [
+          2,
+          22,
+          30
+        ],
+        "lens-less": [
+          3
+        ],
+        "vascular": [
+          4
+        ],
+        "endoscope": [
+          5,
+          28
+        ],
+        "that": [
+          6
+        ],
+        "uses": [
+          7,
+          29
+        ],
+        "local": [
+          8,
+          41
+        ],
+        "wavefront": [
+          9,
+          42
+        ],
+        "control": [
+          10,
+          35,
+          72
+        ],
+        "to": [
+          11,
+          34
+        ],
+        "observe": [
+          12
+        ],
+        "the": [
+          13,
+          40,
+          44,
+          51,
+          61,
+          78,
+          86,
+          89,
+          93,
+          97
+        ],
+        "inside": [
+          14
+        ],
+        "of": [
+          15,
+          25,
+          43,
+          63,
+          77,
+          88
+        ],
+        "narrow": [
+          16
+        ],
+        "blood": [
+          17
+        ],
+        "vessels": [
+          18,
+          20
+        ],
+        "and": [
+          19,
+          96
+        ],
+        "with": [
+          21,
+          101
+        ],
+        "small": [
+          23
+        ],
+        "radius": [
+          24
+        ],
+        "curvature.": [
+          26
+        ],
+        "The": [
+          27,
+          82
+        ],
+        "spatial": [
+          31,
+          52,
+          79,
+          98
+        ],
+        "phase": [
+          32,
+          53,
+          57,
+          80
+        ],
+        "modulator": [
+          33,
+          54
+        ],
+        "beam": [
+          36,
+          49,
+          65,
+          94,
+          102
+        ],
+        "scanning": [
+          37
+        ],
+        "by": [
+          38
+        ],
+        "manipulating": [
+          39
+        ],
+        "laser": [
+          45
+        ],
+        "beam.": [
+          46
+        ],
+        "To": [
+          47,
+          59
+        ],
+        "achieve": [
+          48
+        ],
+        "focusing,": [
+          50
+        ],
+        "requires": [
+          55
+        ],
+        "many": [
+          56
+        ],
+        "patterns.": [
+          58
+        ],
+        "increase": [
+          60
+        ],
+        "number": [
+          62
+        ],
+        "focusing": [
+          64,
+          90
+        ],
+        "patterns,": [
+          66
+        ],
+        "this": [
+          67
+        ],
+        "study": [
+          68,
+          83
+        ],
+        "used": [
+          69
+        ],
+        "1-bit": [
+          70
+        ],
+        "(binary)": [
+          71
+        ],
+        "for": [
+          73
+        ],
+        "each": [
+          74
+        ],
+        "cell": [
+          75
+        ],
+        "value": [
+          76
+        ],
+        "modulator.": [
+          81
+        ],
+        "experimentally": [
+          84
+        ],
+        "investigated": [
+          85
+        ],
+        "characteristics": [
+          87
+        ],
+        "beam,": [
+          91
+        ],
+        "including": [
+          92
+        ],
+        "pattern": [
+          95
+        ],
+        "resolution": [
+          99
+        ],
+        "associated": [
+          100
+        ],
+        "scanning.": [
+          103
+        ]
+      },
+      "abstract_inverted_index_v3": null,
+      "cited_by_api_url": "https://api.openalex.org/works?filter=cites:W4386882530",
+      "counts_by_year": [],
+      "updated_date": "2025-06-12T08:41:29.274545",
+      "created_date": "2023-09-21"
+    },
+    {
+      "id": "https://openalex.org/W3211155829",
+      "doi": "https://doi.org/10.1117/12.2615712",
+      "title": "Investigation of noncontact fast-scanning internal-temperature measurement using a thermopile-infrared point detector",
+      "display_name": "Investigation of noncontact fast-scanning internal-temperature measurement using a thermopile-infrared point detector",
+      "publication_year": 2021,
+      "publication_date": "2021-10-27",
+      "ids": {
+        "openalex": "https://openalex.org/W3211155829",
+        "doi": "https://doi.org/10.1117/12.2615712",
+        "mag": "3211155829"
+      },
+      "language": "en",
+      "primary_location": {
+        "is_oa": false,
+        "landing_page_url": "https://doi.org/10.1117/12.2615712",
+        "pdf_url": null,
+        "source": null,
+        "license": null,
+        "license_id": null,
+        "version": null,
+        "is_accepted": false,
+        "is_published": false
+      },
+      "type": "article",
+      "type_crossref": "proceedings-article",
+      "indexed_in": [
+        "crossref"
+      ],
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null,
+        "any_repository_has_fulltext": false
+      },
+      "authorships": [
+        {
+          "author_position": "first",
+          "author": {
+            "id": "https://openalex.org/A5034708867",
+            "display_name": "Masaki Hisaka",
+            "orcid": "https://orcid.org/0000-0001-8482-6675"
+          },
+          "institutions": [
+            {
+              "id": "https://openalex.org/I189513530",
+              "display_name": "Osaka Electro-Communication University",
+              "ror": "https://ror.org/056bksm23",
+              "country_code": "JP",
+              "type": "education",
+              "lineage": [
+                "https://openalex.org/I189513530"
+              ]
+            }
+          ],
+          "countries": [
+            "JP"
+          ],
+          "is_corresponding": true,
+          "raw_author_name": "Masaki Hisaka",
+          "raw_affiliation_strings": [
+            "Osaka Electro-Communication Univ. (Japan)"
+          ],
+          "affiliations": [
+            {
+              "raw_affiliation_string": "Osaka Electro-Communication Univ. (Japan)",
+              "institution_ids": [
+                "https://openalex.org/I189513530"
+              ]
+            }
+          ]
+        }
+      ],
+      "institution_assertions": [],
+      "countries_distinct_count": 1,
+      "institutions_distinct_count": 1,
+      "corresponding_author_ids": [
+        "https://openalex.org/A5034708867"
+      ],
+      "corresponding_institution_ids": [
+        "https://openalex.org/I189513530"
+      ],
+      "apc_list": null,
+      "apc_paid": null,
+      "fwci": 0.0,
+      "has_fulltext": false,
+      "cited_by_count": 0,
+      "citation_normalized_percentile": {
+        "value": 0.0,
+        "is_in_top_1_percent": false,
+        "is_in_top_10_percent": false
+      },
+      "cited_by_percentile_year": {
+        "min": 0,
+        "max": 56
+      },
+      "biblio": {
+        "volume": null,
+        "issue": null,
+        "first_page": "37",
+        "last_page": "37"
+      },
+      "is_retracted": false,
+      "is_paratext": false,
+      "primary_topic": {
+        "id": "https://openalex.org/T12019",
+        "display_name": "Calibration and Measurement Techniques",
+        "score": 0.9993,
+        "subfield": {
+          "id": "https://openalex.org/subfields/2202",
+          "display_name": "Aerospace Engineering"
+        },
+        "field": {
+          "id": "https://openalex.org/fields/22",
+          "display_name": "Engineering"
+        },
+        "domain": {
+          "id": "https://openalex.org/domains/3",
+          "display_name": "Physical Sciences"
+        }
+      },
+      "topics": [
+        {
+          "id": "https://openalex.org/T12019",
+          "display_name": "Calibration and Measurement Techniques",
+          "score": 0.9993,
+          "subfield": {
+            "id": "https://openalex.org/subfields/2202",
+            "display_name": "Aerospace Engineering"
+          },
+          "field": {
+            "id": "https://openalex.org/fields/22",
+            "display_name": "Engineering"
+          },
+          "domain": {
+            "id": "https://openalex.org/domains/3",
+            "display_name": "Physical Sciences"
+          }
+        },
+        {
+          "id": "https://openalex.org/T13928",
+          "display_name": "Advanced Sensor Technologies Research",
+          "score": 0.9992,
+          "subfield": {
+            "id": "https://openalex.org/subfields/2204",
+            "display_name": "Biomedical Engineering"
+          },
+          "field": {
+            "id": "https://openalex.org/fields/22",
+            "display_name": "Engineering"
+          },
+          "domain": {
+            "id": "https://openalex.org/domains/3",
+            "display_name": "Physical Sciences"
+          }
+        },
+        {
+          "id": "https://openalex.org/T11890",
+          "display_name": "Scientific Measurement and Uncertainty Evaluation",
+          "score": 0.998,
+          "subfield": {
+            "id": "https://openalex.org/subfields/1804",
+            "display_name": "Statistics, Probability and Uncertainty"
+          },
+          "field": {
+            "id": "https://openalex.org/fields/18",
+            "display_name": "Decision Sciences"
+          },
+          "domain": {
+            "id": "https://openalex.org/domains/2",
+            "display_name": "Social Sciences"
+          }
+        }
+      ],
+      "keywords": [
+        {
+          "id": "https://openalex.org/keywords/thermopile",
+          "display_name": "Thermopile",
+          "score": 0.9652922
+        }
+      ],
+      "concepts": [
+        {
+          "id": "https://openalex.org/C47279676",
+          "wikidata": "https://www.wikidata.org/wiki/Q915693",
+          "display_name": "Thermopile",
+          "level": 3,
+          "score": 0.9652922
+        },
+        {
+          "id": "https://openalex.org/C94915269",
+          "wikidata": "https://www.wikidata.org/wiki/Q1834857",
+          "display_name": "Detector",
+          "level": 2,
+          "score": 0.7450688
+        },
+        {
+          "id": "https://openalex.org/C158355884",
+          "wikidata": "https://www.wikidata.org/wiki/Q11388",
+          "display_name": "Infrared",
+          "level": 2,
+          "score": 0.6418309
+        },
+        {
+          "id": "https://openalex.org/C72293138",
+          "wikidata": "https://www.wikidata.org/wiki/Q909741",
+          "display_name": "Temperature measurement",
+          "level": 2,
+          "score": 0.6310449
+        },
+        {
+          "id": "https://openalex.org/C192562407",
+          "wikidata": "https://www.wikidata.org/wiki/Q228736",
+          "display_name": "Materials science",
+          "level": 0,
+          "score": 0.6277966
+        },
+        {
+          "id": "https://openalex.org/C28719098",
+          "wikidata": "https://www.wikidata.org/wiki/Q44946",
+          "display_name": "Point (geometry)",
+          "level": 2,
+          "score": 0.56481874
+        },
+        {
+          "id": "https://openalex.org/C120665830",
+          "wikidata": "https://www.wikidata.org/wiki/Q14620",
+          "display_name": "Optics",
+          "level": 1,
+          "score": 0.45433432
+        },
+        {
+          "id": "https://openalex.org/C49040817",
+          "wikidata": "https://www.wikidata.org/wiki/Q193091",
+          "display_name": "Optoelectronics",
+          "level": 1,
+          "score": 0.3853697
+        },
+        {
+          "id": "https://openalex.org/C121332964",
+          "wikidata": "https://www.wikidata.org/wiki/Q413",
+          "display_name": "Physics",
+          "level": 0,
+          "score": 0.23480892
+        },
+        {
+          "id": "https://openalex.org/C33923547",
+          "wikidata": "https://www.wikidata.org/wiki/Q395",
+          "display_name": "Mathematics",
+          "level": 0,
+          "score": 0.052646518
+        },
+        {
+          "id": "https://openalex.org/C62520636",
+          "wikidata": "https://www.wikidata.org/wiki/Q944",
+          "display_name": "Quantum mechanics",
+          "level": 1,
+          "score": 0.0
+        },
+        {
+          "id": "https://openalex.org/C2524010",
+          "wikidata": "https://www.wikidata.org/wiki/Q8087",
+          "display_name": "Geometry",
+          "level": 1,
+          "score": 0.0
+        }
+      ],
+      "mesh": [],
+      "locations_count": 1,
+      "locations": [
+        {
+          "is_oa": false,
+          "landing_page_url": "https://doi.org/10.1117/12.2615712",
+          "pdf_url": null,
+          "source": null,
+          "license": null,
+          "license_id": null,
+          "version": null,
+          "is_accepted": false,
+          "is_published": false
+        }
+      ],
+      "best_oa_location": null,
+      "sustainable_development_goals": [],
+      "grants": [],
+      "datasets": [],
+      "versions": [],
+      "referenced_works_count": 1,
+      "referenced_works": [
+        "https://openalex.org/W2774571962"
+      ],
+      "related_works": [
+        "https://openalex.org/W4328092585",
+        "https://openalex.org/W4319301974",
+        "https://openalex.org/W3115077618",
+        "https://openalex.org/W2911355857",
+        "https://openalex.org/W2895400523",
+        "https://openalex.org/W2358088046",
+        "https://openalex.org/W2133468814",
+        "https://openalex.org/W1598554143",
+        "https://openalex.org/W1551902208",
+        "https://openalex.org/W1497220320"
+      ],
+      "abstract_inverted_index": {
+        "One": [
+          0
+        ],
+        "of": [
+          1,
+          103,
+          116
+        ],
+        "the": [
+          2,
+          11,
+          51,
+          64,
+          81,
+          88,
+          94,
+          101,
+          117
+        ],
+        "important": [
+          3
+        ],
+        "and": [
+          4,
+          43,
+          113
+        ],
+        "vital": [
+          5
+        ],
+        "parameters": [
+          6
+        ],
+        "in": [
+          7,
+          54,
+          91,
+          100,
+          108
+        ],
+        "clinical": [
+          8
+        ],
+        "applications": [
+          9
+        ],
+        "is": [
+          10
+        ],
+        "human": [
+          12
+        ],
+        "body's": [
+          13
+        ],
+        "core": [
+          14
+        ],
+        "temperature.": [
+          15,
+          34
+        ],
+        "This": [
+          16,
+          61
+        ],
+        "study": [
+          17,
+          62
+        ],
+        "proposed": [
+          18
+        ],
+        "a": [
+          19,
+          30,
+          41,
+          44,
+          58,
+          70,
+          77
+        ],
+        "noncontact": [
+          20
+        ],
+        "method": [
+          21
+        ],
+        "using": [
+          22,
+          40
+        ],
+        "an": [
+          23
+        ],
+        "infrared": [
+          24
+        ],
+        "(IR)": [
+          25
+        ],
+        "point": [
+          26,
+          37,
+          52
+        ],
+        "detector": [
+          27,
+          38
+        ],
+        "to": [
+          28,
+          68
+        ],
+        "measure": [
+          29
+        ],
+        "thermal": [
+          31,
+          59,
+          71,
+          110
+        ],
+        "object's": [
+          32
+        ],
+        "internal": [
+          33
+        ],
+        "An": [
+          35
+        ],
+        "IR": [
+          36,
+          47,
+          92
+        ],
+        "constructed": [
+          39
+        ],
+        "pinhole": [
+          42
+        ],
+        "thermopile": [
+          45
+        ],
+        "detects": [
+          46
+        ],
+        "light": [
+          48
+        ],
+        "only": [
+          49
+        ],
+        "at": [
+          50
+        ],
+        "located": [
+          53
+        ],
+        "imaging": [
+          55
+        ],
+        "relation": [
+          56
+        ],
+        "within": [
+          57
+        ],
+        "object.": [
+          60
+        ],
+        "introduced": [
+          63
+        ],
+        "2D": [
+          65
+        ],
+        "fast-scanning": [
+          66
+        ],
+        "system": [
+          67
+        ],
+        "reduce": [
+          69
+        ],
+        "filament": [
+          72
+        ],
+        "image's": [
+          73
+        ],
+        "capturing": [
+          74
+        ],
+        "time": [
+          75,
+          84
+        ],
+        "inside": [
+          76
+        ],
+        "miniature": [
+          78
+        ],
+        "bulb.": [
+          79
+        ],
+        "Although": [
+          80
+        ],
+        "thermopile's": [
+          82
+        ],
+        "response": [
+          83
+        ],
+        "could": [
+          85
+        ],
+        "not": [
+          86
+        ],
+        "follow": [
+          87
+        ],
+        "high-speed": [
+          89
+        ],
+        "changes": [
+          90
+        ],
+        "intensity,": [
+          93
+        ],
+        "filament's": [
+          95
+        ],
+        "helical": [
+          96
+        ],
+        "structure": [
+          97
+        ],
+        "was": [
+          98
+        ],
+        "disclosed": [
+          99
+        ],
+        "condition": [
+          102
+        ],
+        "low": [
+          104
+        ],
+        "background": [
+          105
+        ],
+        "noise,": [
+          106
+        ],
+        "resulting": [
+          107
+        ],
+        "decreased": [
+          109
+        ],
+        "images'": [
+          111
+        ],
+        "contrast": [
+          112
+        ],
+        "positional": [
+          114
+        ],
+        "shifts": [
+          115
+        ],
+        "measured": [
+          118
+        ],
+        "filament.": [
+          119
+        ]
+      },
+      "abstract_inverted_index_v3": null,
+      "cited_by_api_url": "https://api.openalex.org/works?filter=cites:W3211155829",
+      "counts_by_year": [],
+      "updated_date": "2025-03-29T23:20:49.522818",
+      "created_date": "2021-11-08"
+    },
+    {
+      "id": "https://openalex.org/W3034602330",
+      "doi": "https://doi.org/10.1117/12.2573220",
+      "title": "Phase-contrast optical microscopy using active image processing",
+      "display_name": "Phase-contrast optical microscopy using active image processing",
+      "publication_year": 2020,
+      "publication_date": "2020-06-15",
+      "ids": {
+        "openalex": "https://openalex.org/W3034602330",
+        "doi": "https://doi.org/10.1117/12.2573220",
+        "mag": "3034602330"
+      },
+      "language": "en",
+      "primary_location": {
+        "is_oa": false,
+        "landing_page_url": "https://doi.org/10.1117/12.2573220",
+        "pdf_url": null,
+        "source": null,
+        "license": null,
+        "license_id": null,
+        "version": null,
+        "is_accepted": false,
+        "is_published": false
+      },
+      "type": "article",
+      "type_crossref": "proceedings-article",
+      "indexed_in": [
+        "crossref"
+      ],
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null,
+        "any_repository_has_fulltext": false
+      },
+      "authorships": [
+        {
+          "author_position": "first",
+          "author": {
+            "id": "https://openalex.org/A5034708867",
+            "display_name": "Masaki Hisaka",
+            "orcid": "https://orcid.org/0000-0001-8482-6675"
+          },
+          "institutions": [
+            {
+              "id": "https://openalex.org/I189513530",
+              "display_name": "Osaka Electro-Communication University",
+              "ror": "https://ror.org/056bksm23",
+              "country_code": "JP",
+              "type": "education",
+              "lineage": [
+                "https://openalex.org/I189513530"
+              ]
+            }
+          ],
+          "countries": [
+            "JP"
+          ],
+          "is_corresponding": true,
+          "raw_author_name": "Masaki Hisaka",
+          "raw_affiliation_strings": [
+            "Osaka Electro-Communication Univ. (Japan)"
+          ],
+          "affiliations": [
+            {
+              "raw_affiliation_string": "Osaka Electro-Communication Univ. (Japan)",
+              "institution_ids": [
+                "https://openalex.org/I189513530"
+              ]
+            }
+          ]
+        }
+      ],
+      "institution_assertions": [],
+      "countries_distinct_count": 1,
+      "institutions_distinct_count": 1,
+      "corresponding_author_ids": [
+        "https://openalex.org/A5034708867"
+      ],
+      "corresponding_institution_ids": [
+        "https://openalex.org/I189513530"
+      ],
+      "apc_list": null,
+      "apc_paid": null,
+      "fwci": 0.0,
+      "has_fulltext": false,
+      "cited_by_count": 0,
+      "citation_normalized_percentile": {
+        "value": 0.0,
+        "is_in_top_1_percent": false,
+        "is_in_top_10_percent": false
+      },
+      "cited_by_percentile_year": {
+        "min": 0,
+        "max": 60
+      },
+      "biblio": {
+        "volume": null,
+        "issue": null,
+        "first_page": "11",
+        "last_page": "11"
+      },
+      "is_retracted": false,
+      "is_paratext": false,
+      "primary_topic": {
+        "id": "https://openalex.org/T11897",
+        "display_name": "Digital Holography and Microscopy",
+        "score": 0.9997,
+        "subfield": {
+          "id": "https://openalex.org/subfields/3107",
+          "display_name": "Atomic and Molecular Physics, and Optics"
+        },
+        "field": {
+          "id": "https://openalex.org/fields/31",
+          "display_name": "Physics and Astronomy"
+        },
+        "domain": {
+          "id": "https://openalex.org/domains/3",
+          "display_name": "Physical Sciences"
+        }
+      },
+      "topics": [
+        {
+          "id": "https://openalex.org/T11897",
+          "display_name": "Digital Holography and Microscopy",
+          "score": 0.9997,
+          "subfield": {
+            "id": "https://openalex.org/subfields/3107",
+            "display_name": "Atomic and Molecular Physics, and Optics"
+          },
+          "field": {
+            "id": "https://openalex.org/fields/31",
+            "display_name": "Physics and Astronomy"
+          },
+          "domain": {
+            "id": "https://openalex.org/domains/3",
+            "display_name": "Physical Sciences"
+          }
+        },
+        {
+          "id": "https://openalex.org/T11183",
+          "display_name": "Advanced X-ray Imaging Techniques",
+          "score": 0.9975,
+          "subfield": {
+            "id": "https://openalex.org/subfields/3108",
+            "display_name": "Radiation"
+          },
+          "field": {
+            "id": "https://openalex.org/fields/31",
+            "display_name": "Physics and Astronomy"
+          },
+          "domain": {
+            "id": "https://openalex.org/domains/3",
+            "display_name": "Physical Sciences"
+          }
+        },
+        {
+          "id": "https://openalex.org/T10638",
+          "display_name": "Optical measurement and interference techniques",
+          "score": 0.9962,
+          "subfield": {
+            "id": "https://openalex.org/subfields/1707",
+            "display_name": "Computer Vision and Pattern Recognition"
+          },
+          "field": {
+            "id": "https://openalex.org/fields/17",
+            "display_name": "Computer Science"
+          },
+          "domain": {
+            "id": "https://openalex.org/domains/3",
+            "display_name": "Physical Sciences"
+          }
+        }
+      ],
+      "keywords": [
+        {
+          "id": "https://openalex.org/keywords/biological-imaging",
+          "display_name": "Biological Imaging",
+          "score": 0.44148958
+        }
+      ],
+      "concepts": [
+        {
+          "id": "https://openalex.org/C67649825",
+          "wikidata": "https://www.wikidata.org/wiki/Q196538",
+          "display_name": "Microscope",
+          "level": 2,
+          "score": 0.6823216
+        },
+        {
+          "id": "https://openalex.org/C120665830",
+          "wikidata": "https://www.wikidata.org/wiki/Q14620",
+          "display_name": "Optics",
+          "level": 1,
+          "score": 0.68203664
+        },
+        {
+          "id": "https://openalex.org/C77017923",
+          "wikidata": "https://www.wikidata.org/wiki/Q912313",
+          "display_name": "Optical microscope",
+          "level": 3,
+          "score": 0.61728597
+        },
+        {
+          "id": "https://openalex.org/C151193507",
+          "wikidata": "https://www.wikidata.org/wiki/Q898815",
+          "display_name": "Phase contrast microscopy",
+          "level": 2,
+          "score": 0.615975
+        },
+        {
+          "id": "https://openalex.org/C147080431",
+          "wikidata": "https://www.wikidata.org/wiki/Q1074953",
+          "display_name": "Microscopy",
+          "level": 2,
+          "score": 0.6033742
+        },
+        {
+          "id": "https://openalex.org/C2776502983",
+          "wikidata": "https://www.wikidata.org/wiki/Q690182",
+          "display_name": "Contrast (vision)",
+          "level": 2,
+          "score": 0.5822746
+        },
+        {
+          "id": "https://openalex.org/C44280652",
+          "wikidata": "https://www.wikidata.org/wiki/Q104837",
+          "display_name": "Phase (matter)",
+          "level": 2,
+          "score": 0.5536163
+        },
+        {
+          "id": "https://openalex.org/C192562407",
+          "wikidata": "https://www.wikidata.org/wiki/Q228736",
+          "display_name": "Materials science",
+          "level": 0,
+          "score": 0.49939418
+        },
+        {
+          "id": "https://openalex.org/C58640550",
+          "wikidata": "https://www.wikidata.org/wiki/Q7180908",
+          "display_name": "Phase-contrast imaging",
+          "level": 3,
+          "score": 0.46952218
+        },
+        {
+          "id": "https://openalex.org/C2779884411",
+          "wikidata": "https://www.wikidata.org/wiki/Q4914995",
+          "display_name": "Biological imaging",
+          "level": 3,
+          "score": 0.44148958
+        },
+        {
+          "id": "https://openalex.org/C9417928",
+          "wikidata": "https://www.wikidata.org/wiki/Q1070689",
+          "display_name": "Image processing",
+          "level": 3,
+          "score": 0.43658546
+        },
+        {
+          "id": "https://openalex.org/C154945302",
+          "wikidata": "https://www.wikidata.org/wiki/Q11660",
+          "display_name": "Artificial intelligence",
+          "level": 1,
+          "score": 0.30210268
+        },
+        {
+          "id": "https://openalex.org/C41008148",
+          "wikidata": "https://www.wikidata.org/wiki/Q21198",
+          "display_name": "Computer science",
+          "level": 0,
+          "score": 0.27376494
+        },
+        {
+          "id": "https://openalex.org/C121332964",
+          "wikidata": "https://www.wikidata.org/wiki/Q413",
+          "display_name": "Physics",
+          "level": 0,
+          "score": 0.14731243
+        },
+        {
+          "id": "https://openalex.org/C115961682",
+          "wikidata": "https://www.wikidata.org/wiki/Q860623",
+          "display_name": "Image (mathematics)",
+          "level": 2,
+          "score": 0.11380619
+        },
+        {
+          "id": "https://openalex.org/C26771246",
+          "wikidata": "https://www.wikidata.org/wiki/Q321095",
+          "display_name": "Scanning electron microscope",
+          "level": 2,
+          "score": 0.10975939
+        },
+        {
+          "id": "https://openalex.org/C62520636",
+          "wikidata": "https://www.wikidata.org/wiki/Q944",
+          "display_name": "Quantum mechanics",
+          "level": 1,
+          "score": 0.0
+        },
+        {
+          "id": "https://openalex.org/C91881484",
+          "wikidata": "https://www.wikidata.org/wiki/Q191807",
+          "display_name": "Fluorescence",
+          "level": 2,
+          "score": 0.0
+        }
+      ],
+      "mesh": [],
+      "locations_count": 1,
+      "locations": [
+        {
+          "is_oa": false,
+          "landing_page_url": "https://doi.org/10.1117/12.2573220",
+          "pdf_url": null,
+          "source": null,
+          "license": null,
+          "license_id": null,
+          "version": null,
+          "is_accepted": false,
+          "is_published": false
+        }
+      ],
+      "best_oa_location": null,
+      "sustainable_development_goals": [
+        {
+          "score": 0.64,
+          "display_name": "Affordable and clean energy",
+          "id": "https://metadata.un.org/sdg/7"
+        }
+      ],
+      "grants": [],
+      "datasets": [],
+      "versions": [],
+      "referenced_works_count": 2,
+      "referenced_works": [
+        "https://openalex.org/W1995987989",
+        "https://openalex.org/W2059913961"
+      ],
+      "related_works": [
+        "https://openalex.org/W4386106354",
+        "https://openalex.org/W2607350649",
+        "https://openalex.org/W2517391003",
+        "https://openalex.org/W2385625896",
+        "https://openalex.org/W2201509369",
+        "https://openalex.org/W2080823790",
+        "https://openalex.org/W2006802527",
+        "https://openalex.org/W2006752384",
+        "https://openalex.org/W1532628279",
+        "https://openalex.org/W119975033"
+      ],
+      "abstract_inverted_index": {
+        "Phase-contrast": [
+          0
+        ],
+        "imaging": [
+          1
+        ],
+        "of": [
+          2,
+          7,
+          46,
+          73
+        ],
+        "biological": [
+          3,
+          15,
+          74
+        ],
+        "tissues": [
+          4
+        ],
+        "is": [
+          5,
+          31
+        ],
+        "one": [
+          6
+        ],
+        "the": [
+          8,
+          79,
+          82
+        ],
+        "most": [
+          9
+        ],
+        "important": [
+          10
+        ],
+        "techniques": [
+          11
+        ],
+        "used": [
+          12
+        ],
+        "to": [
+          13,
+          42,
+          81
+        ],
+        "investigate": [
+          14
+        ],
+        "structures": [
+          16
+        ],
+        "and": [
+          17,
+          26,
+          57,
+          63,
+          69
+        ],
+        "functions.": [
+          18
+        ],
+        "A": [
+          19
+        ],
+        "phase-contrast": [
+          20,
+          71,
+          83
+        ],
+        "optical": [
+          21
+        ],
+        "microscope": [
+          22,
+          50,
+          85
+        ],
+        "using": [
+          23,
+          86
+        ],
+        "oblique": [
+          24
+        ],
+        "illumination": [
+          25
+        ],
+        "active": [
+          27
+        ],
+        "image": [
+          28
+        ],
+        "processing": [
+          29
+        ],
+        "that": [
+          30
+        ],
+        "a": [
+          32
+        ],
+        "figure-8-shaped": [
+          33
+        ],
+        "spatial-frequency": [
+          34
+        ],
+        "filter": [
+          35
+        ],
+        "with": [
+          36
+        ],
+        "sign": [
+          37
+        ],
+        "changes": [
+          38
+        ],
+        "has": [
+          39
+        ],
+        "been": [
+          40
+        ],
+        "developed": [
+          41
+        ],
+        "visualize": [
+          43
+        ],
+        "phase": [
+          44,
+          56
+        ],
+        "structure": [
+          45
+        ],
+        "living": [
+          47
+        ],
+        "tissues.": [
+          48
+        ],
+        "This": [
+          49
+        ],
+        "offers": [
+          51
+        ],
+        "promising": [
+          52
+        ],
+        "features": [
+          53
+        ],
+        "including": [
+          54
+        ],
+        "separate": [
+          55
+        ],
+        "amplitude-contrast": [
+          58
+        ],
+        "imaging,": [
+          59,
+          62
+        ],
+        "spherical": [
+          60
+        ],
+        "aberration-free": [
+          61
+        ],
+        "reduced": [
+          64
+        ],
+        "multi-scattering": [
+          65
+        ],
+        "light.": [
+          66
+        ],
+        "We": [
+          67,
+          76
+        ],
+        "reproduced": [
+          68
+        ],
+        "evaluated": [
+          70
+        ],
+        "images": [
+          72
+        ],
+        "samples.": [
+          75
+        ],
+        "also": [
+          77
+        ],
+        "extended": [
+          78
+        ],
+        "technique": [
+          80
+        ],
+        "scanning": [
+          84
+        ],
+        "annular": [
+          87
+        ],
+        "illumination.": [
+          88
+        ]
+      },
+      "abstract_inverted_index_v3": null,
+      "cited_by_api_url": "https://api.openalex.org/works?filter=cites:W3034602330",
+      "counts_by_year": [],
+      "updated_date": "2024-12-31T04:48:10.584117",
+      "created_date": "2020-06-19"
+    },
+    {
+      "id": "https://openalex.org/W2800565741",
+      "doi": "https://doi.org/10.1117/12.2319167",
+      "title": "Three-dimensional beam focusing control for lensless vascular endoscopes using local wavefront control",
+      "display_name": "Three-dimensional beam focusing control for lensless vascular endoscopes using local wavefront control",
+      "publication_year": 2018,
+      "publication_date": "2018-04-24",
+      "ids": {
+        "openalex": "https://openalex.org/W2800565741",
+        "doi": "https://doi.org/10.1117/12.2319167",
+        "mag": "2800565741"
+      },
+      "language": "en",
+      "primary_location": {
+        "is_oa": false,
+        "landing_page_url": "https://doi.org/10.1117/12.2319167",
+        "pdf_url": null,
+        "source": null,
+        "license": null,
+        "license_id": null,
+        "version": null,
+        "is_accepted": false,
+        "is_published": false
+      },
+      "type": "article",
+      "type_crossref": "proceedings-article",
+      "indexed_in": [
+        "crossref"
+      ],
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null,
+        "any_repository_has_fulltext": false
+      },
+      "authorships": [
+        {
+          "author_position": "first",
+          "author": {
+            "id": "https://openalex.org/A5034708867",
+            "display_name": "Masaki Hisaka",
+            "orcid": "https://orcid.org/0000-0001-8482-6675"
+          },
+          "institutions": [
+            {
+              "id": "https://openalex.org/I189513530",
+              "display_name": "Osaka Electro-Communication University",
+              "ror": "https://ror.org/056bksm23",
+              "country_code": "JP",
+              "type": "education",
+              "lineage": [
+                "https://openalex.org/I189513530"
+              ]
+            }
+          ],
+          "countries": [
+            "JP"
+          ],
+          "is_corresponding": true,
+          "raw_author_name": "Masaki Hisaka",
+          "raw_affiliation_strings": [
+            "Osaka Electro-Communication Univ. (Japan)"
+          ],
+          "affiliations": [
+            {
+              "raw_affiliation_string": "Osaka Electro-Communication Univ. (Japan)",
+              "institution_ids": [
+                "https://openalex.org/I189513530"
+              ]
+            }
+          ]
+        }
+      ],
+      "institution_assertions": [],
+      "countries_distinct_count": 1,
+      "institutions_distinct_count": 1,
+      "corresponding_author_ids": [
+        "https://openalex.org/A5034708867"
+      ],
+      "corresponding_institution_ids": [
+        "https://openalex.org/I189513530"
+      ],
+      "apc_list": null,
+      "apc_paid": null,
+      "fwci": 0.0,
+      "has_fulltext": false,
+      "cited_by_count": 0,
+      "citation_normalized_percentile": {
+        "value": 0.0,
+        "is_in_top_1_percent": false,
+        "is_in_top_10_percent": false
+      },
+      "cited_by_percentile_year": {
+        "min": 0,
+        "max": 61
+      },
+      "biblio": {
+        "volume": null,
+        "issue": null,
+        "first_page": "54",
+        "last_page": "54"
+      },
+      "is_retracted": false,
+      "is_paratext": false,
+      "primary_topic": {
+        "id": "https://openalex.org/T11569",
+        "display_name": "Optical Coherence Tomography Applications",
+        "score": 0.9901,
+        "subfield": {
+          "id": "https://openalex.org/subfields/2204",
+          "display_name": "Biomedical Engineering"
+        },
+        "field": {
+          "id": "https://openalex.org/fields/22",
+          "display_name": "Engineering"
+        },
+        "domain": {
+          "id": "https://openalex.org/domains/3",
+          "display_name": "Physical Sciences"
+        }
+      },
+      "topics": [
+        {
+          "id": "https://openalex.org/T11569",
+          "display_name": "Optical Coherence Tomography Applications",
+          "score": 0.9901,
+          "subfield": {
+            "id": "https://openalex.org/subfields/2204",
+            "display_name": "Biomedical Engineering"
+          },
+          "field": {
+            "id": "https://openalex.org/fields/22",
+            "display_name": "Engineering"
+          },
+          "domain": {
+            "id": "https://openalex.org/domains/3",
+            "display_name": "Physical Sciences"
+          }
+        },
+        {
+          "id": "https://openalex.org/T12760",
+          "display_name": "Laser Design and Applications",
+          "score": 0.9612,
+          "subfield": {
+            "id": "https://openalex.org/subfields/2208",
+            "display_name": "Electrical and Electronic Engineering"
+          },
+          "field": {
+            "id": "https://openalex.org/fields/22",
+            "display_name": "Engineering"
+          },
+          "domain": {
+            "id": "https://openalex.org/domains/3",
+            "display_name": "Physical Sciences"
+          }
+        },
+        {
+          "id": "https://openalex.org/T11377",
+          "display_name": "Retinal and Macular Surgery",
+          "score": 0.9525,
+          "subfield": {
+            "id": "https://openalex.org/subfields/2741",
+            "display_name": "Radiology, Nuclear Medicine and Imaging"
+          },
+          "field": {
+            "id": "https://openalex.org/fields/27",
+            "display_name": "Medicine"
+          },
+          "domain": {
+            "id": "https://openalex.org/domains/4",
+            "display_name": "Health Sciences"
+          }
+        }
+      ],
+      "keywords": [
+        {
+          "id": "https://openalex.org/keywords/light-beam",
+          "display_name": "Light beam",
+          "score": 0.42181346
+        }
+      ],
+      "concepts": [
+        {
+          "id": "https://openalex.org/C165699331",
+          "wikidata": "https://www.wikidata.org/wiki/Q461533",
+          "display_name": "Wavefront",
+          "level": 2,
+          "score": 0.8122587
+        },
+        {
+          "id": "https://openalex.org/C120665830",
+          "wikidata": "https://www.wikidata.org/wiki/Q14620",
+          "display_name": "Optics",
+          "level": 1,
+          "score": 0.78486335
+        },
+        {
+          "id": "https://openalex.org/C2778134712",
+          "wikidata": "https://www.wikidata.org/wiki/Q1047307",
+          "display_name": "Bundle",
+          "level": 2,
+          "score": 0.741807
+        },
+        {
+          "id": "https://openalex.org/C146710177",
+          "wikidata": "https://www.wikidata.org/wiki/Q1154996",
+          "display_name": "Fiber bundle",
+          "level": 3,
+          "score": 0.60246867
+        },
+        {
+          "id": "https://openalex.org/C168834538",
+          "wikidata": "https://www.wikidata.org/wiki/Q3705329",
+          "display_name": "Beam (structure)",
+          "level": 2,
+          "score": 0.6000295
+        },
+        {
+          "id": "https://openalex.org/C207114421",
+          "wikidata": "https://www.wikidata.org/wiki/Q133900",
+          "display_name": "Diffraction",
+          "level": 2,
+          "score": 0.5399973
+        },
+        {
+          "id": "https://openalex.org/C15336307",
+          "wikidata": "https://www.wikidata.org/wiki/Q1766051",
+          "display_name": "Lens (geology)",
+          "level": 2,
+          "score": 0.50625956
+        },
+        {
+          "id": "https://openalex.org/C194232370",
+          "wikidata": "https://www.wikidata.org/wiki/Q162",
+          "display_name": "Optical fiber",
+          "level": 2,
+          "score": 0.49478716
+        },
+        {
+          "id": "https://openalex.org/C2164484",
+          "wikidata": "https://www.wikidata.org/wiki/Q5170150",
+          "display_name": "Core (optical fiber)",
+          "level": 2,
+          "score": 0.4602479
+        },
+        {
+          "id": "https://openalex.org/C128765274",
+          "wikidata": "https://www.wikidata.org/wiki/Q663314",
+          "display_name": "Hexagonal crystal system",
+          "level": 2,
+          "score": 0.45197815
+        },
+        {
+          "id": "https://openalex.org/C121332964",
+          "wikidata": "https://www.wikidata.org/wiki/Q413",
+          "display_name": "Physics",
+          "level": 0,
+          "score": 0.42350996
+        },
+        {
+          "id": "https://openalex.org/C191463272",
+          "wikidata": "https://www.wikidata.org/wiki/Q2493660",
+          "display_name": "Light beam",
+          "level": 2,
+          "score": 0.42181346
+        },
+        {
+          "id": "https://openalex.org/C192562407",
+          "wikidata": "https://www.wikidata.org/wiki/Q228736",
+          "display_name": "Materials science",
+          "level": 0,
+          "score": 0.36408532
+        },
+        {
+          "id": "https://openalex.org/C185592680",
+          "wikidata": "https://www.wikidata.org/wiki/Q2329",
+          "display_name": "Chemistry",
+          "level": 0,
+          "score": 0.06912276
+        },
+        {
+          "id": "https://openalex.org/C159985019",
+          "wikidata": "https://www.wikidata.org/wiki/Q181790",
+          "display_name": "Composite material",
+          "level": 1,
+          "score": 0.0
+        },
+        {
+          "id": "https://openalex.org/C8010536",
+          "wikidata": "https://www.wikidata.org/wiki/Q160398",
+          "display_name": "Crystallography",
+          "level": 1,
+          "score": 0.0
+        }
+      ],
+      "mesh": [],
+      "locations_count": 1,
+      "locations": [
+        {
+          "is_oa": false,
+          "landing_page_url": "https://doi.org/10.1117/12.2319167",
+          "pdf_url": null,
+          "source": null,
+          "license": null,
+          "license_id": null,
+          "version": null,
+          "is_accepted": false,
+          "is_published": false
+        }
+      ],
+      "best_oa_location": null,
+      "sustainable_development_goals": [],
+      "grants": [],
+      "datasets": [],
+      "versions": [],
+      "referenced_works_count": 0,
+      "referenced_works": [],
+      "related_works": [
+        "https://openalex.org/W4252043533",
+        "https://openalex.org/W4240564646",
+        "https://openalex.org/W2349013766",
+        "https://openalex.org/W2326458079",
+        "https://openalex.org/W2141129703",
+        "https://openalex.org/W2119919461",
+        "https://openalex.org/W2036508296",
+        "https://openalex.org/W2031036731",
+        "https://openalex.org/W1997125070",
+        "https://openalex.org/W168697621"
+      ],
+      "abstract_inverted_index": {
+        "In": [
+          0,
+          83
+        ],
+        "this": [
+          1,
+          84
+        ],
+        "study,": [
+          2
+        ],
+        "the": [
+          3,
+          21,
+          46,
+          62,
+          65,
+          70,
+          77,
+          95,
+          100,
+          106
+        ],
+        "focusing": [
+          4,
+          60,
+          72
+        ],
+        "beam": [
+          5,
+          43,
+          59,
+          71,
+          78
+        ],
+        "generated": [
+          6
+        ],
+        "by": [
+          7,
+          36
+        ],
+        "an": [
+          8,
+          37
+        ],
+        "optical": [
+          9,
+          14,
+          38,
+          55
+        ],
+        "fiber": [
+          10,
+          31,
+          47
+        ],
+        "bundle": [
+          11
+        ],
+        "having": [
+          12
+        ],
+        "locally": [
+          13,
+          35
+        ],
+        "delay": [
+          15,
+          39
+        ],
+        "has": [
+          16
+        ],
+        "been": [
+          17
+        ],
+        "investigated": [
+          18
+        ],
+        "to": [
+          19
+        ],
+        "simplify": [
+          20
+        ],
+        "structure": [
+          22
+        ],
+        "of": [
+          23,
+          76,
+          88,
+          99
+        ],
+        "vascular": [
+          24
+        ],
+        "endoscopes.": [
+          25
+        ],
+        "The": [
+          26,
+          54
+        ],
+        "wavefront": [
+          27
+        ],
+        "propagating": [
+          28
+        ],
+        "within": [
+          29
+        ],
+        "each": [
+          30
+        ],
+        "core": [
+          32,
+          48
+        ],
+        "is": [
+          33
+        ],
+        "delayed": [
+          34
+        ],
+        "system.": [
+          40
+        ],
+        "Each": [
+          41
+        ],
+        "diffraction": [
+          42
+        ],
+        "emitted": [
+          44
+        ],
+        "from": [
+          45
+        ],
+        "forms": [
+          49
+        ],
+        "a": [
+          50,
+          80
+        ],
+        "superimposed": [
+          51
+        ],
+        "convergent": [
+          52,
+          90
+        ],
+        "wave.": [
+          53
+        ],
+        "delays": [
+          56
+        ],
+        "make": [
+          57
+        ],
+        "arbitrary": [
+          58
+        ],
+        "after": [
+          61
+        ],
+        "light": [
+          63
+        ],
+        "exits": [
+          64
+        ],
+        "bundle.": [
+          66
+        ],
+        "We": [
+          67
+        ],
+        "have": [
+          68
+        ],
+        "demonstrated": [
+          69
+        ],
+        "and": [
+          73
+        ],
+        "three-dimensional": [
+          74
+        ],
+        "scanning": [
+          75
+        ],
+        "using": [
+          79
+        ],
+        "liquid": [
+          81
+        ],
+        "lens.": [
+          82
+        ],
+        "experiment,": [
+          85
+        ],
+        "six": [
+          86
+        ],
+        "points": [
+          87
+        ],
+        "unnecessary": [
+          89
+        ],
+        "light,": [
+          91
+        ],
+        "which": [
+          92
+        ],
+        "depended": [
+          93
+        ],
+        "on": [
+          94
+        ],
+        "hexagonal": [
+          96
+        ],
+        "lattice": [
+          97
+        ],
+        "structures": [
+          98
+        ],
+        "bundle,": [
+          101
+        ],
+        "were": [
+          102
+        ],
+        "also": [
+          103
+        ],
+        "formed": [
+          104
+        ],
+        "at": [
+          105
+        ],
+        "same": [
+          107
+        ],
+        "time.": [
+          108
+        ]
+      },
+      "abstract_inverted_index_v3": null,
+      "cited_by_api_url": "https://api.openalex.org/works?filter=cites:W2800565741",
+      "counts_by_year": [],
+      "updated_date": "2025-06-15T22:13:03.612034",
+      "created_date": "2018-05-17"
+    },
+    {
+      "id": "https://openalex.org/W2771889473",
+      "doi": "https://doi.org/10.1002/ecj.12029",
+      "title": "Headband‐Type Near‐Infrared Spectroscopy Device for Measuring Oxyhemoglobin in Frontal Cortex",
+      "display_name": "Headband‐Type Near‐Infrared Spectroscopy Device for Measuring Oxyhemoglobin in Frontal Cortex",
+      "publication_year": 2017,
+      "publication_date": "2017-12-13",
+      "ids": {
+        "openalex": "https://openalex.org/W2771889473",
+        "doi": "https://doi.org/10.1002/ecj.12029",
+        "mag": "2771889473"
+      },
+      "language": "en",
+      "primary_location": {
+        "is_oa": false,
+        "landing_page_url": "https://doi.org/10.1002/ecj.12029",
+        "pdf_url": null,
+        "source": {
+          "id": "https://openalex.org/S155686367",
+          "display_name": "Electronics and Communications in Japan",
+          "issn_l": "1942-9533",
+          "issn": [
+            "1942-9533",
+            "1942-9541"
+          ],
+          "is_oa": false,
+          "is_in_doaj": false,
+          "is_indexed_in_scopus": true,
+          "is_core": true,
+          "host_organization": "https://openalex.org/P4310320595",
+          "host_organization_name": "Wiley",
+          "host_organization_lineage": [
+            "https://openalex.org/P4310320595"
+          ],
+          "host_organization_lineage_names": [
+            "Wiley"
+          ],
+          "type": "journal"
+        },
+        "license": null,
+        "license_id": null,
+        "version": null,
+        "is_accepted": false,
+        "is_published": false
+      },
+      "type": "article",
+      "type_crossref": "journal-article",
+      "indexed_in": [
+        "crossref"
+      ],
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null,
+        "any_repository_has_fulltext": false
+      },
+      "authorships": [
+        {
+          "author_position": "first",
+          "author": {
+            "id": "https://openalex.org/A5068540680",
+            "display_name": "Yasuhiro Miyake",
+            "orcid": "https://orcid.org/0000-0003-0095-0447"
+          },
+          "institutions": [
+            {
+              "id": "https://openalex.org/I189513530",
+              "display_name": "Osaka Electro-Communication University",
+              "ror": "https://ror.org/056bksm23",
+              "country_code": "JP",
+              "type": "education",
+              "lineage": [
+                "https://openalex.org/I189513530"
+              ]
+            }
+          ],
+          "countries": [
+            "JP"
+          ],
+          "is_corresponding": false,
+          "raw_author_name": "YASUHIRO MIYAKE",
+          "raw_affiliation_strings": [
+            "Osaka Electro-Communication University, Japan"
+          ],
+          "affiliations": [
+            {
+              "raw_affiliation_string": "Osaka Electro-Communication University, Japan",
+              "institution_ids": [
+                "https://openalex.org/I189513530"
+              ]
+            }
+          ]
+        },
+        {
+          "author_position": "middle",
+          "author": {
+            "id": "https://openalex.org/A5034708867",
+            "display_name": "Masaki Hisaka",
+            "orcid": "https://orcid.org/0000-0001-8482-6675"
+          },
+          "institutions": [
+            {
+              "id": "https://openalex.org/I189513530",
+              "display_name": "Osaka Electro-Communication University",
+              "ror": "https://ror.org/056bksm23",
+              "country_code": "JP",
+              "type": "education",
+              "lineage": [
+                "https://openalex.org/I189513530"
+              ]
+            }
+          ],
+          "countries": [
+            "JP"
+          ],
+          "is_corresponding": false,
+          "raw_author_name": "MASAKI HISAKA",
+          "raw_affiliation_strings": [
+            "Osaka Electro-Communication University, Japan"
+          ],
+          "affiliations": [
+            {
+              "raw_affiliation_string": "Osaka Electro-Communication University, Japan",
+              "institution_ids": [
+                "https://openalex.org/I189513530"
+              ]
+            }
+          ]
+        },
+        {
+          "author_position": "middle",
+          "author": {
+            "id": "https://openalex.org/A5065511527",
+            "display_name": "Mitsuhiro Kita",
+            "orcid": null
+          },
+          "institutions": [],
+          "countries": [
+            "JP"
+          ],
+          "is_corresponding": false,
+          "raw_author_name": "MITSUHIRO KITA",
+          "raw_affiliation_strings": [
+            "BrainEnergy Inc., Japan"
+          ],
+          "affiliations": [
+            {
+              "raw_affiliation_string": "BrainEnergy Inc., Japan",
+              "institution_ids": []
+            }
+          ]
+        },
+        {
+          "author_position": "last",
+          "author": {
+            "id": "https://openalex.org/A5072804809",
+            "display_name": "M. Matsumura",
+            "orcid": "https://orcid.org/0000-0002-6906-0103"
+          },
+          "institutions": [
+            {
+              "id": "https://openalex.org/I189513530",
+              "display_name": "Osaka Electro-Communication University",
+              "ror": "https://ror.org/056bksm23",
+              "country_code": "JP",
+              "type": "education",
+              "lineage": [
+                "https://openalex.org/I189513530"
+              ]
+            }
+          ],
+          "countries": [
+            "JP"
+          ],
+          "is_corresponding": false,
+          "raw_author_name": "MASAFUMI MATSUMURA",
+          "raw_affiliation_strings": [
+            "Osaka Electro-Communication University, Japan"
+          ],
+          "affiliations": [
+            {
+              "raw_affiliation_string": "Osaka Electro-Communication University, Japan",
+              "institution_ids": [
+                "https://openalex.org/I189513530"
+              ]
+            }
+          ]
+        }
+      ],
+      "institution_assertions": [],
+      "countries_distinct_count": 1,
+      "institutions_distinct_count": 1,
+      "corresponding_author_ids": [],
+      "corresponding_institution_ids": [],
+      "apc_list": {
+        "value": 2630,
+        "currency": "USD",
+        "value_usd": 2630
+      },
+      "apc_paid": null,
+      "fwci": 0.214,
+      "has_fulltext": true,
+      "fulltext_origin": "ngrams",
+      "cited_by_count": 2,
+      "citation_normalized_percentile": {
+        "value": 0.574038,
+        "is_in_top_1_percent": false,
+        "is_in_top_10_percent": false
+      },
+      "cited_by_percentile_year": {
+        "min": 71,
+        "max": 75
+      },
+      "biblio": {
+        "volume": "101",
+        "issue": "2",
+        "first_page": "23",
+        "last_page": "31"
+      },
+      "is_retracted": false,
+      "is_paratext": false,
+      "primary_topic": {
+        "id": "https://openalex.org/T10977",
+        "display_name": "Optical Imaging and Spectroscopy Techniques",
+        "score": 0.9997,
+        "subfield": {
+          "id": "https://openalex.org/subfields/2741",
+          "display_name": "Radiology, Nuclear Medicine and Imaging"
+        },
+        "field": {
+          "id": "https://openalex.org/fields/27",
+          "display_name": "Medicine"
+        },
+        "domain": {
+          "id": "https://openalex.org/domains/4",
+          "display_name": "Health Sciences"
+        }
+      },
+      "topics": [
+        {
+          "id": "https://openalex.org/T10977",
+          "display_name": "Optical Imaging and Spectroscopy Techniques",
+          "score": 0.9997,
+          "subfield": {
+            "id": "https://openalex.org/subfields/2741",
+            "display_name": "Radiology, Nuclear Medicine and Imaging"
+          },
+          "field": {
+            "id": "https://openalex.org/fields/27",
+            "display_name": "Medicine"
+          },
+          "domain": {
+            "id": "https://openalex.org/domains/4",
+            "display_name": "Health Sciences"
+          }
+        },
+        {
+          "id": "https://openalex.org/T11196",
+          "display_name": "Non-Invasive Vital Sign Monitoring",
+          "score": 0.9982,
+          "subfield": {
+            "id": "https://openalex.org/subfields/2204",
+            "display_name": "Biomedical Engineering"
+          },
+          "field": {
+            "id": "https://openalex.org/fields/22",
+            "display_name": "Engineering"
+          },
+          "domain": {
+            "id": "https://openalex.org/domains/3",
+            "display_name": "Physical Sciences"
+          }
+        },
+        {
+          "id": "https://openalex.org/T10745",
+          "display_name": "Heart Rate Variability and Autonomic Control",
+          "score": 0.9957,
+          "subfield": {
+            "id": "https://openalex.org/subfields/2705",
+            "display_name": "Cardiology and Cardiovascular Medicine"
+          },
+          "field": {
+            "id": "https://openalex.org/fields/27",
+            "display_name": "Medicine"
+          },
+          "domain": {
+            "id": "https://openalex.org/domains/4",
+            "display_name": "Health Sciences"
+          }
+        }
+      ],
+      "keywords": [],
+      "concepts": [
+        {
+          "id": "https://openalex.org/C43571822",
+          "wikidata": "https://www.wikidata.org/wiki/Q599037",
+          "display_name": "Near-infrared spectroscopy",
+          "level": 2,
+          "score": 0.5465902
+        },
+        {
+          "id": "https://openalex.org/C136229726",
+          "wikidata": "https://www.wikidata.org/wiki/Q327092",
+          "display_name": "Biomedical engineering",
+          "level": 1,
+          "score": 0.3437575
+        },
+        {
+          "id": "https://openalex.org/C41008148",
+          "wikidata": "https://www.wikidata.org/wiki/Q21198",
+          "display_name": "Computer science",
+          "level": 0,
+          "score": 0.32363057
+        },
+        {
+          "id": "https://openalex.org/C71924100",
+          "wikidata": "https://www.wikidata.org/wiki/Q11190",
+          "display_name": "Medicine",
+          "level": 0,
+          "score": 0.18189284
+        },
+        {
+          "id": "https://openalex.org/C120665830",
+          "wikidata": "https://www.wikidata.org/wiki/Q14620",
+          "display_name": "Optics",
+          "level": 1,
+          "score": 0.1313738
+        },
+        {
+          "id": "https://openalex.org/C121332964",
+          "wikidata": "https://www.wikidata.org/wiki/Q413",
+          "display_name": "Physics",
+          "level": 0,
+          "score": 0.10359928
+        }
+      ],
+      "mesh": [],
+      "locations_count": 1,
+      "locations": [
+        {
+          "is_oa": false,
+          "landing_page_url": "https://doi.org/10.1002/ecj.12029",
+          "pdf_url": null,
+          "source": {
+            "id": "https://openalex.org/S155686367",
+            "display_name": "Electronics and Communications in Japan",
+            "issn_l": "1942-9533",
+            "issn": [
+              "1942-9533",
+              "1942-9541"
+            ],
+            "is_oa": false,
+            "is_in_doaj": false,
+            "is_indexed_in_scopus": true,
+            "is_core": true,
+            "host_organization": "https://openalex.org/P4310320595",
+            "host_organization_name": "Wiley",
+            "host_organization_lineage": [
+              "https://openalex.org/P4310320595"
+            ],
+            "host_organization_lineage_names": [
+              "Wiley"
+            ],
+            "type": "journal"
+          },
+          "license": null,
+          "license_id": null,
+          "version": null,
+          "is_accepted": false,
+          "is_published": false
+        }
+      ],
+      "best_oa_location": null,
+      "sustainable_development_goals": [],
+      "grants": [],
+      "datasets": [],
+      "versions": [],
+      "referenced_works_count": 16,
+      "referenced_works": [
+        "https://openalex.org/W1819650838",
+        "https://openalex.org/W1988815249",
+        "https://openalex.org/W2001654405",
+        "https://openalex.org/W2003585812",
+        "https://openalex.org/W2009124912",
+        "https://openalex.org/W2010275504",
+        "https://openalex.org/W2011550515",
+        "https://openalex.org/W2019489038",
+        "https://openalex.org/W2050147546",
+        "https://openalex.org/W2064009778",
+        "https://openalex.org/W2074800844",
+        "https://openalex.org/W2110785144",
+        "https://openalex.org/W2116253700",
+        "https://openalex.org/W2212270646",
+        "https://openalex.org/W2344201654",
+        "https://openalex.org/W2395322322"
+      ],
+      "related_works": [
+        "https://openalex.org/W2748952813",
+        "https://openalex.org/W2530322880",
+        "https://openalex.org/W2390279801",
+        "https://openalex.org/W2382290278",
+        "https://openalex.org/W2376932109",
+        "https://openalex.org/W2359140296",
+        "https://openalex.org/W2358668433",
+        "https://openalex.org/W2350741829",
+        "https://openalex.org/W2001405890",
+        "https://openalex.org/W1596801655"
+      ],
+      "abstract_inverted_index": {
+        "SUMMARY": [
+          0
+        ],
+        "Near‐infrared": [
+          1
+        ],
+        "spectroscopy": [
+          2
+        ],
+        "(NIRS)": [
+          3
+        ],
+        "is": [
+          4,
+          76
+        ],
+        "an": [
+          5,
+          94
+        ],
+        "important": [
+          6
+        ],
+        "technique": [
+          7
+        ],
+        "that": [
+          8,
+          75,
+          130
+        ],
+        "percutaneously": [
+          9
+        ],
+        "and": [
+          10,
+          35,
+          47,
+          62,
+          103,
+          119,
+          133
+        ],
+        "noninvasively": [
+          11
+        ],
+        "monitors": [
+          12
+        ],
+        "the": [
+          13,
+          42,
+          48,
+          51,
+          69,
+          106,
+          113,
+          117,
+          125,
+          131,
+          136,
+          143
+        ],
+        "changes": [
+          14
+        ],
+        "in": [
+          15,
+          44
+        ],
+        "hemoglobin": [
+          16
+        ],
+        "concentration": [
+          17
+        ],
+        "of": [
+          18,
+          50,
+          112,
+          124,
+          138
+        ],
+        "cerebral": [
+          19
+        ],
+        "blood": [
+          20
+        ],
+        "flow.": [
+          21
+        ],
+        "We": [
+          22
+        ],
+        "have": [
+          23
+        ],
+        "developed": [
+          24,
+          87
+        ],
+        "headband‐type": [
+          25,
+          57
+        ],
+        "NIRS": [
+          26,
+          52,
+          58,
+          73,
+          89,
+          110,
+          127,
+          144
+        ],
+        "devices": [
+          27,
+          90
+        ],
+        "using": [
+          28,
+          78,
+          93,
+          98
+        ],
+        "a": [
+          29,
+          36,
+          79,
+          99
+        ],
+        "light‐emitting": [
+          30
+        ],
+        "diode": [
+          31
+        ],
+        "(LED)": [
+          32
+        ],
+        "power": [
+          33
+        ],
+        "source": [
+          34,
+          137
+        ],
+        "photodiode": [
+          37
+        ],
+        "detector": [
+          38
+        ],
+        "(PD)": [
+          39
+        ],
+        "to": [
+          40
+        ],
+        "reduce": [
+          41
+        ],
+        "burden": [
+          43
+        ],
+        "diagnosis": [
+          45
+        ],
+        "preparation": [
+          46
+        ],
+        "price": [
+          49
+        ],
+        "module.": [
+          53
+        ],
+        "The": [
+          54,
+          85,
+          122
+        ],
+        "10‐channel": [
+          55
+        ],
+        "non‐real‐time": [
+          56
+        ],
+        "device": [
+          59
+        ],
+        "with": [
+          60,
+          109
+        ],
+        "PD": [
+          61
+        ],
+        "one‐package": [
+          63
+        ],
+        "three‐wavelength": [
+          64
+        ],
+        "LED": [
+          65
+        ],
+        "as": [
+          66,
+          68
+        ],
+        "well": [
+          67
+        ],
+        "two‐channel": [
+          70
+        ],
+        "real‐time": [
+          71,
+          126
+        ],
+        "wireless": [
+          72
+        ],
+        "headband": [
+          74,
+          88
+        ],
+        "controlled": [
+          77
+        ],
+        "tablet": [
+          80
+        ],
+        "PC": [
+          81
+        ],
+        "were": [
+          82,
+          91
+        ],
+        "manufactured": [
+          83
+        ],
+        "in‐house.": [
+          84
+        ],
+        "two": [
+          86
+        ],
+        "evaluated": [
+          92
+        ],
+        "existing": [
+          95
+        ],
+        "LABNIRS": [
+          96
+        ],
+        "system": [
+          97
+        ],
+        "verbal": [
+          100
+        ],
+        "fluency": [
+          101
+        ],
+        "task,": [
+          102
+        ],
+        "they": [
+          104
+        ],
+        "exhibited": [
+          105
+        ],
+        "same": [
+          107
+        ],
+        "tendency": [
+          108
+        ],
+        "signals": [
+          111,
+          128
+        ],
+        "different": [
+          114
+        ],
+        "levels": [
+          115
+        ],
+        "at": [
+          116
+        ],
+        "rest": [
+          118
+        ],
+        "task": [
+          120
+        ],
+        "stages.": [
+          121
+        ],
+        "measurement": [
+          123
+        ],
+        "revealed": [
+          129
+        ],
+        "voice": [
+          132
+        ],
+        "breath": [
+          134
+        ],
+        "caused": [
+          135
+        ],
+        "low‐frequency": [
+          139
+        ],
+        "fluctuations": [
+          140
+        ],
+        "superimposed": [
+          141
+        ],
+        "on": [
+          142
+        ],
+        "signals.": [
+          145
+        ]
+      },
+      "abstract_inverted_index_v3": null,
+      "cited_by_api_url": "https://api.openalex.org/works?filter=cites:W2771889473",
+      "counts_by_year": [
+        {
+          "year": 2022,
+          "cited_by_count": 1
+        },
+        {
+          "year": 2018,
+          "cited_by_count": 1
+        }
+      ],
+      "updated_date": "2025-05-24T16:20:10.746150",
+      "created_date": "2017-12-22"
+    },
+    {
+      "id": "https://openalex.org/W2774571962",
+      "doi": "https://doi.org/10.1007/s10043-017-0394-z",
+      "title": "Noncontact localized internal infrared radiation measurement using an infrared point detector",
+      "display_name": "Noncontact localized internal infrared radiation measurement using an infrared point detector",
+      "publication_year": 2017,
+      "publication_date": "2017-12-09",
+      "ids": {
+        "openalex": "https://openalex.org/W2774571962",
+        "doi": "https://doi.org/10.1007/s10043-017-0394-z",
+        "mag": "2774571962"
+      },
+      "language": "en",
+      "primary_location": {
+        "is_oa": false,
+        "landing_page_url": "https://doi.org/10.1007/s10043-017-0394-z",
+        "pdf_url": null,
+        "source": {
+          "id": "https://openalex.org/S111228885",
+          "display_name": "Optical Review",
+          "issn_l": "1340-6000",
+          "issn": [
+            "1340-6000",
+            "1349-9432"
+          ],
+          "is_oa": false,
+          "is_in_doaj": false,
+          "is_indexed_in_scopus": true,
+          "is_core": true,
+          "host_organization": "https://openalex.org/P4310319900",
+          "host_organization_name": "Springer Science+Business Media",
+          "host_organization_lineage": [
+            "https://openalex.org/P4310319965",
+            "https://openalex.org/P4310319900"
+          ],
+          "host_organization_lineage_names": [
+            "Springer Nature",
+            "Springer Science+Business Media"
+          ],
+          "type": "journal"
+        },
+        "license": null,
+        "license_id": null,
+        "version": null,
+        "is_accepted": false,
+        "is_published": false
+      },
+      "type": "article",
+      "type_crossref": "journal-article",
+      "indexed_in": [
+        "crossref"
+      ],
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null,
+        "any_repository_has_fulltext": false
+      },
+      "authorships": [
+        {
+          "author_position": "first",
+          "author": {
+            "id": "https://openalex.org/A5034708867",
+            "display_name": "Masaki Hisaka",
+            "orcid": "https://orcid.org/0000-0001-8482-6675"
+          },
+          "institutions": [
+            {
+              "id": "https://openalex.org/I189513530",
+              "display_name": "Osaka Electro-Communication University",
+              "ror": "https://ror.org/056bksm23",
+              "country_code": "JP",
+              "type": "education",
+              "lineage": [
+                "https://openalex.org/I189513530"
+              ]
+            }
+          ],
+          "countries": [
+            "JP"
+          ],
+          "is_corresponding": true,
+          "raw_author_name": "Masaki Hisaka",
+          "raw_affiliation_strings": [
+            "Department of Biomedical Engineering, Osaka Electro-Communication University, Shijonawate, Osaka, 575-0063, Japan"
+          ],
+          "affiliations": [
+            {
+              "raw_affiliation_string": "Department of Biomedical Engineering, Osaka Electro-Communication University, Shijonawate, Osaka, 575-0063, Japan",
+              "institution_ids": [
+                "https://openalex.org/I189513530"
+              ]
+            }
+          ]
+        }
+      ],
+      "institution_assertions": [],
+      "countries_distinct_count": 1,
+      "institutions_distinct_count": 1,
+      "corresponding_author_ids": [
+        "https://openalex.org/A5034708867"
+      ],
+      "corresponding_institution_ids": [
+        "https://openalex.org/I189513530"
+      ],
+      "apc_list": {
+        "value": 2390,
+        "currency": "EUR",
+        "value_usd": 2990
+      },
+      "apc_paid": null,
+      "fwci": 0.0,
+      "has_fulltext": true,
+      "fulltext_origin": "ngrams",
+      "cited_by_count": 2,
+      "citation_normalized_percentile": {
+        "value": 0.481392,
+        "is_in_top_1_percent": false,
+        "is_in_top_10_percent": false
+      },
+      "cited_by_percentile_year": {
+        "min": 71,
+        "max": 75
+      },
+      "biblio": {
+        "volume": "25",
+        "issue": "3",
+        "first_page": "397",
+        "last_page": "402"
+      },
+      "is_retracted": false,
+      "is_paratext": false,
+      "primary_topic": {
+        "id": "https://openalex.org/T12994",
+        "display_name": "Infrared Thermography in Medicine",
+        "score": 0.9988,
+        "subfield": {
+          "id": "https://openalex.org/subfields/2741",
+          "display_name": "Radiology, Nuclear Medicine and Imaging"
+        },
+        "field": {
+          "id": "https://openalex.org/fields/27",
+          "display_name": "Medicine"
+        },
+        "domain": {
+          "id": "https://openalex.org/domains/4",
+          "display_name": "Health Sciences"
+        }
+      },
+      "topics": [
+        {
+          "id": "https://openalex.org/T12994",
+          "display_name": "Infrared Thermography in Medicine",
+          "score": 0.9988,
+          "subfield": {
+            "id": "https://openalex.org/subfields/2741",
+            "display_name": "Radiology, Nuclear Medicine and Imaging"
+          },
+          "field": {
+            "id": "https://openalex.org/fields/27",
+            "display_name": "Medicine"
+          },
+          "domain": {
+            "id": "https://openalex.org/domains/4",
+            "display_name": "Health Sciences"
+          }
+        },
+        {
+          "id": "https://openalex.org/T12015",
+          "display_name": "Photoacoustic and Ultrasonic Imaging",
+          "score": 0.9979,
+          "subfield": {
+            "id": "https://openalex.org/subfields/2204",
+            "display_name": "Biomedical Engineering"
+          },
+          "field": {
+            "id": "https://openalex.org/fields/22",
+            "display_name": "Engineering"
+          },
+          "domain": {
+            "id": "https://openalex.org/domains/3",
+            "display_name": "Physical Sciences"
+          }
+        },
+        {
+          "id": "https://openalex.org/T11861",
+          "display_name": "Thermal Regulation in Medicine",
+          "score": 0.9977,
+          "subfield": {
+            "id": "https://openalex.org/subfields/2706",
+            "display_name": "Critical Care and Intensive Care Medicine"
+          },
+          "field": {
+            "id": "https://openalex.org/fields/27",
+            "display_name": "Medicine"
+          },
+          "domain": {
+            "id": "https://openalex.org/domains/4",
+            "display_name": "Health Sciences"
+          }
+        }
+      ],
+      "keywords": [
+        {
+          "id": "https://openalex.org/keywords/pinhole",
+          "display_name": "Pinhole (optics)",
+          "score": 0.4193955
+        },
+        {
+          "id": "https://openalex.org/keywords/black-body-radiation",
+          "display_name": "Black-body radiation",
+          "score": 0.4105518
+        }
+      ],
+      "concepts": [
+        {
+          "id": "https://openalex.org/C158355884",
+          "wikidata": "https://www.wikidata.org/wiki/Q11388",
+          "display_name": "Infrared",
+          "level": 2,
+          "score": 0.75167876
+        },
+        {
+          "id": "https://openalex.org/C120665830",
+          "wikidata": "https://www.wikidata.org/wiki/Q14620",
+          "display_name": "Optics",
+          "level": 1,
+          "score": 0.72529685
+        },
+        {
+          "id": "https://openalex.org/C192562407",
+          "wikidata": "https://www.wikidata.org/wiki/Q228736",
+          "display_name": "Materials science",
+          "level": 0,
+          "score": 0.61838686
+        },
+        {
+          "id": "https://openalex.org/C94915269",
+          "wikidata": "https://www.wikidata.org/wiki/Q1834857",
+          "display_name": "Detector",
+          "level": 2,
+          "score": 0.5279005
+        },
+        {
+          "id": "https://openalex.org/C153385146",
+          "wikidata": "https://www.wikidata.org/wiki/Q18335",
+          "display_name": "Radiation",
+          "level": 2,
+          "score": 0.479006
+        },
+        {
+          "id": "https://openalex.org/C2776700484",
+          "wikidata": "https://www.wikidata.org/wiki/Q15832623",
+          "display_name": "Pinhole (optics)",
+          "level": 2,
+          "score": 0.4193955
+        },
+        {
+          "id": "https://openalex.org/C157909335",
+          "wikidata": "https://www.wikidata.org/wiki/Q900097",
+          "display_name": "Black-body radiation",
+          "level": 3,
+          "score": 0.4105518
+        },
+        {
+          "id": "https://openalex.org/C121332964",
+          "wikidata": "https://www.wikidata.org/wiki/Q413",
+          "display_name": "Physics",
+          "level": 0,
+          "score": 0.32595956
+        }
+      ],
+      "mesh": [],
+      "locations_count": 1,
+      "locations": [
+        {
+          "is_oa": false,
+          "landing_page_url": "https://doi.org/10.1007/s10043-017-0394-z",
+          "pdf_url": null,
+          "source": {
+            "id": "https://openalex.org/S111228885",
+            "display_name": "Optical Review",
+            "issn_l": "1340-6000",
+            "issn": [
+              "1340-6000",
+              "1349-9432"
+            ],
+            "is_oa": false,
+            "is_in_doaj": false,
+            "is_indexed_in_scopus": true,
+            "is_core": true,
+            "host_organization": "https://openalex.org/P4310319900",
+            "host_organization_name": "Springer Science+Business Media",
+            "host_organization_lineage": [
+              "https://openalex.org/P4310319965",
+              "https://openalex.org/P4310319900"
+            ],
+            "host_organization_lineage_names": [
+              "Springer Nature",
+              "Springer Science+Business Media"
+            ],
+            "type": "journal"
+          },
+          "license": null,
+          "license_id": null,
+          "version": null,
+          "is_accepted": false,
+          "is_published": false
+        }
+      ],
+      "best_oa_location": null,
+      "sustainable_development_goals": [],
+      "grants": [],
+      "datasets": [],
+      "versions": [],
+      "referenced_works_count": 10,
+      "referenced_works": [
+        "https://openalex.org/W147517017",
+        "https://openalex.org/W1951668749",
+        "https://openalex.org/W2041774644",
+        "https://openalex.org/W2049311826",
+        "https://openalex.org/W2070118483",
+        "https://openalex.org/W2104723236",
+        "https://openalex.org/W2321299297",
+        "https://openalex.org/W2403125468",
+        "https://openalex.org/W2514700268",
+        "https://openalex.org/W2606512756"
+      ],
+      "related_works": [
+        "https://openalex.org/W4321274343",
+        "https://openalex.org/W4286005541",
+        "https://openalex.org/W3142412832",
+        "https://openalex.org/W2552592440",
+        "https://openalex.org/W2391549584",
+        "https://openalex.org/W2351712597",
+        "https://openalex.org/W2145222266",
+        "https://openalex.org/W2079391868",
+        "https://openalex.org/W2006149152",
+        "https://openalex.org/W1968210103"
+      ],
+      "abstract_inverted_index": null,
+      "abstract_inverted_index_v3": null,
+      "cited_by_api_url": "https://api.openalex.org/works?filter=cites:W2774571962",
+      "counts_by_year": [
+        {
+          "year": 2021,
+          "cited_by_count": 2
+        }
+      ],
+      "updated_date": "2025-05-21T04:20:54.560183",
+      "created_date": "2017-12-22"
+    },
+    {
+      "id": "https://openalex.org/W2621802474",
+      "doi": "https://doi.org/10.7567/jjap.56.070303",
+      "title": "Coaxial random-access reading in multilayered optical data storage systems using a pair of counter-propagating pulse-shaped spatial solitons",
+      "display_name": "Coaxial random-access reading in multilayered optical data storage systems using a pair of counter-propagating pulse-shaped spatial solitons",
+      "publication_year": 2017,
+      "publication_date": "2017-06-08",
+      "ids": {
+        "openalex": "https://openalex.org/W2621802474",
+        "doi": "https://doi.org/10.7567/jjap.56.070303",
+        "mag": "2621802474"
+      },
+      "language": "en",
+      "primary_location": {
+        "is_oa": false,
+        "landing_page_url": "https://doi.org/10.7567/jjap.56.070303",
+        "pdf_url": null,
+        "source": {
+          "id": "https://openalex.org/S143744711",
+          "display_name": "Japanese Journal of Applied Physics",
+          "issn_l": "0021-4922",
+          "issn": [
+            "0021-4922",
+            "1347-4065"
+          ],
+          "is_oa": false,
+          "is_in_doaj": false,
+          "is_indexed_in_scopus": true,
+          "is_core": true,
+          "host_organization": "https://openalex.org/P4310311669",
+          "host_organization_name": "Institute of Physics",
+          "host_organization_lineage": [
+            "https://openalex.org/P4310311669"
+          ],
+          "host_organization_lineage_names": [
+            "Institute of Physics"
+          ],
+          "type": "journal"
+        },
+        "license": null,
+        "license_id": null,
+        "version": null,
+        "is_accepted": false,
+        "is_published": false
+      },
+      "type": "article",
+      "type_crossref": "journal-article",
+      "indexed_in": [
+        "crossref"
+      ],
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null,
+        "any_repository_has_fulltext": false
+      },
+      "authorships": [
+        {
+          "author_position": "first",
+          "author": {
+            "id": "https://openalex.org/A5034708867",
+            "display_name": "Masaki Hisaka",
+            "orcid": "https://orcid.org/0000-0001-8482-6675"
+          },
+          "institutions": [
+            {
+              "id": "https://openalex.org/I189513530",
+              "display_name": "Osaka Electro-Communication University",
+              "ror": "https://ror.org/056bksm23",
+              "country_code": "JP",
+              "type": "education",
+              "lineage": [
+                "https://openalex.org/I189513530"
+              ]
+            }
+          ],
+          "countries": [
+            "JP"
+          ],
+          "is_corresponding": true,
+          "raw_author_name": "Masaki Hisaka",
+          "raw_affiliation_strings": [
+            "Department of Biomedical Engineering, Osaka Electro-Communication University, Shijonawate, Osaka 575-0063, Japan"
+          ],
+          "affiliations": [
+            {
+              "raw_affiliation_string": "Department of Biomedical Engineering, Osaka Electro-Communication University, Shijonawate, Osaka 575-0063, Japan",
+              "institution_ids": [
+                "https://openalex.org/I189513530"
+              ]
+            }
+          ]
+        }
+      ],
+      "institution_assertions": [],
+      "countries_distinct_count": 1,
+      "institutions_distinct_count": 1,
+      "corresponding_author_ids": [
+        "https://openalex.org/A5034708867"
+      ],
+      "corresponding_institution_ids": [
+        "https://openalex.org/I189513530"
+      ],
+      "apc_list": null,
+      "apc_paid": null,
+      "fwci": 0.0,
+      "has_fulltext": false,
+      "cited_by_count": 0,
+      "citation_normalized_percentile": {
+        "value": 0.0,
+        "is_in_top_1_percent": false,
+        "is_in_top_10_percent": false
+      },
+      "cited_by_percentile_year": {
+        "min": 0,
+        "max": 63
+      },
+      "biblio": {
+        "volume": "56",
+        "issue": "7",
+        "first_page": "070303",
+        "last_page": "070303"
+      },
+      "is_retracted": false,
+      "is_paratext": false,
+      "primary_topic": {
+        "id": "https://openalex.org/T11788",
+        "display_name": "Nonlinear Optical Materials Studies",
+        "score": 0.9949,
+        "subfield": {
+          "id": "https://openalex.org/subfields/2204",
+          "display_name": "Biomedical Engineering"
+        },
+        "field": {
+          "id": "https://openalex.org/fields/22",
+          "display_name": "Engineering"
+        },
+        "domain": {
+          "id": "https://openalex.org/domains/3",
+          "display_name": "Physical Sciences"
+        }
+      },
+      "topics": [
+        {
+          "id": "https://openalex.org/T11788",
+          "display_name": "Nonlinear Optical Materials Studies",
+          "score": 0.9949,
+          "subfield": {
+            "id": "https://openalex.org/subfields/2204",
+            "display_name": "Biomedical Engineering"
+          },
+          "field": {
+            "id": "https://openalex.org/fields/22",
+            "display_name": "Engineering"
+          },
+          "domain": {
+            "id": "https://openalex.org/domains/3",
+            "display_name": "Physical Sciences"
+          }
+        },
+        {
+          "id": "https://openalex.org/T10988",
+          "display_name": "Advanced Fiber Laser Technologies",
+          "score": 0.9924,
+          "subfield": {
+            "id": "https://openalex.org/subfields/3107",
+            "display_name": "Atomic and Molecular Physics, and Optics"
+          },
+          "field": {
+            "id": "https://openalex.org/fields/31",
+            "display_name": "Physics and Astronomy"
+          },
+          "domain": {
+            "id": "https://openalex.org/domains/3",
+            "display_name": "Physical Sciences"
+          }
+        },
+        {
+          "id": "https://openalex.org/T11050",
+          "display_name": "Photorefractive and Nonlinear Optics",
+          "score": 0.9863,
+          "subfield": {
+            "id": "https://openalex.org/subfields/3107",
+            "display_name": "Atomic and Molecular Physics, and Optics"
+          },
+          "field": {
+            "id": "https://openalex.org/fields/31",
+            "display_name": "Physics and Astronomy"
+          },
+          "domain": {
+            "id": "https://openalex.org/domains/3",
+            "display_name": "Physical Sciences"
+          }
+        }
+      ],
+      "keywords": [
+        {
+          "id": "https://openalex.org/keywords/coaxial",
+          "display_name": "Coaxial",
+          "score": 0.7412815
+        }
+      ],
+      "concepts": [
+        {
+          "id": "https://openalex.org/C51221625",
+          "wikidata": "https://www.wikidata.org/wiki/Q1751466",
+          "display_name": "Coaxial",
+          "level": 2,
+          "score": 0.7412815
+        },
+        {
+          "id": "https://openalex.org/C120665830",
+          "wikidata": "https://www.wikidata.org/wiki/Q14620",
+          "display_name": "Optics",
+          "level": 1,
+          "score": 0.6324899
+        },
+        {
+          "id": "https://openalex.org/C554936623",
+          "wikidata": "https://www.wikidata.org/wiki/Q199657",
+          "display_name": "Reading (process)",
+          "level": 2,
+          "score": 0.52335775
+        },
+        {
+          "id": "https://openalex.org/C121332964",
+          "wikidata": "https://www.wikidata.org/wiki/Q413",
+          "display_name": "Physics",
+          "level": 0,
+          "score": 0.48044583
+        },
+        {
+          "id": "https://openalex.org/C2780167933",
+          "wikidata": "https://www.wikidata.org/wiki/Q1550652",
+          "display_name": "Pulse (music)",
+          "level": 3,
+          "score": 0.46630514
+        },
+        {
+          "id": "https://openalex.org/C87651913",
+          "wikidata": "https://www.wikidata.org/wiki/Q464949",
+          "display_name": "Soliton",
+          "level": 3,
+          "score": 0.43723464
+        },
+        {
+          "id": "https://openalex.org/C520434653",
+          "wikidata": "https://www.wikidata.org/wiki/Q38867",
+          "display_name": "Laser",
+          "level": 2,
+          "score": 0.43111026
+        },
+        {
+          "id": "https://openalex.org/C2780064504",
+          "wikidata": "https://www.wikidata.org/wiki/Q127583",
+          "display_name": "Sapphire",
+          "level": 3,
+          "score": 0.41313466
+        },
+        {
+          "id": "https://openalex.org/C192562407",
+          "wikidata": "https://www.wikidata.org/wiki/Q228736",
+          "display_name": "Materials science",
+          "level": 0,
+          "score": 0.39711684
+        },
+        {
+          "id": "https://openalex.org/C158622935",
+          "wikidata": "https://www.wikidata.org/wiki/Q660848",
+          "display_name": "Nonlinear system",
+          "level": 2,
+          "score": 0.39153478
+        },
+        {
+          "id": "https://openalex.org/C41008148",
+          "wikidata": "https://www.wikidata.org/wiki/Q21198",
+          "display_name": "Computer science",
+          "level": 0,
+          "score": 0.17560625
+        },
+        {
+          "id": "https://openalex.org/C76155785",
+          "wikidata": "https://www.wikidata.org/wiki/Q418",
+          "display_name": "Telecommunications",
+          "level": 1,
+          "score": 0.17526138
+        },
+        {
+          "id": "https://openalex.org/C62520636",
+          "wikidata": "https://www.wikidata.org/wiki/Q944",
+          "display_name": "Quantum mechanics",
+          "level": 1,
+          "score": 0.0
+        },
+        {
+          "id": "https://openalex.org/C94915269",
+          "wikidata": "https://www.wikidata.org/wiki/Q1834857",
+          "display_name": "Detector",
+          "level": 2,
+          "score": 0.0
+        },
+        {
+          "id": "https://openalex.org/C17744445",
+          "wikidata": "https://www.wikidata.org/wiki/Q36442",
+          "display_name": "Political science",
+          "level": 0,
+          "score": 0.0
+        },
+        {
+          "id": "https://openalex.org/C199539241",
+          "wikidata": "https://www.wikidata.org/wiki/Q7748",
+          "display_name": "Law",
+          "level": 1,
+          "score": 0.0
+        }
+      ],
+      "mesh": [],
+      "locations_count": 1,
+      "locations": [
+        {
+          "is_oa": false,
+          "landing_page_url": "https://doi.org/10.7567/jjap.56.070303",
+          "pdf_url": null,
+          "source": {
+            "id": "https://openalex.org/S143744711",
+            "display_name": "Japanese Journal of Applied Physics",
+            "issn_l": "0021-4922",
+            "issn": [
+              "0021-4922",
+              "1347-4065"
+            ],
+            "is_oa": false,
+            "is_in_doaj": false,
+            "is_indexed_in_scopus": true,
+            "is_core": true,
+            "host_organization": "https://openalex.org/P4310311669",
+            "host_organization_name": "Institute of Physics",
+            "host_organization_lineage": [
+              "https://openalex.org/P4310311669"
+            ],
+            "host_organization_lineage_names": [
+              "Institute of Physics"
+            ],
+            "type": "journal"
+          },
+          "license": null,
+          "license_id": null,
+          "version": null,
+          "is_accepted": false,
+          "is_published": false
+        }
+      ],
+      "best_oa_location": null,
+      "sustainable_development_goals": [
+        {
+          "score": 0.85,
+          "display_name": "Quality education",
+          "id": "https://metadata.un.org/sdg/4"
+        }
+      ],
+      "grants": [
+        {
+          "funder": "https://openalex.org/F4320334764",
+          "funder_display_name": "Japan Society for the Promotion of Science",
+          "award_id": "JP24560055"
+        }
+      ],
+      "datasets": [],
+      "versions": [],
+      "referenced_works_count": 12,
+      "referenced_works": [
+        "https://openalex.org/W1966509680",
+        "https://openalex.org/W1975982056",
+        "https://openalex.org/W1976086806",
+        "https://openalex.org/W1985464943",
+        "https://openalex.org/W1992987784",
+        "https://openalex.org/W2029688389",
+        "https://openalex.org/W2054480823",
+        "https://openalex.org/W2061972561",
+        "https://openalex.org/W2081240217",
+        "https://openalex.org/W2085174740",
+        "https://openalex.org/W2103600923",
+        "https://openalex.org/W2127755875"
+      ],
+      "related_works": [
+        "https://openalex.org/W2541036237",
+        "https://openalex.org/W2348390823",
+        "https://openalex.org/W2321456801",
+        "https://openalex.org/W2196457331",
+        "https://openalex.org/W2061725551",
+        "https://openalex.org/W2037752228",
+        "https://openalex.org/W2007005446",
+        "https://openalex.org/W2002774257",
+        "https://openalex.org/W1975898470",
+        "https://openalex.org/W1493791558"
+      ],
+      "abstract_inverted_index": {
+        "Coaxial": [
+          0,
+          72
+        ],
+        "random-access": [
+          1,
+          73
+        ],
+        "reading": [
+          2,
+          74
+        ],
+        "in": [
+          3,
+          41
+        ],
+        "multilayered": [
+          4,
+          82
+        ],
+        "optical": [
+          5
+        ],
+        "data": [
+          6
+        ],
+        "storage": [
+          7
+        ],
+        "using": [
+          8
+        ],
+        "a": [
+          9,
+          42
+        ],
+        "pair": [
+          10
+        ],
+        "of": [
+          11,
+          67,
+          80,
+          94
+        ],
+        "counter-propagating": [
+          12
+        ],
+        "pulse-shaped": [
+          13
+        ],
+        "spatial": [
+          14,
+          21,
+          78
+        ],
+        "solitons": [
+          15
+        ],
+        "was": [
+          16,
+          85
+        ],
+        "experimentally": [
+          17
+        ],
+        "investigated.": [
+          18
+        ],
+        "Counter-propagating": [
+          19
+        ],
+        "second-harmonic": [
+          20,
+          70
+        ],
+        "solitons,": [
+          22
+        ],
+        "which": [
+          23,
+          58
+        ],
+        "are": [
+          24
+        ],
+        "formed": [
+          25
+        ],
+        "by": [
+          26,
+          87
+        ],
+        "focusing": [
+          27
+        ],
+        "titanium": [
+          28
+        ],
+        "sapphire": [
+          29
+        ],
+        "pulsed": [
+          30
+        ],
+        "lasers,": [
+          31
+        ],
+        "induced": [
+          32
+        ],
+        "nonlinear": [
+          33,
+          48
+        ],
+        "collision": [
+          34,
+          52,
+          89
+        ],
+        "and": [
+          35,
+          53,
+          65
+        ],
+        "determined": [
+          36
+        ],
+        "the": [
+          37,
+          51,
+          54,
+          63,
+          68,
+          77,
+          81,
+          92,
+          95
+        ],
+        "depth": [
+          38
+        ],
+        "readout": [
+          39
+        ],
+        "address": [
+          40
+        ],
+        "strontium": [
+          43
+        ],
+        "barium": [
+          44
+        ],
+        "niobate": [
+          45
+        ],
+        "crystal.": [
+          46
+        ],
+        "The": [
+          47
+        ],
+        "interaction": [
+          49
+        ],
+        "between": [
+          50
+        ],
+        "locally-reversed": [
+          55
+        ],
+        "crystal": [
+          56
+        ],
+        "domains,": [
+          57
+        ],
+        "represents": [
+          59
+        ],
+        "single-bit": [
+          60
+        ],
+        "data,": [
+          61
+        ],
+        "changed": [
+          62
+        ],
+        "spectrum": [
+          64
+        ],
+        "intensity": [
+          66
+        ],
+        "transmitted": [
+          69
+        ],
+        "beam.": [
+          71
+        ],
+        "associated": [
+          75
+        ],
+        "with": [
+          76
+        ],
+        "soliton": [
+          79
+        ],
+        "bit": [
+          83
+        ],
+        "datum": [
+          84
+        ],
+        "demonstrated": [
+          86
+        ],
+        "scanning": [
+          88
+        ],
+        "points": [
+          90
+        ],
+        "along": [
+          91
+        ],
+        "direction": [
+          93
+        ],
+        "depth.": [
+          96
+        ]
+      },
+      "abstract_inverted_index_v3": null,
+      "cited_by_api_url": "https://api.openalex.org/works?filter=cites:W2621802474",
+      "counts_by_year": [],
+      "updated_date": "2025-01-24T18:18:01.908117",
+      "created_date": "2017-06-15"
+    },
+    {
+      "id": "https://openalex.org/W2606512756",
+      "doi": "https://doi.org/10.1117/12.2274894",
+      "title": "Non-contact local temperature measurement inside an object using an infrared point detector",
+      "display_name": "Non-contact local temperature measurement inside an object using an infrared point detector",
+      "publication_year": 2017,
+      "publication_date": "2017-04-18",
+      "ids": {
+        "openalex": "https://openalex.org/W2606512756",
+        "doi": "https://doi.org/10.1117/12.2274894",
+        "mag": "2606512756"
+      },
+      "language": "en",
+      "primary_location": {
+        "is_oa": false,
+        "landing_page_url": "https://doi.org/10.1117/12.2274894",
+        "pdf_url": null,
+        "source": {
+          "id": "https://openalex.org/S183492911",
+          "display_name": "Proceedings of SPIE, the International Society for Optical Engineering/Proceedings of SPIE",
+          "issn_l": "0277-786X",
+          "issn": [
+            "0277-786X",
+            "1996-756X"
+          ],
+          "is_oa": false,
+          "is_in_doaj": false,
+          "is_indexed_in_scopus": false,
+          "is_core": true,
+          "host_organization": "https://openalex.org/P4310315543",
+          "host_organization_name": "SPIE",
+          "host_organization_lineage": [
+            "https://openalex.org/P4310315543"
+          ],
+          "host_organization_lineage_names": [
+            "SPIE"
+          ],
+          "type": "journal"
+        },
+        "license": null,
+        "license_id": null,
+        "version": null,
+        "is_accepted": false,
+        "is_published": false
+      },
+      "type": "article",
+      "type_crossref": "proceedings-article",
+      "indexed_in": [
+        "crossref"
+      ],
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null,
+        "any_repository_has_fulltext": false
+      },
+      "authorships": [
+        {
+          "author_position": "first",
+          "author": {
+            "id": "https://openalex.org/A5034708867",
+            "display_name": "Masaki Hisaka",
+            "orcid": "https://orcid.org/0000-0001-8482-6675"
+          },
+          "institutions": [
+            {
+              "id": "https://openalex.org/I189513530",
+              "display_name": "Osaka Electro-Communication University",
+              "ror": "https://ror.org/056bksm23",
+              "country_code": "JP",
+              "type": "education",
+              "lineage": [
+                "https://openalex.org/I189513530"
+              ]
+            }
+          ],
+          "countries": [
+            "JP"
+          ],
+          "is_corresponding": true,
+          "raw_author_name": "Masaki Hisaka",
+          "raw_affiliation_strings": [
+            "Osaka Electro-Communication Univ. (Japan)"
+          ],
+          "affiliations": [
+            {
+              "raw_affiliation_string": "Osaka Electro-Communication Univ. (Japan)",
+              "institution_ids": [
+                "https://openalex.org/I189513530"
+              ]
+            }
+          ]
+        }
+      ],
+      "institution_assertions": [],
+      "countries_distinct_count": 1,
+      "institutions_distinct_count": 1,
+      "corresponding_author_ids": [
+        "https://openalex.org/A5034708867"
+      ],
+      "corresponding_institution_ids": [
+        "https://openalex.org/I189513530"
+      ],
+      "apc_list": null,
+      "apc_paid": null,
+      "fwci": 0.214,
+      "has_fulltext": false,
+      "cited_by_count": 1,
+      "citation_normalized_percentile": {
+        "value": 0.483142,
+        "is_in_top_1_percent": false,
+        "is_in_top_10_percent": false
+      },
+      "cited_by_percentile_year": {
+        "min": 63,
+        "max": 71
+      },
+      "biblio": {
+        "volume": "10251",
+        "issue": null,
+        "first_page": "1025118",
+        "last_page": "1025118"
+      },
+      "is_retracted": false,
+      "is_paratext": false,
+      "primary_topic": {
+        "id": "https://openalex.org/T12994",
+        "display_name": "Infrared Thermography in Medicine",
+        "score": 0.9807,
+        "subfield": {
+          "id": "https://openalex.org/subfields/2741",
+          "display_name": "Radiology, Nuclear Medicine and Imaging"
+        },
+        "field": {
+          "id": "https://openalex.org/fields/27",
+          "display_name": "Medicine"
+        },
+        "domain": {
+          "id": "https://openalex.org/domains/4",
+          "display_name": "Health Sciences"
+        }
+      },
+      "topics": [
+        {
+          "id": "https://openalex.org/T12994",
+          "display_name": "Infrared Thermography in Medicine",
+          "score": 0.9807,
+          "subfield": {
+            "id": "https://openalex.org/subfields/2741",
+            "display_name": "Radiology, Nuclear Medicine and Imaging"
+          },
+          "field": {
+            "id": "https://openalex.org/fields/27",
+            "display_name": "Medicine"
+          },
+          "domain": {
+            "id": "https://openalex.org/domains/4",
+            "display_name": "Health Sciences"
+          }
+        },
+        {
+          "id": "https://openalex.org/T11856",
+          "display_name": "Thermography and Photoacoustic Techniques",
+          "score": 0.9776,
+          "subfield": {
+            "id": "https://openalex.org/subfields/2211",
+            "display_name": "Mechanics of Materials"
+          },
+          "field": {
+            "id": "https://openalex.org/fields/22",
+            "display_name": "Engineering"
+          },
+          "domain": {
+            "id": "https://openalex.org/domains/3",
+            "display_name": "Physical Sciences"
+          }
+        },
+        {
+          "id": "https://openalex.org/T12389",
+          "display_name": "Infrared Target Detection Methodologies",
+          "score": 0.9625,
+          "subfield": {
+            "id": "https://openalex.org/subfields/2202",
+            "display_name": "Aerospace Engineering"
+          },
+          "field": {
+            "id": "https://openalex.org/fields/22",
+            "display_name": "Engineering"
+          },
+          "domain": {
+            "id": "https://openalex.org/domains/3",
+            "display_name": "Physical Sciences"
+          }
+        }
+      ],
+      "keywords": [
+        {
+          "id": "https://openalex.org/keywords/pinhole",
+          "display_name": "Pinhole (optics)",
+          "score": 0.6775738
+        },
+        {
+          "id": "https://openalex.org/keywords/infrared-detector",
+          "display_name": "Infrared detector",
+          "score": 0.49487513
+        }
+      ],
+      "concepts": [
+        {
+          "id": "https://openalex.org/C94915269",
+          "wikidata": "https://www.wikidata.org/wiki/Q1834857",
+          "display_name": "Detector",
+          "level": 2,
+          "score": 0.7461617
+        },
+        {
+          "id": "https://openalex.org/C2776700484",
+          "wikidata": "https://www.wikidata.org/wiki/Q15832623",
+          "display_name": "Pinhole (optics)",
+          "level": 2,
+          "score": 0.6775738
+        },
+        {
+          "id": "https://openalex.org/C120665830",
+          "wikidata": "https://www.wikidata.org/wiki/Q14620",
+          "display_name": "Optics",
+          "level": 1,
+          "score": 0.6719116
+        },
+        {
+          "id": "https://openalex.org/C158355884",
+          "wikidata": "https://www.wikidata.org/wiki/Q11388",
+          "display_name": "Infrared",
+          "level": 2,
+          "score": 0.6703902
+        },
+        {
+          "id": "https://openalex.org/C72293138",
+          "wikidata": "https://www.wikidata.org/wiki/Q909741",
+          "display_name": "Temperature measurement",
+          "level": 2,
+          "score": 0.6276495
+        },
+        {
+          "id": "https://openalex.org/C192562407",
+          "wikidata": "https://www.wikidata.org/wiki/Q228736",
+          "display_name": "Materials science",
+          "level": 0,
+          "score": 0.53836066
+        },
+        {
+          "id": "https://openalex.org/C2779818494",
+          "wikidata": "https://www.wikidata.org/wiki/Q909168",
+          "display_name": "Infrared detector",
+          "level": 3,
+          "score": 0.49487513
+        },
+        {
+          "id": "https://openalex.org/C121332964",
+          "wikidata": "https://www.wikidata.org/wiki/Q413",
+          "display_name": "Physics",
+          "level": 0,
+          "score": 0.3225606
+        },
+        {
+          "id": "https://openalex.org/C62520636",
+          "wikidata": "https://www.wikidata.org/wiki/Q944",
+          "display_name": "Quantum mechanics",
+          "level": 1,
+          "score": 0.0
+        }
+      ],
+      "mesh": [],
+      "locations_count": 1,
+      "locations": [
+        {
+          "is_oa": false,
+          "landing_page_url": "https://doi.org/10.1117/12.2274894",
+          "pdf_url": null,
+          "source": {
+            "id": "https://openalex.org/S183492911",
+            "display_name": "Proceedings of SPIE, the International Society for Optical Engineering/Proceedings of SPIE",
+            "issn_l": "0277-786X",
+            "issn": [
+              "0277-786X",
+              "1996-756X"
+            ],
+            "is_oa": false,
+            "is_in_doaj": false,
+            "is_indexed_in_scopus": false,
+            "is_core": true,
+            "host_organization": "https://openalex.org/P4310315543",
+            "host_organization_name": "SPIE",
+            "host_organization_lineage": [
+              "https://openalex.org/P4310315543"
+            ],
+            "host_organization_lineage_names": [
+              "SPIE"
+            ],
+            "type": "journal"
+          },
+          "license": null,
+          "license_id": null,
+          "version": null,
+          "is_accepted": false,
+          "is_published": false
+        }
+      ],
+      "best_oa_location": null,
+      "sustainable_development_goals": [],
+      "grants": [],
+      "datasets": [],
+      "versions": [],
+      "referenced_works_count": 1,
+      "referenced_works": [
+        "https://openalex.org/W2056527405"
+      ],
+      "related_works": [
+        "https://openalex.org/W2492092472",
+        "https://openalex.org/W2386680108",
+        "https://openalex.org/W2383646424",
+        "https://openalex.org/W2361672150",
+        "https://openalex.org/W2360860506",
+        "https://openalex.org/W2360081552",
+        "https://openalex.org/W2250238308",
+        "https://openalex.org/W2064102517",
+        "https://openalex.org/W2042416167",
+        "https://openalex.org/W2040756183"
+      ],
+      "abstract_inverted_index": {
+        "Local": [
+          0
+        ],
+        "temperature": [
+          1,
+          23,
+          89,
+          95
+        ],
+        "measurement": [
+          2
+        ],
+        "in": [
+          3,
+          12,
+          66,
+          101
+        ],
+        "deep": [
+          4
+        ],
+        "areas": [
+          5
+        ],
+        "of": [
+          6,
+          54,
+          63,
+          74,
+          103
+        ],
+        "objects": [
+          7
+        ],
+        "is": [
+          8,
+          57
+        ],
+        "an": [
+          9,
+          25
+        ],
+        "important": [
+          10
+        ],
+        "technique": [
+          11
+        ],
+        "biomedical": [
+          13
+        ],
+        "measurement.": [
+          14
+        ],
+        "We": [
+          15,
+          69
+        ],
+        "have": [
+          16
+        ],
+        "investigated": [
+          17,
+          87
+        ],
+        "a": [
+          18,
+          28,
+          40,
+          97
+        ],
+        "non-contact": [
+          19
+        ],
+        "method": [
+          20
+        ],
+        "for": [
+          21,
+          31
+        ],
+        "measuring": [
+          22
+        ],
+        "inside": [
+          24,
+          77
+        ],
+        "object": [
+          26,
+          56
+        ],
+        "using": [
+          27,
+          81,
+          96
+        ],
+        "point": [
+          29,
+          37,
+          84
+        ],
+        "detector": [
+          30,
+          38
+        ],
+        "infrared": [
+          32
+        ],
+        "(IR)": [
+          33
+        ],
+        "light.": [
+          34
+        ],
+        "An": [
+          35
+        ],
+        "IR": [
+          36,
+          47,
+          83
+        ],
+        "with": [
+          39
+        ],
+        "pinhole": [
+          41,
+          64
+        ],
+        "was": [
+          42
+        ],
+        "constructed": [
+          43
+        ],
+        "and": [
+          44,
+          86
+        ],
+        "the": [
+          45,
+          51,
+          55,
+          61,
+          71,
+          75,
+          78,
+          82,
+          88,
+          104
+        ],
+        "radiant": [
+          46
+        ],
+        "light": [
+          48
+        ],
+        "emitted": [
+          49
+        ],
+        "from": [
+          50
+        ],
+        "local": [
+          52
+        ],
+        "interior": [
+          53
+        ],
+        "photodetected": [
+          58
+        ],
+        "only": [
+          59
+        ],
+        "at": [
+          60,
+          91
+        ],
+        "position": [
+          62
+        ],
+        "located": [
+          65
+        ],
+        "imaging": [
+          67
+        ],
+        "relation.": [
+          68
+        ],
+        "measured": [
+          70
+        ],
+        "thermal": [
+          72
+        ],
+        "structure": [
+          73
+        ],
+        "filament": [
+          76
+        ],
+        "miniature": [
+          79
+        ],
+        "bulb": [
+          80
+        ],
+        "detector,": [
+          85
+        ],
+        "dependence": [
+          90
+        ],
+        "approximately": [
+          92
+        ],
+        "human": [
+          93
+        ],
+        "body": [
+          94
+        ],
+        "glass": [
+          98
+        ],
+        "plate": [
+          99
+        ],
+        "positioned": [
+          100
+        ],
+        "front": [
+          102
+        ],
+        "heat": [
+          105
+        ],
+        "source.": [
+          106
+        ]
+      },
+      "abstract_inverted_index_v3": null,
+      "cited_by_api_url": "https://api.openalex.org/works?filter=cites:W2606512756",
+      "counts_by_year": [
+        {
+          "year": 2017,
+          "cited_by_count": 1
+        }
+      ],
+      "updated_date": "2025-06-18T16:44:52.260381",
+      "created_date": "2017-04-28"
+    },
+    {
+      "id": "https://openalex.org/W2607983855",
+      "doi": "https://doi.org/10.1541/ieejeiss.137.709",
+      "title": "Headband-type Near-infrared Spectroscopy Device for Measuring Oxyhemoglobin in Frontal Cortex",
+      "display_name": "Headband-type Near-infrared Spectroscopy Device for Measuring Oxyhemoglobin in Frontal Cortex",
+      "publication_year": 2017,
+      "publication_date": "2017-01-01",
+      "ids": {
+        "openalex": "https://openalex.org/W2607983855",
+        "doi": "https://doi.org/10.1541/ieejeiss.137.709",
+        "mag": "2607983855"
+      },
+      "language": "en",
+      "primary_location": {
+        "is_oa": false,
+        "landing_page_url": "https://doi.org/10.1541/ieejeiss.137.709",
+        "pdf_url": null,
+        "source": {
+          "id": "https://openalex.org/S2764471703",
+          "display_name": "IEEJ Transactions on Electronics Information and Systems",
+          "issn_l": "0385-4221",
+          "issn": [
+            "0385-4221",
+            "1348-8155"
+          ],
+          "is_oa": false,
+          "is_in_doaj": false,
+          "is_indexed_in_scopus": true,
+          "is_core": false,
+          "host_organization": null,
+          "host_organization_name": null,
+          "host_organization_lineage": [],
+          "host_organization_lineage_names": [],
+          "type": "journal"
+        },
+        "license": null,
+        "license_id": null,
+        "version": null,
+        "is_accepted": false,
+        "is_published": false
+      },
+      "type": "article",
+      "type_crossref": "journal-article",
+      "indexed_in": [
+        "crossref"
+      ],
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null,
+        "any_repository_has_fulltext": false
+      },
+      "authorships": [
+        {
+          "author_position": "first",
+          "author": {
+            "id": "https://openalex.org/A5068540680",
+            "display_name": "Yasuhiro Miyake",
+            "orcid": "https://orcid.org/0000-0003-0095-0447"
+          },
+          "institutions": [
+            {
+              "id": "https://openalex.org/I189513530",
+              "display_name": "Osaka Electro-Communication University",
+              "ror": "https://ror.org/056bksm23",
+              "country_code": "JP",
+              "type": "education",
+              "lineage": [
+                "https://openalex.org/I189513530"
+              ]
+            }
+          ],
+          "countries": [
+            "JP"
+          ],
+          "is_corresponding": false,
+          "raw_author_name": "Yasuhiro Miyake",
+          "raw_affiliation_strings": [
+            "Graduate School of Biomedical Engineering, Osaka Electro-Communication University"
+          ],
+          "affiliations": [
+            {
+              "raw_affiliation_string": "Graduate School of Biomedical Engineering, Osaka Electro-Communication University",
+              "institution_ids": [
+                "https://openalex.org/I189513530"
+              ]
+            }
+          ]
+        },
+        {
+          "author_position": "middle",
+          "author": {
+            "id": "https://openalex.org/A5034708867",
+            "display_name": "Masaki Hisaka",
+            "orcid": "https://orcid.org/0000-0001-8482-6675"
+          },
+          "institutions": [
+            {
+              "id": "https://openalex.org/I189513530",
+              "display_name": "Osaka Electro-Communication University",
+              "ror": "https://ror.org/056bksm23",
+              "country_code": "JP",
+              "type": "education",
+              "lineage": [
+                "https://openalex.org/I189513530"
+              ]
+            }
+          ],
+          "countries": [
+            "JP"
+          ],
+          "is_corresponding": false,
+          "raw_author_name": "Masaki Hisaka",
+          "raw_affiliation_strings": [
+            "Department of Biomedical Engineering, Osaka Electro-Communication University"
+          ],
+          "affiliations": [
+            {
+              "raw_affiliation_string": "Department of Biomedical Engineering, Osaka Electro-Communication University",
+              "institution_ids": [
+                "https://openalex.org/I189513530"
+              ]
+            }
+          ]
+        },
+        {
+          "author_position": "middle",
+          "author": {
+            "id": "https://openalex.org/A5065511527",
+            "display_name": "Mitsuhiro Kita",
+            "orcid": null
+          },
+          "institutions": [],
+          "countries": [],
+          "is_corresponding": false,
+          "raw_author_name": "Mitsuhiro Kita",
+          "raw_affiliation_strings": [
+            "BrainEnergy Inc."
+          ],
+          "affiliations": [
+            {
+              "raw_affiliation_string": "BrainEnergy Inc.",
+              "institution_ids": []
+            }
+          ]
+        },
+        {
+          "author_position": "last",
+          "author": {
+            "id": "https://openalex.org/A5072804809",
+            "display_name": "M. Matsumura",
+            "orcid": "https://orcid.org/0000-0002-6906-0103"
+          },
+          "institutions": [
+            {
+              "id": "https://openalex.org/I189513530",
+              "display_name": "Osaka Electro-Communication University",
+              "ror": "https://ror.org/056bksm23",
+              "country_code": "JP",
+              "type": "education",
+              "lineage": [
+                "https://openalex.org/I189513530"
+              ]
+            }
+          ],
+          "countries": [
+            "JP"
+          ],
+          "is_corresponding": false,
+          "raw_author_name": "Masafumi Matsumura",
+          "raw_affiliation_strings": [
+            "Department of Biomedical Engineering, Osaka Electro-Communication University"
+          ],
+          "affiliations": [
+            {
+              "raw_affiliation_string": "Department of Biomedical Engineering, Osaka Electro-Communication University",
+              "institution_ids": [
+                "https://openalex.org/I189513530"
+              ]
+            }
+          ]
+        }
+      ],
+      "institution_assertions": [],
+      "countries_distinct_count": 1,
+      "institutions_distinct_count": 1,
+      "corresponding_author_ids": [],
+      "corresponding_institution_ids": [],
+      "apc_list": null,
+      "apc_paid": null,
+      "fwci": 0.0,
+      "has_fulltext": false,
+      "cited_by_count": 0,
+      "citation_normalized_percentile": {
+        "value": 0.0,
+        "is_in_top_1_percent": false,
+        "is_in_top_10_percent": false
+      },
+      "cited_by_percentile_year": {
+        "min": 0,
+        "max": 63
+      },
+      "biblio": {
+        "volume": "137",
+        "issue": "5",
+        "first_page": "709",
+        "last_page": "716"
+      },
+      "is_retracted": false,
+      "is_paratext": false,
+      "primary_topic": {
+        "id": "https://openalex.org/T10977",
+        "display_name": "Optical Imaging and Spectroscopy Techniques",
+        "score": 0.9997,
+        "subfield": {
+          "id": "https://openalex.org/subfields/2741",
+          "display_name": "Radiology, Nuclear Medicine and Imaging"
+        },
+        "field": {
+          "id": "https://openalex.org/fields/27",
+          "display_name": "Medicine"
+        },
+        "domain": {
+          "id": "https://openalex.org/domains/4",
+          "display_name": "Health Sciences"
+        }
+      },
+      "topics": [
+        {
+          "id": "https://openalex.org/T10977",
+          "display_name": "Optical Imaging and Spectroscopy Techniques",
+          "score": 0.9997,
+          "subfield": {
+            "id": "https://openalex.org/subfields/2741",
+            "display_name": "Radiology, Nuclear Medicine and Imaging"
+          },
+          "field": {
+            "id": "https://openalex.org/fields/27",
+            "display_name": "Medicine"
+          },
+          "domain": {
+            "id": "https://openalex.org/domains/4",
+            "display_name": "Health Sciences"
+          }
+        },
+        {
+          "id": "https://openalex.org/T11196",
+          "display_name": "Non-Invasive Vital Sign Monitoring",
+          "score": 0.9986,
+          "subfield": {
+            "id": "https://openalex.org/subfields/2204",
+            "display_name": "Biomedical Engineering"
+          },
+          "field": {
+            "id": "https://openalex.org/fields/22",
+            "display_name": "Engineering"
+          },
+          "domain": {
+            "id": "https://openalex.org/domains/3",
+            "display_name": "Physical Sciences"
+          }
+        },
+        {
+          "id": "https://openalex.org/T10745",
+          "display_name": "Heart Rate Variability and Autonomic Control",
+          "score": 0.9956,
+          "subfield": {
+            "id": "https://openalex.org/subfields/2705",
+            "display_name": "Cardiology and Cardiovascular Medicine"
+          },
+          "field": {
+            "id": "https://openalex.org/fields/27",
+            "display_name": "Medicine"
+          },
+          "domain": {
+            "id": "https://openalex.org/domains/4",
+            "display_name": "Health Sciences"
+          }
+        }
+      ],
+      "keywords": [],
+      "concepts": [
+        {
+          "id": "https://openalex.org/C43571822",
+          "wikidata": "https://www.wikidata.org/wiki/Q599037",
+          "display_name": "Near-infrared spectroscopy",
+          "level": 2,
+          "score": 0.56417537
+        },
+        {
+          "id": "https://openalex.org/C169760540",
+          "wikidata": "https://www.wikidata.org/wiki/Q207011",
+          "display_name": "Neuroscience",
+          "level": 1,
+          "score": 0.14667937
+        },
+        {
+          "id": "https://openalex.org/C15744967",
+          "wikidata": "https://www.wikidata.org/wiki/Q9418",
+          "display_name": "Psychology",
+          "level": 0,
+          "score": 0.068449676
+        }
+      ],
+      "mesh": [],
+      "locations_count": 1,
+      "locations": [
+        {
+          "is_oa": false,
+          "landing_page_url": "https://doi.org/10.1541/ieejeiss.137.709",
+          "pdf_url": null,
+          "source": {
+            "id": "https://openalex.org/S2764471703",
+            "display_name": "IEEJ Transactions on Electronics Information and Systems",
+            "issn_l": "0385-4221",
+            "issn": [
+              "0385-4221",
+              "1348-8155"
+            ],
+            "is_oa": false,
+            "is_in_doaj": false,
+            "is_indexed_in_scopus": true,
+            "is_core": false,
+            "host_organization": null,
+            "host_organization_name": null,
+            "host_organization_lineage": [],
+            "host_organization_lineage_names": [],
+            "type": "journal"
+          },
+          "license": null,
+          "license_id": null,
+          "version": null,
+          "is_accepted": false,
+          "is_published": false
+        }
+      ],
+      "best_oa_location": null,
+      "sustainable_development_goals": [],
+      "grants": [],
+      "datasets": [],
+      "versions": [],
+      "referenced_works_count": 13,
+      "referenced_works": [
+        "https://openalex.org/W1988815249",
+        "https://openalex.org/W2001654405",
+        "https://openalex.org/W2009124912",
+        "https://openalex.org/W2010275504",
+        "https://openalex.org/W2011550515",
+        "https://openalex.org/W2019489038",
+        "https://openalex.org/W2050147546",
+        "https://openalex.org/W2064009778",
+        "https://openalex.org/W2074800844",
+        "https://openalex.org/W2110785144",
+        "https://openalex.org/W2212270646",
+        "https://openalex.org/W2344201654",
+        "https://openalex.org/W2395322322"
+      ],
+      "related_works": [
+        "https://openalex.org/W3198921063",
+        "https://openalex.org/W3155996242",
+        "https://openalex.org/W3100064493",
+        "https://openalex.org/W3084343074",
+        "https://openalex.org/W2885539902",
+        "https://openalex.org/W2796123342",
+        "https://openalex.org/W2387943948",
+        "https://openalex.org/W2355144053",
+        "https://openalex.org/W1979206876",
+        "https://openalex.org/W1612492758"
+      ],
+      "abstract_inverted_index": {
+        "Near-infrared": [
+          0
+        ],
+        "spectroscopy": [
+          1
+        ],
+        "(NIRS)": [
+          2
+        ],
+        "is": [
+          3,
+          75
+        ],
+        "an": [
+          4,
+          94
+        ],
+        "important": [
+          5
+        ],
+        "technique": [
+          6
+        ],
+        "that": [
+          7,
+          74,
+          130
+        ],
+        "percutaneously": [
+          8
+        ],
+        "and": [
+          9,
+          34,
+          46,
+          61,
+          103,
+          119,
+          133
+        ],
+        "noninvasively": [
+          10
+        ],
+        "monitors": [
+          11
+        ],
+        "the": [
+          12,
+          41,
+          47,
+          50,
+          68,
+          106,
+          113,
+          117,
+          125,
+          131,
+          136,
+          143
+        ],
+        "changes": [
+          13
+        ],
+        "in": [
+          14,
+          43,
+          83
+        ],
+        "hemoglobin": [
+          15
+        ],
+        "concentration": [
+          16
+        ],
+        "of": [
+          17,
+          49,
+          112,
+          124,
+          138
+        ],
+        "cerebral": [
+          18
+        ],
+        "blood": [
+          19
+        ],
+        "flow.": [
+          20
+        ],
+        "We": [
+          21
+        ],
+        "have": [
+          22
+        ],
+        "developed": [
+          23,
+          87
+        ],
+        "headband-type": [
+          24,
+          56
+        ],
+        "NIRS": [
+          25,
+          51,
+          57,
+          72,
+          89,
+          110,
+          127,
+          144
+        ],
+        "devices": [
+          26,
+          90
+        ],
+        "using": [
+          27,
+          77,
+          93,
+          98
+        ],
+        "a": [
+          28,
+          35,
+          78,
+          99
+        ],
+        "light-emitting": [
+          29
+        ],
+        "diode": [
+          30
+        ],
+        "(LED)": [
+          31
+        ],
+        "power": [
+          32
+        ],
+        "source": [
+          33,
+          137
+        ],
+        "photodiode": [
+          36
+        ],
+        "detector": [
+          37
+        ],
+        "(PD)": [
+          38
+        ],
+        "to": [
+          39
+        ],
+        "reduce": [
+          40
+        ],
+        "burden": [
+          42
+        ],
+        "diagnosis": [
+          44
+        ],
+        "preparation": [
+          45
+        ],
+        "price": [
+          48
+        ],
+        "module.": [
+          52
+        ],
+        "The": [
+          53,
+          85,
+          122
+        ],
+        "ten-channel": [
+          54
+        ],
+        "nonreal-time": [
+          55
+        ],
+        "device": [
+          58
+        ],
+        "with": [
+          59,
+          109
+        ],
+        "PD": [
+          60
+        ],
+        "one-package": [
+          62
+        ],
+        "three-wavelength": [
+          63
+        ],
+        "LED": [
+          64
+        ],
+        "as": [
+          65,
+          67
+        ],
+        "well": [
+          66
+        ],
+        "two-channel": [
+          69
+        ],
+        "real-time": [
+          70,
+          126
+        ],
+        "wireless": [
+          71
+        ],
+        "headband": [
+          73,
+          88
+        ],
+        "controlled": [
+          76
+        ],
+        "tablet": [
+          79
+        ],
+        "PC": [
+          80
+        ],
+        "were": [
+          81,
+          91
+        ],
+        "manufactured": [
+          82
+        ],
+        "house.": [
+          84
+        ],
+        "two": [
+          86
+        ],
+        "evaluated": [
+          92
+        ],
+        "existing": [
+          95
+        ],
+        "LABNIRS": [
+          96
+        ],
+        "system": [
+          97
+        ],
+        "verbal": [
+          100
+        ],
+        "fluency": [
+          101
+        ],
+        "task,": [
+          102
+        ],
+        "they": [
+          104
+        ],
+        "exhibited": [
+          105
+        ],
+        "same": [
+          107
+        ],
+        "tendency": [
+          108
+        ],
+        "signals": [
+          111,
+          128
+        ],
+        "different": [
+          114
+        ],
+        "levels": [
+          115
+        ],
+        "at": [
+          116
+        ],
+        "rest": [
+          118
+        ],
+        "task": [
+          120
+        ],
+        "stages.": [
+          121
+        ],
+        "measurement": [
+          123
+        ],
+        "revealed": [
+          129
+        ],
+        "voice": [
+          132
+        ],
+        "breath": [
+          134
+        ],
+        "caused": [
+          135
+        ],
+        "low-frequency": [
+          139
+        ],
+        "fluctuations": [
+          140
+        ],
+        "superimposed": [
+          141
+        ],
+        "on": [
+          142
+        ],
+        "signals.": [
+          145
+        ]
+      },
+      "abstract_inverted_index_v3": null,
+      "cited_by_api_url": "https://api.openalex.org/works?filter=cites:W2607983855",
+      "counts_by_year": [],
+      "updated_date": "2025-01-21T11:32:51.322669",
+      "created_date": "2017-05-05"
+    },
+    {
+      "id": "https://openalex.org/W2546746177",
+      "doi": "https://doi.org/10.1117/12.2245582",
+      "title": "Optical processing deep inside optical materials using counterpropagating pulse-shaped spatial solitons",
+      "display_name": "Optical processing deep inside optical materials using counterpropagating pulse-shaped spatial solitons",
+      "publication_year": 2016,
+      "publication_date": "2016-10-31",
+      "ids": {
+        "openalex": "https://openalex.org/W2546746177",
+        "doi": "https://doi.org/10.1117/12.2245582",
+        "mag": "2546746177"
+      },
+      "language": "en",
+      "primary_location": {
+        "is_oa": false,
+        "landing_page_url": "https://doi.org/10.1117/12.2245582",
+        "pdf_url": null,
+        "source": {
+          "id": "https://openalex.org/S183492911",
+          "display_name": "Proceedings of SPIE, the International Society for Optical Engineering/Proceedings of SPIE",
+          "issn_l": "0277-786X",
+          "issn": [
+            "0277-786X",
+            "1996-756X"
+          ],
+          "is_oa": false,
+          "is_in_doaj": false,
+          "is_indexed_in_scopus": false,
+          "is_core": true,
+          "host_organization": "https://openalex.org/P4310315543",
+          "host_organization_name": "SPIE",
+          "host_organization_lineage": [
+            "https://openalex.org/P4310315543"
+          ],
+          "host_organization_lineage_names": [
+            "SPIE"
+          ],
+          "type": "journal"
+        },
+        "license": null,
+        "license_id": null,
+        "version": null,
+        "is_accepted": false,
+        "is_published": false
+      },
+      "type": "article",
+      "type_crossref": "proceedings-article",
+      "indexed_in": [
+        "crossref"
+      ],
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null,
+        "any_repository_has_fulltext": false
+      },
+      "authorships": [
+        {
+          "author_position": "first",
+          "author": {
+            "id": "https://openalex.org/A5034708867",
+            "display_name": "Masaki Hisaka",
+            "orcid": "https://orcid.org/0000-0001-8482-6675"
+          },
+          "institutions": [
+            {
+              "id": "https://openalex.org/I189513530",
+              "display_name": "Osaka Electro-Communication University",
+              "ror": "https://ror.org/056bksm23",
+              "country_code": "JP",
+              "type": "education",
+              "lineage": [
+                "https://openalex.org/I189513530"
+              ]
+            }
+          ],
+          "countries": [
+            "JP"
+          ],
+          "is_corresponding": true,
+          "raw_author_name": "Masaki Hisaka",
+          "raw_affiliation_strings": [
+            "Osaka Electro-Communication Univ. (Japan)"
+          ],
+          "affiliations": [
+            {
+              "raw_affiliation_string": "Osaka Electro-Communication Univ. (Japan)",
+              "institution_ids": [
+                "https://openalex.org/I189513530"
+              ]
+            }
+          ]
+        }
+      ],
+      "institution_assertions": [],
+      "countries_distinct_count": 1,
+      "institutions_distinct_count": 1,
+      "corresponding_author_ids": [
+        "https://openalex.org/A5034708867"
+      ],
+      "corresponding_institution_ids": [
+        "https://openalex.org/I189513530"
+      ],
+      "apc_list": null,
+      "apc_paid": null,
+      "fwci": 0.0,
+      "has_fulltext": true,
+      "fulltext_origin": "ngrams",
+      "cited_by_count": 0,
+      "citation_normalized_percentile": {
+        "value": 0.0,
+        "is_in_top_1_percent": false,
+        "is_in_top_10_percent": false
+      },
+      "cited_by_percentile_year": {
+        "min": 0,
+        "max": 66
+      },
+      "biblio": {
+        "volume": "10021",
+        "issue": null,
+        "first_page": "100210G",
+        "last_page": "100210G"
+      },
+      "is_retracted": false,
+      "is_paratext": false,
+      "primary_topic": {
+        "id": "https://openalex.org/T10988",
+        "display_name": "Advanced Fiber Laser Technologies",
+        "score": 0.9978,
+        "subfield": {
+          "id": "https://openalex.org/subfields/3107",
+          "display_name": "Atomic and Molecular Physics, and Optics"
+        },
+        "field": {
+          "id": "https://openalex.org/fields/31",
+          "display_name": "Physics and Astronomy"
+        },
+        "domain": {
+          "id": "https://openalex.org/domains/3",
+          "display_name": "Physical Sciences"
+        }
+      },
+      "topics": [
+        {
+          "id": "https://openalex.org/T10988",
+          "display_name": "Advanced Fiber Laser Technologies",
+          "score": 0.9978,
+          "subfield": {
+            "id": "https://openalex.org/subfields/3107",
+            "display_name": "Atomic and Molecular Physics, and Optics"
+          },
+          "field": {
+            "id": "https://openalex.org/fields/31",
+            "display_name": "Physics and Astronomy"
+          },
+          "domain": {
+            "id": "https://openalex.org/domains/3",
+            "display_name": "Physical Sciences"
+          }
+        },
+        {
+          "id": "https://openalex.org/T11575",
+          "display_name": "Nonlinear Photonic Systems",
+          "score": 0.996,
+          "subfield": {
+            "id": "https://openalex.org/subfields/3109",
+            "display_name": "Statistical and Nonlinear Physics"
+          },
+          "field": {
+            "id": "https://openalex.org/fields/31",
+            "display_name": "Physics and Astronomy"
+          },
+          "domain": {
+            "id": "https://openalex.org/domains/3",
+            "display_name": "Physical Sciences"
+          }
+        },
+        {
+          "id": "https://openalex.org/T10566",
+          "display_name": "Laser-Matter Interactions and Applications",
+          "score": 0.9828,
+          "subfield": {
+            "id": "https://openalex.org/subfields/3107",
+            "display_name": "Atomic and Molecular Physics, and Optics"
+          },
+          "field": {
+            "id": "https://openalex.org/fields/31",
+            "display_name": "Physics and Astronomy"
+          },
+          "domain": {
+            "id": "https://openalex.org/domains/3",
+            "display_name": "Physical Sciences"
+          }
+        }
+      ],
+      "keywords": [
+        {
+          "id": "https://openalex.org/keywords/strontium-barium-niobate",
+          "display_name": "Strontium barium niobate",
+          "score": 0.6365614
+        },
+        {
+          "id": "https://openalex.org/keywords/crystal",
+          "display_name": "Crystal (programming language)",
+          "score": 0.6341717
+        },
+        {
+          "id": "https://openalex.org/keywords/harmonic",
+          "display_name": "Harmonic",
+          "score": 0.41808426
+        }
+      ],
+      "concepts": [
+        {
+          "id": "https://openalex.org/C167735695",
+          "wikidata": "https://www.wikidata.org/wiki/Q1777507",
+          "display_name": "Femtosecond",
+          "level": 3,
+          "score": 0.6973962
+        },
+        {
+          "id": "https://openalex.org/C120665830",
+          "wikidata": "https://www.wikidata.org/wiki/Q14620",
+          "display_name": "Optics",
+          "level": 1,
+          "score": 0.65938437
+        },
+        {
+          "id": "https://openalex.org/C2780872166",
+          "wikidata": "https://www.wikidata.org/wiki/Q16865868",
+          "display_name": "Strontium barium niobate",
+          "level": 4,
+          "score": 0.6365614
+        },
+        {
+          "id": "https://openalex.org/C2781285689",
+          "wikidata": "https://www.wikidata.org/wiki/Q21921428",
+          "display_name": "Crystal (programming language)",
+          "level": 2,
+          "score": 0.6341717
+        },
+        {
+          "id": "https://openalex.org/C2780167933",
+          "wikidata": "https://www.wikidata.org/wiki/Q1550652",
+          "display_name": "Pulse (music)",
+          "level": 3,
+          "score": 0.5714548
+        },
+        {
+          "id": "https://openalex.org/C87651913",
+          "wikidata": "https://www.wikidata.org/wiki/Q464949",
+          "display_name": "Soliton",
+          "level": 3,
+          "score": 0.56551784
+        },
+        {
+          "id": "https://openalex.org/C520434653",
+          "wikidata": "https://www.wikidata.org/wiki/Q38867",
+          "display_name": "Laser",
+          "level": 2,
+          "score": 0.53392553
+        },
+        {
+          "id": "https://openalex.org/C121332964",
+          "wikidata": "https://www.wikidata.org/wiki/Q413",
+          "display_name": "Physics",
+          "level": 0,
+          "score": 0.5247048
+        },
+        {
+          "id": "https://openalex.org/C78854221",
+          "wikidata": "https://www.wikidata.org/wiki/Q756033",
+          "display_name": "Nonlinear optics",
+          "level": 3,
+          "score": 0.50064874
+        },
+        {
+          "id": "https://openalex.org/C168834538",
+          "wikidata": "https://www.wikidata.org/wiki/Q3705329",
+          "display_name": "Beam (structure)",
+          "level": 2,
+          "score": 0.4678776
+        },
+        {
+          "id": "https://openalex.org/C192562407",
+          "wikidata": "https://www.wikidata.org/wiki/Q228736",
+          "display_name": "Materials science",
+          "level": 0,
+          "score": 0.4634222
+        },
+        {
+          "id": "https://openalex.org/C60799052",
+          "wikidata": "https://www.wikidata.org/wiki/Q46221",
+          "display_name": "Electric field",
+          "level": 2,
+          "score": 0.4486006
+        },
+        {
+          "id": "https://openalex.org/C30713254",
+          "wikidata": "https://www.wikidata.org/wiki/Q1455635",
+          "display_name": "Second-harmonic generation",
+          "level": 3,
+          "score": 0.43957162
+        },
+        {
+          "id": "https://openalex.org/C127934551",
+          "wikidata": "https://www.wikidata.org/wiki/Q1148098",
+          "display_name": "Harmonic",
+          "level": 2,
+          "score": 0.41808426
+        },
+        {
+          "id": "https://openalex.org/C49040817",
+          "wikidata": "https://www.wikidata.org/wiki/Q193091",
+          "display_name": "Optoelectronics",
+          "level": 1,
+          "score": 0.3464074
+        },
+        {
+          "id": "https://openalex.org/C158622935",
+          "wikidata": "https://www.wikidata.org/wiki/Q660848",
+          "display_name": "Nonlinear system",
+          "level": 2,
+          "score": 0.28293028
+        },
+        {
+          "id": "https://openalex.org/C133386390",
+          "wikidata": "https://www.wikidata.org/wiki/Q184996",
+          "display_name": "Dielectric",
+          "level": 2,
+          "score": 0.073637664
+        },
+        {
+          "id": "https://openalex.org/C62520636",
+          "wikidata": "https://www.wikidata.org/wiki/Q944",
+          "display_name": "Quantum mechanics",
+          "level": 1,
+          "score": 0.0
+        },
+        {
+          "id": "https://openalex.org/C94915269",
+          "wikidata": "https://www.wikidata.org/wiki/Q1834857",
+          "display_name": "Detector",
+          "level": 2,
+          "score": 0.0
+        },
+        {
+          "id": "https://openalex.org/C41008148",
+          "wikidata": "https://www.wikidata.org/wiki/Q21198",
+          "display_name": "Computer science",
+          "level": 0,
+          "score": 0.0
+        },
+        {
+          "id": "https://openalex.org/C79090758",
+          "wikidata": "https://www.wikidata.org/wiki/Q1045739",
+          "display_name": "Ferroelectricity",
+          "level": 3,
+          "score": 0.0
+        },
+        {
+          "id": "https://openalex.org/C199360897",
+          "wikidata": "https://www.wikidata.org/wiki/Q9143",
+          "display_name": "Programming language",
+          "level": 1,
+          "score": 0.0
+        }
+      ],
+      "mesh": [],
+      "locations_count": 1,
+      "locations": [
+        {
+          "is_oa": false,
+          "landing_page_url": "https://doi.org/10.1117/12.2245582",
+          "pdf_url": null,
+          "source": {
+            "id": "https://openalex.org/S183492911",
+            "display_name": "Proceedings of SPIE, the International Society for Optical Engineering/Proceedings of SPIE",
+            "issn_l": "0277-786X",
+            "issn": [
+              "0277-786X",
+              "1996-756X"
+            ],
+            "is_oa": false,
+            "is_in_doaj": false,
+            "is_indexed_in_scopus": false,
+            "is_core": true,
+            "host_organization": "https://openalex.org/P4310315543",
+            "host_organization_name": "SPIE",
+            "host_organization_lineage": [
+              "https://openalex.org/P4310315543"
+            ],
+            "host_organization_lineage_names": [
+              "SPIE"
+            ],
+            "type": "journal"
+          },
+          "license": null,
+          "license_id": null,
+          "version": null,
+          "is_accepted": false,
+          "is_published": false
+        }
+      ],
+      "best_oa_location": null,
+      "sustainable_development_goals": [],
+      "grants": [],
+      "datasets": [],
+      "versions": [],
+      "referenced_works_count": 5,
+      "referenced_works": [
+        "https://openalex.org/W1966509680",
+        "https://openalex.org/W1975982056",
+        "https://openalex.org/W2047927870",
+        "https://openalex.org/W2061972561",
+        "https://openalex.org/W2067181341"
+      ],
+      "related_works": [
+        "https://openalex.org/W3080228278",
+        "https://openalex.org/W2744867079",
+        "https://openalex.org/W2239035031",
+        "https://openalex.org/W2091327371",
+        "https://openalex.org/W2083962211",
+        "https://openalex.org/W2003963696",
+        "https://openalex.org/W1971552855",
+        "https://openalex.org/W1662579491",
+        "https://openalex.org/W1631691792",
+        "https://openalex.org/W1500523605"
+      ],
+      "abstract_inverted_index": {
+        "Optical": [
+          0
+        ],
+        "processing": [
+          1
+        ],
+        "using": [
+          2
+        ],
+        "a": [
+          3,
+          31,
+          38,
+          50,
+          91
+        ],
+        "pair": [
+          4
+        ],
+        "of": [
+          5,
+          30,
+          97,
+          107
+        ],
+        "counterpropagating": [
+          6,
+          45
+        ],
+        "pulse-shaped": [
+          7,
+          39
+        ],
+        "spatial": [
+          8
+        ],
+        "solitons": [
+          9
+        ],
+        "to": [
+          10
+        ],
+        "control": [
+          11
+        ],
+        "the": [
+          12,
+          28,
+          60,
+          81,
+          85,
+          94,
+          98,
+          105
+        ],
+        "molecular": [
+          13
+        ],
+        "structure": [
+          14
+        ],
+        "deep": [
+          15
+        ],
+        "inside": [
+          16
+        ],
+        "an": [
+          17,
+          73
+        ],
+        "optical": [
+          18
+        ],
+        "material": [
+          19
+        ],
+        "is": [
+          20
+        ],
+        "investigated.": [
+          21
+        ],
+        "A": [
+          22
+        ],
+        "femtosecond": [
+          23
+        ],
+        "pulsed": [
+          24
+        ],
+        "laser": [
+          25
+        ],
+        "focused": [
+          26
+        ],
+        "at": [
+          27,
+          59
+        ],
+        "surface": [
+          29
+        ],
+        "strontium": [
+          32
+        ],
+        "barium": [
+          33
+        ],
+        "niobate": [
+          34
+        ],
+        "single": [
+          35
+        ],
+        "crystal": [
+          36,
+          55,
+          70,
+          110
+        ],
+        "induces": [
+          37,
+          90
+        ],
+        "self-focusing": [
+          40
+        ],
+        "second-harmonic": [
+          41,
+          95
+        ],
+        "beam.": [
+          42
+        ],
+        "The": [
+          43,
+          77
+        ],
+        "two": [
+          44
+        ],
+        "beams": [
+          46
+        ],
+        "are": [
+          47,
+          57
+        ],
+        "involved": [
+          48
+        ],
+        "in": [
+          49,
+          93
+        ],
+        "head-on": [
+          51
+        ],
+        "collision.": [
+          52
+        ],
+        "Locally": [
+          53
+        ],
+        "reversed": [
+          54,
+          88,
+          109
+        ],
+        "domains": [
+          56,
+          89
+        ],
+        "formed": [
+          58
+        ],
+        "collision": [
+          61,
+          83
+        ],
+        "point,": [
+          62
+        ],
+        "assisted": [
+          63
+        ],
+        "by": [
+          64
+        ],
+        "external": [
+          65
+        ],
+        "threshold": [
+          66
+        ],
+        "controls": [
+          67
+        ],
+        "such": [
+          68
+        ],
+        "as": [
+          69
+        ],
+        "temperature": [
+          71
+        ],
+        "and": [
+          72,
+          84,
+          100
+        ],
+        "electric": [
+          74
+        ],
+        "dc": [
+          75
+        ],
+        "field.": [
+          76
+        ],
+        "nonlinear": [
+          78
+        ],
+        "interaction": [
+          79
+        ],
+        "between": [
+          80
+        ],
+        "soliton": [
+          82
+        ],
+        "approximate": [
+          86
+        ],
+        "nonperiodic": [
+          87
+        ],
+        "change": [
+          92
+        ],
+        "intensity": [
+          96
+        ],
+        "scattered": [
+          99
+        ],
+        "transmitted": [
+          101
+        ],
+        "beams,": [
+          102
+        ],
+        "thereby": [
+          103
+        ],
+        "enabling": [
+          104
+        ],
+        "detection": [
+          106
+        ],
+        "locally": [
+          108
+        ],
+        "domains.": [
+          111
+        ]
+      },
+      "abstract_inverted_index_v3": null,
+      "cited_by_api_url": "https://api.openalex.org/works?filter=cites:W2546746177",
+      "counts_by_year": [],
+      "updated_date": "2025-01-25T14:13:35.899165",
+      "created_date": "2016-11-11"
+    }
+  ],
+  "timestamp": 1750298458.0901499,
+  "ttl": 259200,
+  "version": "1.0"
+}

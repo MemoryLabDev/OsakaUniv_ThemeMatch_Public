@@ -58,9 +58,29 @@
                 <p v-if="researcherData?.target_researcher?.name_en" class="text-base sm:text-lg text-gray-600 mb-2 break-words">
                   {{ researcherData.target_researcher.name_en }}
                 </p>
-                <p v-if="researcherData?.target_researcher?.affiliation" class="text-sm sm:text-base text-gray-600 break-words">
+                <p v-if="researcherData?.target_researcher?.affiliation" class="text-sm sm:text-base text-gray-600 mb-3 break-words">
                   {{ researcherData.target_researcher.affiliation }}
                 </p>
+                
+                <!-- 分類タグ -->
+                <div v-if="researcherData?.target_researcher?.field_tag || researcherData?.target_researcher?.affiliation_tag" class="mb-3">
+                  <div class="flex flex-wrap gap-2">
+                    <span
+                      v-if="researcherData.target_researcher.field_tag"
+                      :class="getFieldTagClass(researcherData.target_researcher.field_tag)"
+                      class="inline-block px-3 py-1 text-sm rounded-full font-medium"
+                    >
+                      {{ researcherData.target_researcher.field_tag }}
+                    </span>
+                    <span
+                      v-if="researcherData.target_researcher.affiliation_tag"
+                      :class="getAffiliationTagClass(researcherData.target_researcher.affiliation_tag)"
+                      class="inline-block px-3 py-1 text-sm rounded-full font-medium"
+                    >
+                      {{ researcherData.target_researcher.affiliation_tag }}
+                    </span>
+                  </div>
+                </div>
               </div>
 
               <!-- キーワード -->
@@ -280,6 +300,26 @@
                   {{ match.researcher.affiliation }}
                 </p>
                 
+                <!-- 分類タグ -->
+                <div v-if="match.researcher.field_tag || match.researcher.affiliation_tag" class="mb-2 sm:mb-3">
+                  <div class="flex flex-wrap gap-1">
+                    <span
+                      v-if="match.researcher.field_tag"
+                      :class="getFieldTagClass(match.researcher.field_tag)"
+                      class="inline-block px-2 py-0.5 sm:py-1 text-xs rounded-full font-medium"
+                    >
+                      {{ match.researcher.field_tag }}
+                    </span>
+                    <span
+                      v-if="match.researcher.affiliation_tag"
+                      :class="getAffiliationTagClass(match.researcher.affiliation_tag)"
+                      class="inline-block px-2 py-0.5 sm:py-1 text-xs rounded-full font-medium"
+                    >
+                      {{ match.researcher.affiliation_tag }}
+                    </span>
+                  </div>
+                </div>
+                
                 <!-- 共通キーワード -->
                 <div v-if="match.researcher.keywords?.length" class="mb-0 sm:mb-3">
                   <span class="text-xs sm:text-sm text-gray-500 mr-1 sm:mr-2">共通キーワード:</span>
@@ -433,15 +473,24 @@ const loadResearcherData = async () => {
     const config = useRuntimeConfig()
     const baseURL = config.public.baseURL || '/'
     
-    // IDを3桁ゼロパディングしてファイル名を構築
-    const paddedId = String(researcherId).padStart(3, '0')
-    const filename = `researcher_${paddedId}`
-    // baseURLを含む絶対パスを構築
-    const requestUrl = baseURL + `data/researchers/${filename}.json`
+    // まずUID-based fileとして試行  
+    let requestUrl = baseURL + `data/matching_results_${researcherId}.json`
     
-    console.log('Request URL:', requestUrl)
+    console.log('Request URL (UID-based):', requestUrl)
     const data = await $fetch(requestUrl)
     console.log('Loaded data successfully:', !!data.target_researcher)
+    
+    // matched_researchers と theme_proposals を matches 形式にマッピング
+    if (data.matched_researchers && data.theme_proposals) {
+      data.matches = data.matched_researchers.map((researcher, index) => {
+        const theme_proposal = data.theme_proposals[index] || {}
+        return {
+          researcher: researcher,
+          theme_proposal: theme_proposal
+        }
+      })
+      console.log('Mapped data to matches format:', data.matches.length, 'matches')
+    }
     
     researcherData.value = data
     
@@ -477,6 +526,25 @@ const formatFunding = (amount) => {
     return Math.round(amount / 100) / 10 + '万円'
   }
   return Math.round(amount) + '千円'
+}
+
+// 分類タグのスタイル関数
+const getFieldTagClass = (fieldTag) => {
+  if (fieldTag === '医学') {
+    return 'bg-red-100 text-red-800'
+  } else if (fieldTag === '工学') {
+    return 'bg-blue-100 text-blue-800'
+  }
+  return 'bg-gray-100 text-gray-800'
+}
+
+const getAffiliationTagClass = (affiliationTag) => {
+  if (affiliationTag === 'アカデミア') {
+    return 'bg-green-100 text-green-800'
+  } else if (affiliationTag === '企業') {
+    return 'bg-purple-100 text-purple-800'
+  }
+  return 'bg-gray-100 text-gray-800'
 }
 
 // 初期化

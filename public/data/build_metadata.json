@@ -1,0 +1,20 @@
+{
+  "total_researchers": 65,
+  "successful_builds": 65,
+  "failed_builds": 0,
+  "cache_statistics": {
+    "hits": 0,
+    "misses": 66,
+    "hit_rate": 0.0
+  },
+  "kaken_statistics": {
+    "researchers_with_kaken": 31,
+    "coverage": 0.47692307692307695
+  },
+  "last_updated": "2025-06-20T00:04:49.511234",
+  "build_settings": {
+    "force_rebuild": true,
+    "uid_based": true,
+    "legacy_support": true
+  }
+}

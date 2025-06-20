@@ -263,14 +263,105 @@
 
               <div v-if="matches?.length" class="space-y-6 sm:space-y-8">
                 <div
-                  v-for="(match, index) in matches.slice(0, showAllMatches ? undefined : (isMobile ? 3 : 5))"
+                  v-for="(match, index) in matches.slice(0, showAllMatches ? undefined : 15)"
                   :key="index"
                   class="border border-gray-200 rounded-lg"
                 >
                   <!-- マッチした研究者情報 -->
                   <div class="flex flex-col sm:flex-row sm:items-start sm:justify-between p-4 sm:p-6 border-b border-gray-200">
                     <div class="flex-1 min-w-0 mb-3 sm:mb-0">
-                      <h3 class="text-base sm:text-lg lg:text-xl font-semibold text-gray-900 mb-1 break-words">{{ match.researcher.name }}</h3>
+                      <div class="relative">
+                        <h3 
+                          class="text-base sm:text-lg lg:text-xl font-semibold text-gray-900 mb-1 break-words cursor-pointer hover:text-blue-600 transition-colors" 
+                          @mouseenter="showResearcherPopover(match.researcher, index)"
+                          @mouseleave="hideResearcherPopover"
+                          :class="{ 'text-blue-600': isResearcherPublic(match.researcher) }"
+                        >
+                          {{ match.researcher.name }}
+                          <span v-if="isResearcherPublic(match.researcher)" class="ml-1 text-xs text-blue-500">👤</span>
+                        </h3>
+                        
+                        <!-- Research Popover -->
+                        <div 
+                          v-if="activePopover === index && isResearcherPublic(match.researcher)"
+                          class="absolute z-50 mt-2 w-80 sm:w-96 bg-white rounded-lg shadow-xl border border-gray-200 p-4 left-0 top-full"
+                          @mouseenter="keepPopoverOpen"
+                          @mouseleave="hideResearcherPopover"
+                        >
+                          <div class="space-y-3">
+                            <!-- Researcher Name -->
+                            <div class="border-b border-gray-100 pb-2">
+                              <h4 class="font-semibold text-gray-900 text-base">{{ match.researcher.name }}</h4>
+                              <p v-if="match.researcher.name_en" class="text-sm text-gray-600">{{ match.researcher.name_en }}</p>
+                            </div>
+                            
+                            <!-- Classification Tags -->
+                            <div v-if="match.researcher.field_tag || match.researcher.affiliation_tag" class="mb-2">
+                              <h5 class="text-xs font-medium text-gray-700 mb-1">分類</h5>
+                              <div class="flex flex-wrap gap-1">
+                                <span
+                                  v-if="match.researcher.field_tag"
+                                  :class="getFieldTagClass(match.researcher.field_tag)"
+                                  class="inline-block px-2 py-1 text-xs rounded-full font-medium"
+                                >
+                                  {{ match.researcher.field_tag }}
+                                </span>
+                                <span
+                                  v-if="match.researcher.affiliation_tag"
+                                  :class="getAffiliationTagClass(match.researcher.affiliation_tag)"
+                                  class="inline-block px-2 py-1 text-xs rounded-full font-medium"
+                                >
+                                  {{ match.researcher.affiliation_tag }}
+                                </span>
+                              </div>
+                            </div>
+                            
+                            <!-- Affiliation -->
+                            <div v-if="match.researcher.affiliation">
+                              <h5 class="text-xs font-medium text-gray-700 mb-1">所属</h5>
+                              <p class="text-sm text-gray-600">{{ match.researcher.affiliation }}</p>
+                            </div>
+                            
+                            <!-- Keywords -->
+                            <div v-if="match.researcher.keywords?.length">
+                              <h5 class="text-xs font-medium text-gray-700 mb-2">研究キーワード</h5>
+                              <div class="flex flex-wrap gap-1">
+                                <span
+                                  v-for="keyword in match.researcher.keywords.slice(0, 8)"
+                                  :key="keyword"
+                                  class="inline-block px-2 py-1 text-xs bg-blue-100 text-blue-800 rounded-full"
+                                >
+                                  {{ keyword }}
+                                </span>
+                                <span
+                                  v-if="match.researcher.keywords.length > 8"
+                                  class="inline-block px-2 py-1 text-xs bg-gray-100 text-gray-600 rounded-full"
+                                >
+                                  +{{ match.researcher.keywords.length - 8 }}個
+                                </span>
+                              </div>
+                            </div>
+                            
+                            <!-- Abstract -->
+                            <div v-if="match.researcher.abstract">
+                              <h5 class="text-xs font-medium text-gray-700 mb-1">研究概要</h5>
+                              <p class="text-sm text-gray-600 leading-relaxed line-clamp-4">
+                                {{ match.researcher.abstract.length > 200 ? match.researcher.abstract.substring(0, 200) + '...' : match.researcher.abstract }}
+                              </p>
+                            </div>
+                            
+                            <!-- Privacy indicator -->
+                            <div class="flex items-center justify-between pt-2 border-t border-gray-100">
+                              <span class="text-xs text-green-600 flex items-center">
+                                <svg class="w-3 h-3 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                </svg>
+                                プロフィール公開中
+                              </span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
                       <p v-if="match.researcher.affiliation" class="text-xs sm:text-sm lg:text-base text-gray-600 mb-2 sm:mb-3 break-words">{{ match.researcher.affiliation }}</p>
                       
                       <!-- 共通キーワード -->
@@ -405,7 +496,8 @@ const {
   authInitialized,
   firebaseReady,
   logout, 
-  getUserProfile
+  getUserProfile,
+  getPublicUsers
 } = useFirebase()
 const router = useRouter()
 
@@ -421,6 +513,11 @@ const showAllThemes = ref(false)
 const showKakenDetails = ref(false)
 const showAllProposalKeywords = ref({})
 const isMobile = ref(false)
+
+// ポップオーバー関連
+const activePopover = ref(null)
+const popoverTimeout = ref(null)
+const publicUsers = ref([])
 
 
 // ページメタ設定
@@ -509,117 +606,63 @@ watch(currentUser, async (user) => {
 }, { immediate: true })
 
 // 初期化
-onMounted(() => {
+onMounted(async () => {
   checkMobile()
   window.addEventListener('resize', checkMobile)
+  
+  // 公開ユーザー一覧を取得
+  try {
+    publicUsers.value = await getPublicUsers()
+    console.log('Public users loaded:', publicUsers.value.length)
+  } catch (error) {
+    console.error('Failed to load public users:', error)
+  }
 })
 
 onUnmounted(() => {
   if (process.client) {
     window.removeEventListener('resize', checkMobile)
   }
+  
+  // ポップオーバーのタイムアウトをクリア
+  if (popoverTimeout.value) {
+    clearTimeout(popoverTimeout.value)
+  }
 })
 
-// メールアドレスから日本語名へのマッピング
-const emailToNameMapping = {
-  'admin@memorylab.jp': '管理者',
-  'akikusa_naota@memorylab.handai.jp': '秋草直大',
-  'iizuka_takafumi@memorylab.handai.jp': '飯塚 崇文',
-  'kazushi_ikeda@memorylab.handai.jp': '池田和司',
-  'atsushi_ishikawa@memorylab.handai.jp': '石川　篤',
-  'mayuko_izumi@memorylab.handai.jp': '泉　真祐子',
-  'tadashi_itoh@memorylab.handai.jp': '伊藤　正',
-  'hiroyuki_inoue@memorylab.handai.jp': '井上　博行',
-  'takeshi_imamura@memorylab.handai.jp': '今村健志',
-  'yoshihiko_karube@memorylab.handai.jp': '軽部　義彦',
-  'shinsuke_kawai@memorylab.handai.jp': '河合　伸介',
-  'yuki_kawamoto@memorylab.handai.jp': '川本　雄紀',
-  'hiroshi_kera@memorylab.handai.jp': '螻　洋',
-  'masayuki_koga@memorylab.handai.jp': '古賀　雅行',
-  'saki_komura@memorylab.handai.jp': '小村　沙紀',
-  'hiroyuki_kondoh@memorylab.handai.jp': '近藤　浩之',
-  'jin_meihua@memorylab.handai.jp': '金　美花',
-  'naoki_mukoyama@memorylab.handai.jp': '向山　直輝',
-  'takuya_miyashita@memorylab.handai.jp': '宮下　卓也',
-  'takahito_nakajima@memorylab.handai.jp': '中島　敬人',
-  'kazuhiko_nakamura@memorylab.handai.jp': '中村　和彦',
-  'hironobu_nishikawa@memorylab.handai.jp': '西川　紘展',
-  'kazuya_nomura@memorylab.handai.jp': '野村　和也',
-  'takahiro_ogawa@memorylab.handai.jp': '小川　敬大',
-  'yusuke_okubo@memorylab.handai.jp': '大久保雄介',
-  'shingo_okamoto@memorylab.handai.jp': '岡本　伸悟',
-  'yuna_oki@memorylab.handai.jp': '沖　祐奈',
-  'taiga_osawa@memorylab.handai.jp': '大澤　大河',
-  'akiko_sato@memorylab.handai.jp': '佐藤　明子',
-  'kazushi_shimizu@memorylab.handai.jp': '清水　和志',
-  'kentaro_takeuchi@memorylab.handai.jp': '竹内　健太郎',
-  'katsumasa_fujita@memorylab.handai.jp': '藤田 克昌',
-  'atsushi_fukuda@memorylab.handai.jp': '福田　篤',
-  'kenta_yamamoto@memorylab.handai.jp': '山本　健太',
-  'takeshi_yasuda@memorylab.handai.jp': '安田　毅志',
-  'masayuki_yoshida@memorylab.handai.jp': '吉田　雅之'
-}
 
 // マッチングデータ読み込み関数
 const loadMatchingData = async (user) => {
-  if (!user?.email) {
+  if (!user?.uid) {
+    console.warn('🔍 loadMatchingData: No user UID provided')
     return
   }
   
   try {
-    console.log('🔍 Loading matching data for:', user.email)
+    console.log('🔍 Loading matching data for Firebase UID:', user.uid)
     matchingDataError.value = false
     
-    const config = useRuntimeConfig()
-    const baseURL = config.public.baseURL || '/'
+    // Firebase composable から新しいマッチングデータ取得関数を使用
+    const { getUserMatchingData } = useFirebase()
     
-    // メールアドレスから日本語名を取得
-    const japaneseName = emailToNameMapping[user.email]
+    const data = await getUserMatchingData(user.uid)
     
-    
-    if (!japaneseName) {
-      console.log('❌ Email not found in mapping:', user.email)
-      console.log('❌ Available mappings:', Object.keys(emailToNameMapping))
+    if (data) {
+      console.log('✅ Successfully loaded matching data for user:', user.uid)
+      matchingData.value = data
+    } else {
+      console.warn('❌ No matching data found for user:', user.uid)
       matchingDataError.value = true
-      return
     }
-    
-    // マッチング結果ファイル名を構築（日本語名使用）
-    const filename = `matching_results_${japaneseName}`
-    const requestUrl = baseURL + `data/${filename}.json`
-    
-    
-    console.log('🔍 Attempting to load:', requestUrl)
-    console.log('🔍 Japanese name mapping:', user.email, '->', japaneseName)
-    
-    const data = await $fetch(requestUrl)
-    console.log('✅ Matching data loaded successfully')
-    console.log('✅ Data structure:', {
-      hasTargetResearcher: !!data?.target_researcher,
-      hasMatches: !!data?.matches,
-      hasKakenTrend: !!data?.kaken_trend_analysis,
-      matchCount: data?.matches?.length || 0
-    })
-    
-    matchingData.value = data
     
   } catch (err) {
     console.error('❌ Matching data loading error:', err)
     console.error('❌ Error details:', {
       message: err.message,
-      status: err.status,
-      statusText: err.statusText,
-      url: err.url
+      stack: err.stack
     })
     
-    
-    if (err.status === 404) {
-      console.log('📄 Matching data file not found, showing error message')
-      matchingDataError.value = true
-    } else {
-      console.error('⚠️ Unexpected error loading matching data:', err.message)
-      matchingDataError.value = true
-    }
+    matchingDataError.value = true
   }
 }
 
@@ -689,5 +732,63 @@ const formatDate = (timestamp) => {
     hour: '2-digit',
     minute: '2-digit'
   })
+}
+
+// 研究者ポップオーバー関連
+const showResearcherPopover = (researcher, index) => {
+  if (!isResearcherPublic(researcher)) return
+  
+  // 既存のタイムアウトをクリア
+  if (popoverTimeout.value) {
+    clearTimeout(popoverTimeout.value)
+    popoverTimeout.value = null
+  }
+  
+  activePopover.value = index
+}
+
+const hideResearcherPopover = () => {
+  // 少し遅延してから非表示にする（マウスが移動する時間を確保）
+  popoverTimeout.value = setTimeout(() => {
+    activePopover.value = null
+  }, 150)
+}
+
+const keepPopoverOpen = () => {
+  if (popoverTimeout.value) {
+    clearTimeout(popoverTimeout.value)
+    popoverTimeout.value = null
+  }
+}
+
+// 研究者がプロフィール公開しているかチェック
+const isResearcherPublic = (researcher) => {
+  if (!researcher || !researcher.name) return false
+  
+  // 公開ユーザー一覧から研究者名で直接検索
+  return publicUsers.value.some(
+    user => user.display_name === researcher.name && 
+            user.privacy_settings?.public_profile && 
+            user.privacy_settings?.show_in_search
+  )
+}
+
+// 分類タグのスタイリング関数
+const getFieldTagClass = (fieldTag) => {
+  if (fieldTag === '医学') {
+    return 'bg-red-100 text-red-800'
+  } else if (fieldTag === '工学') {
+    return 'bg-blue-100 text-blue-800'
+  }
+  return 'bg-gray-100 text-gray-800'
+}
+
+const getAffiliationTagClass = (affiliationTag) => {
+  if (affiliationTag === 'アカデミア') {
+    return 'bg-green-100 text-green-800'
+  } else if (affiliationTag === '企業') {
+    return 'bg-purple-100 text-purple-800'
+  }
+  return 'bg-gray-100 text-gray-800'
 }
 </script>

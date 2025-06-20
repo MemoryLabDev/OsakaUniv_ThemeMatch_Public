@@ -352,6 +352,110 @@ export const useFirebase = () => {
     return dbRef($firebaseDB, path)
   }
   
+  // UID マッピング取得: Firebase UID から deterministic UID への変換
+  const getUserMatchingUID = async (firebaseUID) => {
+    console.log('🔗 getUserMatchingUID: Looking up matching UID for Firebase UID:', firebaseUID)
+    
+    if (!firebaseUID) {
+      console.warn('🔗 getUserMatchingUID: No Firebase UID provided')
+      return null
+    }
+    
+    try {
+      // uid_index.json から全ての研究者データを取得
+      const config = useRuntimeConfig()
+      const baseURL = config.public.baseURL || '/'
+      const uidIndexUrl = baseURL + 'data/uid_index.json'
+      const uidIndex = await $fetch(uidIndexUrl)
+      
+      // user_profiles.json から Firebase UID に対応するユーザー情報を取得
+      const userProfilesUrl = baseURL + 'auth/user_profiles.json'
+      const userProfiles = await $fetch(userProfilesUrl)
+      
+      // Firebase UID からユーザー情報を取得
+      const userProfile = userProfiles[firebaseUID]
+      if (!userProfile) {
+        console.warn('🔗 getUserMatchingUID: User profile not found for Firebase UID:', firebaseUID)
+        return null
+      }
+      
+      const userEmail = userProfile.email
+      const userName = userProfile.display_name
+      
+      console.log('🔗 getUserMatchingUID: Found user profile:', { email: userEmail, name: userName })
+      
+      // uid_index.json から研究者名またはメールでマッチング
+      for (const [deterministicUID, researcherData] of Object.entries(uidIndex)) {
+        // 研究者名での照合
+        if (researcherData.name === userName) {
+          console.log('🔗 getUserMatchingUID: Found match by name:', { deterministicUID, name: researcherData.name })
+          return deterministicUID
+        }
+        
+        // メールアドレスでの照合 (もし今後メールアドレスがuid_indexに追加される場合)
+        if (researcherData.email && researcherData.email.includes(userName)) {
+          console.log('🔗 getUserMatchingUID: Found match by email pattern:', { deterministicUID, email: researcherData.email })
+          return deterministicUID
+        }
+      }
+      
+      console.warn('🔗 getUserMatchingUID: No matching researcher found for user:', { email: userEmail, name: userName })
+      return null
+      
+    } catch (error) {
+      console.error('🔗 getUserMatchingUID: Error occurred:', error)
+      return null
+    }
+  }
+  
+  // ユーザーのマッチングデータを取得
+  const getUserMatchingData = async (firebaseUID) => {
+    console.log('📊 getUserMatchingData: Getting matching data for Firebase UID:', firebaseUID)
+    
+    try {
+      // 直接 Firebase UID でマッチングファイルを取得
+      const config = useRuntimeConfig()
+      const baseURL = config.public.baseURL || '/'
+      // キャッシュバスターを追加して強制的に新しいファイルを読み込み
+      const cacheBuster = Date.now()
+      const matchingDataUrl = `${baseURL}data/matching_results_${firebaseUID}.json?v=${cacheBuster}`
+      
+      console.log('📊 getUserMatchingData: Fetching matching data from:', matchingDataUrl)
+      console.log('🔥 CACHE BUSTER: Force reload with timestamp:', cacheBuster)
+      
+      const matchingData = await $fetch(matchingDataUrl, {
+        headers: {
+          'Cache-Control': 'no-cache',
+          'Pragma': 'no-cache'
+        }
+      })
+      
+      // matched_researchers と theme_proposals を matches 形式にマッピング
+      if (matchingData.matched_researchers && matchingData.theme_proposals) {
+        matchingData.matches = matchingData.matched_researchers.map((researcher, index) => {
+          const theme_proposal = matchingData.theme_proposals[index] || {}
+          return {
+            researcher: researcher,
+            theme_proposal: theme_proposal
+          }
+        })
+        console.log('📊 getUserMatchingData: Mapped data to matches format:', matchingData.matches.length, 'matches')
+      }
+      
+      console.log('🔥 CRITICAL DEBUG: Raw matched_researchers count:', matchingData.matched_researchers?.length || 0)
+      console.log('🔥 CRITICAL DEBUG: Raw theme_proposals count:', matchingData.theme_proposals?.length || 0)
+      console.log('🔥 CRITICAL DEBUG: Final matches count:', matchingData.matches?.length || 0)
+      console.log('🔥 CRITICAL DEBUG: File size estimate:', JSON.stringify(matchingData).length, 'characters')
+      
+      console.log('📊 getUserMatchingData: Successfully loaded matching data')
+      return matchingData
+      
+    } catch (error) {
+      console.error('📊 getUserMatchingData: Error occurred:', error)
+      return null
+    }
+  }
+  
   return {
     // 状態
     currentUser: readonly(currentUser),
@@ -370,6 +474,10 @@ export const useFirebase = () => {
     createUserProfile,
     getPublicUsers,
     watchPublicUsers,
+    
+    // マッチングデータ
+    getUserMatchingUID,
+    getUserMatchingData,
     
     // 汎用
     getDatabaseRef

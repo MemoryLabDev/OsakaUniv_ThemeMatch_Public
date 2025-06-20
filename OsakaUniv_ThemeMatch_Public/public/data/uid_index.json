@@ -1,0 +1,20 @@
+{
+  "a460df18922cb6b000eef3565e41": {
+    "uid": "a460df18922cb6b000eef3565e41",
+    "name": "石川　篤",
+    "name_en": "Atsushi Ishikawa",
+    "affiliation": "パナソニックホールディング株式会社",
+    "openalex_id": "a5011431768",
+    "email": "石川　篤@osaka-u.ac.jp",
+    "has_matching_data": true,
+    "total_matches": 6,
+    "max_similarity": 0.4985944837331773,
+    "has_kaken": false,
+    "cached": false,
+    "last_updated": "2025-06-11T09:02:45.777757",
+    "build_info": {
+      "force_rebuild": true,
+      "build_time": "2025-06-11T09:02:45.777770"
+    }
+  }
+}

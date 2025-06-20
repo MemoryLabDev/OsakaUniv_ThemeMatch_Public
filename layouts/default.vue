@@ -46,6 +46,21 @@
               統計情報
             </NuxtLink>
             
+            <!-- 管理者のみ管理ページ表示 -->
+            <NuxtLink 
+              v-if="isAdmin"
+              to="/admin" 
+              class="text-gray-600 hover:text-gray-900 px-3 py-2 rounded-md text-sm font-medium transition-colors"
+              :class="{ 'text-blue-600 bg-blue-50': $route.path === '/admin' }"
+            >
+              管理
+            </NuxtLink>
+            
+            <!-- デバッグ情報表示 -->
+            <div class="text-xs text-gray-400 px-2">
+              Admin: {{ isAdmin ? 'Yes' : 'No' }} | User: {{ currentUser?.email || 'None' }}
+            </div>
+            
             <!-- ユーザーアカウントメニュー -->
             <div class="relative" v-if="isAuthenticated">
               <button
@@ -178,6 +193,23 @@
             </div>
           </NuxtLink>
           
+          <!-- 管理者のみ管理ページ表示 -->
+          <NuxtLink 
+            v-if="isAdmin"
+            to="/admin" 
+            @click="isMobileMenuOpen = false"
+            class="block px-3 py-3 rounded-md text-base font-medium transition-colors"
+            :class="$route.path === '/admin' ? 'text-blue-600 bg-blue-50' : 'text-gray-700 hover:text-gray-900 hover:bg-gray-50'"
+          >
+            <div class="flex items-center">
+              <svg class="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+              </svg>
+              管理
+            </div>
+          </NuxtLink>
+          
           <!-- ログアウトボタン（認証済みユーザーのみ） -->
           <button 
             v-if="isAuthenticated"
@@ -245,6 +277,28 @@ const userInitials = computed(() => {
   return displayName.substring(0, 1).toUpperCase()
 })
 
+// 管理者判定
+const isAdmin = computed(() => {
+  if (!currentUser.value) {
+    console.log('🔐 Admin check: No current user')
+    return false
+  }
+  
+  const userEmail = currentUser.value.email
+  const isAdminFlag = currentUser.value.isAdmin === true
+  const isAdminEmail = userEmail === 'admin@memorylab.jp'
+  const result = isAdminEmail || isAdminFlag
+  
+  console.log('🔐 Admin check:', {
+    userEmail,
+    isAdminFlag,
+    isAdminEmail,
+    result
+  })
+  
+  return result
+})
+
 // ログアウト処理
 const handleLogout = async () => {
   try {
@@ -262,6 +316,19 @@ watch(() => useRoute().path, () => {
   isMobileMenuOpen.value = false
   isUserMenuOpen.value = false
 })
+
+// ユーザー情報の変更を監視（デバッグ用）
+watch(currentUser, (newUser) => {
+  console.log('👤 Current user changed:', newUser)
+  if (newUser) {
+    console.log('👤 User details:', {
+      uid: newUser.uid,
+      email: newUser.email,
+      displayName: newUser.displayName,
+      isAdmin: newUser.isAdmin
+    })
+  }
+}, { immediate: true })
 
 // 外部クリック時にメニューを閉じる
 onMounted(() => {
