@@ -2,7 +2,7 @@ name: Deploy to GitHub Pages
 
 on:
   push:
-    branches: [main, master]   # ← main と master 両方
+    branches: [main, master]
   workflow_dispatch:
 
 permissions:
@@ -34,13 +34,11 @@ jobs:
       - name: Configure GitHub Pages
         uses: actions/configure-pages@v4
 
-      # 4) (任意) キャッシュ復元
-      - name: Restore Nuxt cache
+      # 4) キャッシュ復元（.output は除外）
+      - name: Restore npm cache
         uses: actions/cache@v4
         with:
-          path: |
-            node_modules         # 依存モジュール
-            .output              # ビルド成果物 (再生成を早くする)
+          path: node_modules
           key: nuxt-${{ runner.os }}-${{ hashFiles('package-lock.json') }}
           restore-keys: nuxt-${{ runner.os }}-
 
@@ -48,16 +46,20 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      # 6) 静的サイトを生成
+      # 6) 旧ビルドの残骸を削除
+      - name: Clean previous build
+        run: rm -rf .output
+
+      # 7) 静的サイト生成
       - name: Generate static site with Nuxt
         run: |
           echo "==> nuxt generate start"
-          npx nuxi generate        # Nuxt3 / Nuxt2 の場合は npm run generate
+          npx nuxi generate          # Nuxt3／Nuxt2 は npm run generate
         env:
           NODE_ENV: production
           NODE_OPTIONS: --max-old-space-size=4096
 
-      # 7) ビルド内容の確認 (デバッグ用)
+      # 8) ビルド内容の確認（任意）
       - name: Inspect build output
         run: |
           du -sh .output || true
@@ -65,18 +67,16 @@ jobs:
           echo "------ .output/public preview ------"
           ls -la .output/public | head -n 20
 
-      # 8) GitHub Pages 用にアーティファクトを整形
+      # 9) アーティファクト整形
       - name: Prepare artifact for Pages
         run: |
           mkdir upload
-          # シンボリックリンクを実体化しつつ node_modules は除外
           rsync -a --copy-links --delete \
-                --exclude='node_modules' \
+                --exclude='*/node_modules/**' \
                 .output/public/ upload/
-          # Jekyll 無効化
-          touch upload/.nojekyll
+          touch upload/.nojekyll     # Jekyll 無効化
 
-      # 9) アーティファクトアップロード
+      # 10) アーティファクトアップロード
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
         with:
