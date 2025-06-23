@@ -9,7 +9,7 @@ export default defineNuxtConfig({
   
   // GitHub Pages用の設定
   nitro: {
-    preset: 'static',
+    preset: 'github_pages',
     prerender: {
       routes: ['/'],
       failOnError: false,

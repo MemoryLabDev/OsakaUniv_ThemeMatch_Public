@@ -2,7 +2,7 @@ name: Deploy to GitHub Pages
 
 on:
   push:
-    branches: [main, master]
+    branches: [main, master]   # ← main と master 両方
   workflow_dispatch:
 
 permissions:
@@ -17,74 +17,78 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
+
     steps:
-      - name: Checkout
+      # 1) ソース取得
+      - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Setup Node.js
+      # 2) Node.js セットアップ
+      - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '20'
-          cache: 'npm'
+          node-version: 20
+          cache: npm
 
-      - name: Setup Pages
+      # 3) GitHub Pages 設定
+      - name: Configure GitHub Pages
         uses: actions/configure-pages@v4
 
-      - name: Restore cache
+      # 4) (任意) キャッシュ復元
+      - name: Restore Nuxt cache
         uses: actions/cache@v4
         with:
           path: |
-            .output
-            .nuxt
-            node_modules
-          key: ${{ runner.os }}-nuxt-build-${{ hashFiles('package-lock.json') }}
-          restore-keys: |
-            ${{ runner.os }}-nuxt-build-
+            node_modules         # 依存モジュール
+            .output              # ビルド成果物 (再生成を早くする)
+          key: nuxt-${{ runner.os }}-${{ hashFiles('package-lock.json') }}
+          restore-keys: nuxt-${{ runner.os }}-
 
+      # 5) 依存関係インストール
       - name: Install dependencies
         run: npm ci
 
-      - name: Static HTML export with Nuxt
+      # 6) 静的サイトを生成
+      - name: Generate static site with Nuxt
         run: |
-          echo "Building with NODE_ENV=production"
-          npm run generate
+          echo "==> nuxt generate start"
+          npx nuxi generate        # Nuxt3 / Nuxt2 の場合は npm run generate
         env:
           NODE_ENV: production
           NODE_OPTIONS: --max-old-space-size=4096
 
-      - name: List build output
+      # 7) ビルド内容の確認 (デバッグ用)
+      - name: Inspect build output
         run: |
-          echo "Build output contents:"
-          ls -la .output/
-          if [ -d ".output/public" ]; then
-            echo "Public directory contents:"
-            ls -la .output/public/
-          else
-            echo "ERROR: .output/public directory not found"
-            exit 1
-          fi
+          du -sh .output || true
+          ls -la .output | head -n 20
+          echo "------ .output/public preview ------"
+          ls -la .output/public | head -n 20
 
-      - name: Prepare for upload
+      # 8) GitHub Pages 用にアーティファクトを整形
+      - name: Prepare artifact for Pages
         run: |
-          # Create a clean directory for upload
-          mkdir -p upload
-          # Copy all files to avoid hard link issues
-          cp -r .output/public/* upload/ 2>/dev/null || cp -r .output/public/. upload/
-          # Add .nojekyll to disable Jekyll processing
+          mkdir upload
+          # シンボリックリンクを実体化しつつ node_modules は除外
+          rsync -a --copy-links --delete \
+                --exclude='node_modules' \
+                .output/public/ upload/
+          # Jekyll 無効化
           touch upload/.nojekyll
-          echo "Upload directory prepared successfully"
 
-      - name: Upload artifact
+      # 9) アーティファクトアップロード
+      - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
         with:
           path: ./upload
 
   deploy:
+    needs: build
+    runs-on: ubuntu-latest
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
-    runs-on: ubuntu-latest
-    needs: build
+
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
