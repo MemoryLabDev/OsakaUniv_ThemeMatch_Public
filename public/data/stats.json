@@ -1,15 +1,28 @@
 {
   "total_researchers": 1,
-  "total_proposals": 6,
+  "total_proposals": 15,
+  "cache_statistics": {
+    "hits": 0,
+    "misses": 2,
+    "hit_rate": 0.0,
+    "cached_builds": 0,
+    "fresh_builds": 1
+  },
   "similarity_scores": {
-    "mean": 0.7974648535251617,
-    "median": 0.7974648535251617,
-    "std": 0,
-    "min": 0.7974648535251617,
-    "max": 0.7974648535251617
+    "mean": 0.48477577269077304,
+    "median": 0.48477577269077304,
+    "min": 0.48477577269077304,
+    "max": 0.48477577269077304
   },
-  "top_keywords": {
-    "keyword_藤田 克昌": 1
+  "kaken_statistics": {
+    "researchers_with_kaken": 1,
+    "kaken_coverage": 1.0
   },
-  "last_build": "2025-06-10T16:55:35.610675"
+  "build_info": {
+    "force_rebuild": false,
+    "last_build": "2025-06-23T10:33:57.224052",
+    "successful_builds": 1,
+    "failed_builds": 0,
+    "uid_mappings": 1
+  }
 }

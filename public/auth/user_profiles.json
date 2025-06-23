@@ -1,0 +1,28 @@
+{
+  "46da2a91ef2b277ee73c33fb6eb6": {
+    "uid": "46da2a91ef2b277ee73c33fb6eb6",
+    "email": "katsumasa_fujita@memorylab.handai.jp",
+    "display_name": "藤田 克昌",
+    "name_en": "",
+    "affiliation": "大阪大学",
+    "openalex_id": "a5020194069",
+    "created_at": 1750642437.223073,
+    "updated_at": 1750642437.223081,
+    "privacy_settings": {
+      "public_profile": false,
+      "show_in_search": false,
+      "allow_collaboration": true
+    },
+    "matching_data": {
+      "has_data": true,
+      "total_matches": 15,
+      "max_similarity": 0.48477577269077304,
+      "last_updated": "2025-06-23T10:33:57.223083",
+      "cached": false
+    },
+    "kaken_data": {
+      "has_kaken": true,
+      "last_updated": "2025-06-23T10:33:57.223105"
+    }
+  }
+}
