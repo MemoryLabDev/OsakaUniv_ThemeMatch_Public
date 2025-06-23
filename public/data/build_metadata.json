@@ -1,19 +1,19 @@
 {
-  "total_researchers": 65,
-  "successful_builds": 65,
+  "total_researchers": 1,
+  "successful_builds": 1,
   "failed_builds": 0,
   "cache_statistics": {
     "hits": 0,
-    "misses": 66,
+    "misses": 2,
     "hit_rate": 0.0
   },
   "kaken_statistics": {
-    "researchers_with_kaken": 31,
-    "coverage": 0.47692307692307695
+    "researchers_with_kaken": 1,
+    "coverage": 1.0
   },
-  "last_updated": "2025-06-20T00:04:49.511234",
+  "last_updated": "2025-06-23T10:33:57.214122",
   "build_settings": {
-    "force_rebuild": true,
+    "force_rebuild": false,
     "uid_based": true,
     "legacy_support": true
   }
