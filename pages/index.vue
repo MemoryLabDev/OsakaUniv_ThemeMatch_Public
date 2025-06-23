@@ -50,7 +50,7 @@
           </div>
 
           <!-- マッチング結果が見つかった場合 -->
-          <div v-else-if="matchingData" class="space-y-6">
+          <div v-if="matchingData" class="space-y-6">
             <!-- ユーザー研究情報 -->
             <div class="bg-white rounded-lg shadow">
               <!-- ヘッダーセクション -->
@@ -527,39 +527,20 @@ useHead({
 
 // 未認証ユーザーをログインページにリダイレクト（認証初期化後）
 watch(authInitialized, (initialized) => {
-  
   if (initialized && !isAuthenticated.value) {
-    console.log('🏠 Home: Auth initialized but user not authenticated, redirecting to login')
     router.push('/auth/login')
   }
 }, { immediate: true })
 
 // ユーザー情報読み込み
 watch(currentUser, async (user) => {
-  console.log('🏠 Dashboard: User changed:', user?.email || 'null')
-  
   if (user) {
     try {
-      console.log('🏠 Dashboard: Loading user profile...')
-      console.log('🏠 Dashboard: User UID:', user.uid)
-      console.log('🏠 Dashboard: User email:', user.email)
-      
       const profile = await getUserProfile(user.uid)
-      console.log('🏠 Dashboard: getUserProfile result:', profile)
       
       if (profile) {
-        console.log('🏠 Dashboard: User profile loaded:', profile.name || 'no name')
-        console.log('🏠 Dashboard: Profile data:', {
-          name: profile.name,
-          display_name: profile.display_name,
-          email: profile.email,
-          privacy_settings: profile.privacy_settings
-        })
         userProfile.value = profile
       } else {
-        console.log('🏠 Dashboard: No user profile found - profile is null/undefined')
-        console.log('🏠 Dashboard: Attempting to create default profile...')
-        
         // デフォルトプロフィールを作成
         const defaultProfile = {
           uid: user.uid,
@@ -580,27 +561,17 @@ watch(currentUser, async (user) => {
           const createResult = await createUserProfile(user.uid, defaultProfile)
           
           if (createResult.success) {
-            console.log('🏠 Dashboard: Default profile created successfully')
             userProfile.value = defaultProfile
-          } else {
-            console.log('🏠 Dashboard: Failed to create default profile:', createResult.error)
           }
         } catch (createError) {
-          console.error('🏠 Dashboard: Error creating default profile:', createError)
+          // Error handling without console
         }
       }
       
       // マッチングデータも読み込み
-      console.log('🏠 Dashboard: Starting matching data load...')
       await loadMatchingData(user)
-      console.log('🏠 Dashboard: Matching data load completed')
     } catch (error) {
-      console.error('🏠 Dashboard: Error in user data loading:', error)
-      console.error('🏠 Dashboard: Error details:', {
-        message: error.message,
-        stack: error.stack,
-        name: error.name
-      })
+      // Error handling without console
     }
   }
 }, { immediate: true })
@@ -613,9 +584,8 @@ onMounted(async () => {
   // 公開ユーザー一覧を取得
   try {
     publicUsers.value = await getPublicUsers()
-    console.log('Public users loaded:', publicUsers.value.length)
   } catch (error) {
-    console.error('Failed to load public users:', error)
+    // Error handling without console
   }
 })
 
@@ -634,34 +604,33 @@ onUnmounted(() => {
 // マッチングデータ読み込み関数
 const loadMatchingData = async (user) => {
   if (!user?.uid) {
-    console.warn('🔍 loadMatchingData: No user UID provided')
     return
   }
   
   try {
-    console.log('🔍 Loading matching data for Firebase UID:', user.uid)
     matchingDataError.value = false
     
-    // Firebase composable から新しいマッチングデータ取得関数を使用
-    const { getUserMatchingData } = useFirebase()
+    // シンプルに直接ファイルを読み込み
+    const config = useRuntimeConfig()
+    const baseURL = config.public.baseURL || '/'
+    const matchingDataUrl = `${baseURL}data/matching_results_${user.uid}.json`
     
-    const data = await getUserMatchingData(user.uid)
+    const data = await $fetch(matchingDataUrl)
     
-    if (data) {
-      console.log('✅ Successfully loaded matching data for user:', user.uid)
-      matchingData.value = data
-    } else {
-      console.warn('❌ No matching data found for user:', user.uid)
-      matchingDataError.value = true
+    // matched_researchers と theme_proposals を matches 形式にマッピング
+    if (data.matched_researchers && data.theme_proposals) {
+      data.matches = data.matched_researchers.map((researcher, index) => {
+        const theme_proposal = data.theme_proposals[index] || {}
+        return {
+          researcher: researcher,
+          theme_proposal: theme_proposal
+        }
+      })
     }
     
-  } catch (err) {
-    console.error('❌ Matching data loading error:', err)
-    console.error('❌ Error details:', {
-      message: err.message,
-      stack: err.stack
-    })
+    matchingData.value = data
     
+  } catch (err) {
     matchingDataError.value = true
   }
 }
@@ -694,7 +663,7 @@ const handleLogout = async () => {
     await logout()
     router.push('/auth/login')
   } catch (error) {
-    console.error('Logout error:', error)
+    // Error handling without console
   }
 }
 

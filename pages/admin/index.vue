@@ -1,10 +1,5 @@
 <template>
   <div class="min-h-screen bg-gray-50">
-    <!-- デバッグ情報 -->
-    <div class="bg-yellow-100 p-2 text-sm">
-      Debug: isAdmin={{ isAdmin }}, currentUser={{ currentUser?.email || 'None' }}
-    </div>
-    
     <!-- 管理者権限チェック -->
     <div v-if="!isAdmin" class="flex items-center justify-center min-h-screen">
       <div class="text-center">
@@ -496,7 +491,6 @@ const updateUserSetting = async (uid, setting, value) => {
     
     updateStats()
   } catch (error) {
-    console.error('Setting update error:', error)
     alert('設定の更新に失敗しました')
   }
 }
@@ -532,7 +526,7 @@ const loadUsers = async () => {
       }
     }
   } catch (error) {
-    console.error('Load users error:', error)
+    // Error handling without console
   } finally {
     loading.value = false
   }
@@ -569,7 +563,6 @@ const confirmBulkUpdate = async () => {
     
     alert(`${updateCount} 人のユーザー設定を更新しました`)
   } catch (error) {
-    console.error('Bulk update error:', error)
     alert('一括更新に失敗しました')
   }
 }
@@ -577,7 +570,7 @@ const confirmBulkUpdate = async () => {
 // ユーザー編集
 const editUser = (user) => {
   // 詳細編集ページに遷移するか、モーダルを開く
-  console.log('Edit user:', user)
+  // Implementation needed
 }
 
 // ユーザーリセット
@@ -602,17 +595,12 @@ const resetUser = async (uid) => {
     updateStats()
     alert('ユーザー設定をリセットしました')
   } catch (error) {
-    console.error('Reset user error:', error)
     alert('ユーザーリセットに失敗しました')
   }
 }
 
 // 初期化
 onMounted(async () => {
-  console.log('📋 Admin page: Mounted')
-  console.log('📋 Admin page: Initial isAdmin =', isAdmin.value)
-  console.log('📋 Admin page: Initial currentUser =', currentUser.value)
-  
   // Firebase認証状態の初期化を待つ
   const { authInitialized } = useFirebase()
   
@@ -621,28 +609,19 @@ onMounted(async () => {
   const maxAttempts = 50 // 5秒間
   
   while (!authInitialized.value && attempts < maxAttempts) {
-    console.log('📋 Admin page: Waiting for auth initialization...', attempts)
     await new Promise(resolve => setTimeout(resolve, 100))
     attempts++
   }
   
-  console.log('📋 Admin page: After auth wait - isAdmin =', isAdmin.value)
-  console.log('📋 Admin page: After auth wait - currentUser =', currentUser.value)
-  
   if (isAdmin.value) {
-    console.log('📋 Admin page: Loading users...')
     loadUsers()
-  } else {
-    console.log('📋 Admin page: Not admin, not loading users')
   }
 })
 
 // 認証状態変化の監視も追加
 const { authInitialized } = useFirebase()
 watch(authInitialized, (initialized) => {
-  console.log('📋 Admin page: Auth state changed, initialized =', initialized)
   if (initialized && isAdmin.value && users.value.length === 0) {
-    console.log('📋 Admin page: Late loading users after auth initialization')
     loadUsers()
   }
 })

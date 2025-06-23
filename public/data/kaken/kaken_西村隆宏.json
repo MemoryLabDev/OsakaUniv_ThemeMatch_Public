@@ -1,5 +1,21 @@
 [
   {
+    "grant_url": "https://kaken.nii.ac.jp/ja/grant/KAKENHI-PROJECT-25K10596/",
+    "title": "",
+    "period": "2025-04-01 – 2028-03-31",
+    "amount": "1,950千円 (直接経費: 1,500千円、間接経費: 450千円) 2027年度: 910千円 (直接経費: 700千円、間接経費: 210千円) 2026年度: 130千円 (直接経費: 100千円、間接経費: 30千円) 2025年度: 910千円 (直接経費: 700千円、間接経費: 210千円)",
+    "keywords": "肺癌 / 光線力学的治療",
+    "research_overview": "気管支鏡を用いる中心型肺癌に対する標準的治療である光線力学的治療（Photodynamic therapy: PDT）は、低侵襲・低コストでQOLを損なわない、超高齢化社会の到来を見据えた優れた治療法である。本研究では、肺切除検体を用いて末梢型肺癌に対するPDTにおける適切な照射計画立案に資する肺の正常組織及び腫瘍組織の光学特性データを取得する。さらに、「末梢型肺癌に対するPDTの医師主導治験」にエントリーした症例について、光伝搬シミュレーションを用いて光照射量や照射方法と抗腫瘍効果（腫瘍径の変化）について後方視的に検討し、レーザー照射計画法の策定に向けた評価法を確立することを目的とする。",
+    "research_results": "",
+    "future_strategy": "",
+    "research_summary": "",
+    "academic_significance": "",
+    "social_significance": "",
+    "research_field": "",
+    "year": 2025,
+    "amount_value": 1950.0
+  },
+  {
     "grant_url": "https://kaken.nii.ac.jp/ja/grant/KAKENHI-PROJECT-23K04613/",
     "title": "",
     "period": "2023-04-01 – 2026-03-31",
