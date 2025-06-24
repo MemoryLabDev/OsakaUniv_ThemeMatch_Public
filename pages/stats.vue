@@ -176,7 +176,7 @@
             <div class="border rounded-lg overflow-hidden">
               <iframe 
                 ref="visualizationFrame"
-                src="/data/community_visualization.html"
+                :src="baseURL + 'data/community_visualization.html'"
                 class="w-full h-96 md:h-[600px] lg:h-[800px]"
                 frameborder="0"
                 @load="onVisualizationLoad"
@@ -219,11 +219,15 @@ const showVisualization = ref(false)
 const isLoadingVisualization = ref(false)
 const visualizationFrame = ref(null)
 
+// ランタイム設定
+const config = useRuntimeConfig()
+const baseURL = computed(() => config.public.baseURL)
+
 // データ読み込み
 const loadStatsData = async () => {
   try {
     loading.value = true
-    const data = await $fetch('/data/stats.json')
+    const data = await $fetch(config.public.baseURL + 'data/stats.json')
     statsData.value = data
   } catch (err) {
     error.value = 'データの読み込みに失敗しました: ' + err.message
@@ -265,7 +269,7 @@ const onVisualizationLoad = () => {
 
 const openVisualizationFullscreen = () => {
   if (process.client) {
-    window.open('/data/community_visualization.html', '_blank', 'fullscreen=yes')
+    window.open(config.public.baseURL + 'data/community_visualization.html', '_blank', 'fullscreen=yes')
   }
 }
 
