@@ -140,16 +140,18 @@ jobs:
         NODE_OPTIONS: --max-old-space-size=4096
 
     # 7) アップロード用ディレクトリを作成し、不要物を除外してコピー
+# 7) deploy フォルダにコピー（リンクは展開しない）
     - name: Prepare artifact (strip node_modules)
       run: |
-        mkdir deploy
-        rsync -a .output/public/ deploy/ \
-          --delete \
-          --copy-links \
-          --exclude='*/node_modules/**' \
-          --exclude='*/.cache/**'
-        # GitHub Pages で Jekyll を無効化
+        rm -rf deploy && mkdir deploy
+        rsync -a .output/public/ deploy/ --delete \
+          --exclude='node_modules/**' \
+          --exclude='.cache/**'
+        # copy-links を外したのでリンクのままコピーされる
+        # ↓ここで node_modules を物理的に削除
+        find deploy -type d -name node_modules -prune -exec rm -rf {} +
         touch deploy/.nojekyll
+
 
     # 8) サイズ確認（任意）
     - run: du -sh deploy || true
