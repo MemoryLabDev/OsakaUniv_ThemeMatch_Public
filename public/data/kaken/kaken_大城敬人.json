@@ -1,5 +1,21 @@
 [
   {
+    "grant_url": "https://kaken.nii.ac.jp/ja/grant/KAKENHI-PROJECT-25H01060/",
+    "title": "",
+    "period": "2025-04-01 – 2029-03-31",
+    "amount": "46,540千円 (直接経費: 35,800千円、間接経費: 10,740千円) 2025年度: 16,120千円 (直接経費: 12,400千円、間接経費: 3,720千円)",
+    "keywords": "デザイナー細胞 / CAR-T",
+    "research_overview": "本研究は、RNA_CAR-T医薬を用いたがん幹細胞（CSC）の標的治療を開発し、固形がんの完全治癒を目指す。まず、RNA_CAR-Tの最適化を行い、CSC特異的抗原（FAPなどを含めた新規シーズ）を標的とするRNA_CAR-Tを開発する。次に、新規のDDS技術を導入し、送達効率と安全性を向上させる。さらに、RNA修飾解析による層別化手法を確立し、治療効果予測バイオマーカーを同定する。最終的に、前臨床試験を完了し、臨床応用への基盤技術を確立する。",
+    "research_results": "",
+    "future_strategy": "",
+    "research_summary": "",
+    "academic_significance": "",
+    "social_significance": "",
+    "research_field": "",
+    "year": 2025,
+    "amount_value": 46540.0
+  },
+  {
     "grant_url": "https://kaken.nii.ac.jp/ja/grant/KAKENHI-PROJECT-24K10680/",
     "title": "",
     "period": "2024-04-01 – 2027-03-31",

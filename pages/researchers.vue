@@ -59,57 +59,11 @@
           </select>
         </div>
         
-        <!-- 結果件数とデバッグボタン -->
+        <!-- 結果件数 -->
         <div class="flex items-center justify-between">
           <p class="text-gray-600 text-sm sm:text-base">
             {{ filteredResearchers.length }}件の研究者が見つかりました
           </p>
-          <button
-            @click="showDebug = !showDebug"
-            class="bg-gray-600 text-white px-2 py-1.5 rounded-md text-xs hover:bg-gray-700 transition-colors"
-            title="デバッグ情報を表示"
-          >
-            🐛 Debug
-          </button>
-        </div>
-      </div>
-
-      <!-- デバッグ情報パネル -->
-      <div v-if="showDebug" class="bg-gray-900 text-white p-4 rounded-lg mb-6">
-        <div class="flex justify-between items-center mb-4">
-          <h3 class="text-lg font-bold">🐛 Public Search デバッグ情報</h3>
-          <button @click="showDebug = false" class="text-gray-400 hover:text-white">✕</button>
-        </div>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
-          <div>
-            <h4 class="font-bold text-yellow-400 mb-2">Firebase 状態</h4>
-            <div class="space-y-1">
-              <div>Firebase準備: {{ debugInfo.firebaseReady ? '✅' : '❌' }}</div>
-              <div>公開ユーザー読み込み: {{ debugInfo.publicUsersLoaded ? '✅' : '❌' }}</div>
-              <div>公開ユーザー数: {{ debugInfo.publicUsersCount }}</div>
-              <div>現在のステップ: <span class="text-green-400">{{ debugInfo.step }}</span></div>
-            </div>
-          </div>
-          <div>
-            <h4 class="font-bold text-blue-400 mb-2">フィルタリング結果</h4>
-            <div class="space-y-1">
-              <div>総研究者数: {{ indexData?.researchers?.length || 0 }}</div>
-              <div>フィルタ後: {{ debugInfo.filteredCount }}</div>
-              <div>表示中: {{ filteredResearchers.length }}</div>
-              <div>検索クエリ: {{ searchQuery || 'なし' }}</div>
-            </div>
-          </div>
-        </div>
-        <div v-if="debugInfo.publicUsersEmails" class="mt-4">
-          <h4 class="font-bold text-purple-400 mb-2">公開ユーザーメール一覧</h4>
-          <div class="text-xs text-gray-300 break-all">{{ debugInfo.publicUsersEmails?.slice(0, 3).join(', ') }}{{ debugInfo.publicUsersEmails?.length > 3 ? '...' : '' }}</div>
-        </div>
-        <div v-if="debugInfo.emailMappingUsed" class="mt-4">
-          <h4 class="font-bold text-green-400 mb-2">使用されたメールマッピング例</h4>
-          <div class="text-xs text-gray-300">{{ debugInfo.emailMappingUsed?.slice(0, 3).join(', ') }}{{ debugInfo.emailMappingUsed?.length > 3 ? '...' : '' }}</div>
-        </div>
-        <div class="mt-4 text-xs text-gray-400">
-          最終更新: {{ debugInfo.timestamp }}
         </div>
       </div>
 
@@ -235,28 +189,6 @@ const sortBy = ref('name')
 const isMobile = ref(false)
 const publicUsers = ref([])
 
-// デバッグ関連
-const debugInfo = ref({
-  step: 'initialization',
-  firebaseReady: false,
-  publicUsersLoaded: false,
-  publicUsersCount: 0,
-  filteredCount: 0,
-  publicUsersEmails: null,
-  emailMappingUsed: null,
-  timestamp: new Date().toISOString()
-})
-
-// デバッグ用ヘルパー
-const updateDebugInfo = (updates) => {
-  debugInfo.value = {
-    ...debugInfo.value,
-    ...updates,
-    timestamp: new Date().toISOString()
-  }
-  console.log('🐛 PUBLIC SEARCH DEBUG UPDATE:', debugInfo.value)
-}
-const showDebug = ref(false)
 
 // モバイル検知
 const checkMobile = () => {
@@ -272,46 +204,22 @@ const { getPublicUsers, firebaseReady } = useFirebase()
 const loadData = async () => {
   try {
     loading.value = true
-    updateDebugInfo({ step: 'data_loading_start' })
     
     const config = useRuntimeConfig()
     const baseURL = config.public.baseURL || '/'
     
     // 1. まず公開ユーザー設定を読み込み（必須）
-    console.log('📋 Step 1: Loading public users first...')
     await loadPublicUsers()
     
-    if (publicUsers.value.length === 0) {
-      console.warn('📋 No public users found, but continuing with empty data')
-      updateDebugInfo({ 
-        step: 'no_public_users_warning',
-        firebaseReady: firebaseReady.value,
-        publicUsersCount: 0 
-      })
-    }
-    
     // 2. UID インデックスを読み込み
-    console.log('📋 Step 2: Loading UID index...')
     const uidIndexUrl = baseURL + 'data/uid_index.json'
-    console.log('Loading UID index from:', uidIndexUrl)
     const uidData = await $fetch(uidIndexUrl)
     
     // 3. 公開ユーザーの研究者データのみ読み込み（最適化）
-    console.log('📋 Step 3: Loading researcher data for public users only...')
     await loadResearcherDataFromUIDs(uidData)
     
-    updateDebugInfo({ 
-      step: 'data_loading_completed',
-      finalResearcherCount: indexData.value?.researchers?.length || 0
-    })
-    
   } catch (err) {
-    console.error('Data loading error:', err)
     error.value = 'データの読み込みに失敗しました: ' + err.message
-    updateDebugInfo({ 
-      step: 'data_loading_error',
-      error: err.message
-    })
   } finally {
     loading.value = false
   }
@@ -324,23 +232,16 @@ const loadResearcherDataFromUIDs = async (uidData) => {
     const baseURL = config.public.baseURL || '/'
     const researchers = []
     
-    console.log('📋 Loading researcher data from UIDs:', Object.keys(uidData).length)
-    console.log('📋 Public users for filtering:', publicUsers.value.length)
-    
     // 公開ユーザーのメールアドレスセットを作成
     const publicEmails = new Set(publicUsers.value.map(user => user.email))
-    console.log('📋 Public emails set:', [...publicEmails])
     
     // 各UIDについて、公開設定のユーザーのみ処理
     for (const [uid, userData] of Object.entries(uidData)) {
       try {
         // 最適化：公開ユーザーでない場合はスキップ
         if (!publicEmails.has(userData.email)) {
-          console.log(`📋 Skipping non-public user: ${uid} (${userData.name}) - ${userData.email}`)
           continue
         }
-        
-        console.log(`📋 Loading data for public UID: ${uid} (${userData.name})`)
         
         // UIDベースのマッチング結果ファイルを読み込み
         const matchingResultsUrl = `${baseURL}data/matching_results_${uid}.json`
@@ -365,10 +266,8 @@ const loadResearcherDataFromUIDs = async (uidData) => {
           }
           
           researchers.push(researcher)
-          console.log(`✅ Loaded public data for ${researcher.name}`)
         }
       } catch (fileErr) {
-        console.warn(`⚠️ Could not load data for UID ${uid}:`, fileErr.message)
         // 公開ユーザーの場合、UIDデータのみでも追加
         if (publicEmails.has(userData.email)) {
           researchers.push({
@@ -397,25 +296,20 @@ const loadResearcherDataFromUIDs = async (uidData) => {
       public_count: researchers.length
     }
     
-    console.log(`📋 Loaded ${researchers.length} public researchers from UID system`)
-    
   } catch (err) {
-    console.error('Error loading researcher data from UIDs:', err)
+    // Error handling without console
   }
 }
 
 // 公開ユーザー設定読み込み (キャッシュ機能付き)
 const loadPublicUsers = async () => {
   try {
-    updateDebugInfo({ step: 'loading_public_users' })
-    
     // まず静的ファイルから読み込み (高速)
     try {
       const config = useRuntimeConfig()
       const baseURL = config.public.baseURL || '/'
       const userProfilesUrl = baseURL + 'auth/user_profiles.json'
       
-      console.log('📋 Researchers: Loading from static file:', userProfilesUrl)
       const userProfiles = await $fetch(userProfilesUrl)
       
       // 公開設定のユーザーをフィルタ
@@ -433,51 +327,17 @@ const loadPublicUsers = async () => {
       
       publicUsers.value = users
       
-      console.log('📋 Researchers: Loaded public users from static file:', users.length)
-      updateDebugInfo({ 
-        step: 'public_users_loaded_static',
-        publicUsersLoaded: true,
-        publicUsersCount: users.length,
-        publicUsersEmails: users.map(u => u.email)
-      })
-      
       return // 静的ファイルから読み込み成功
       
     } catch (staticError) {
-      console.warn('📋 Researchers: Static file loading failed, falling back to Firebase:', staticError)
-    }
-    
-    // フォールバック: Firebase から読み込み
-    if (firebaseReady.value) {
-      console.log('📋 Researchers: Loading public users from Firebase...')
-      updateDebugInfo({ 
-        step: 'firebase_ready_loading_users',
-        firebaseReady: true 
-      })
-      
-      const users = await getPublicUsers()
-      publicUsers.value = users
-      
-      console.log('📋 Researchers: Loaded public users from Firebase:', users.length)
-      updateDebugInfo({ 
-        step: 'public_users_loaded_firebase',
-        publicUsersLoaded: true,
-        publicUsersCount: users.length,
-        publicUsersEmails: users.map(u => u.email)
-      })
-    } else {
-      console.log('📋 Researchers: Firebase not ready, no public users loaded')
-      updateDebugInfo({ 
-        step: 'firebase_not_ready',
-        firebaseReady: false 
-      })
+      // フォールバック: Firebase から読み込み
+      if (firebaseReady.value) {
+        const users = await getPublicUsers()
+        publicUsers.value = users
+      }
     }
   } catch (err) {
-    console.warn('📋 Researchers: Failed to load public users:', err)
-    updateDebugInfo({ 
-      step: 'public_users_error',
-      error: err.message
-    })
+    // Error handling without console
   }
 }
 
@@ -497,29 +357,14 @@ const avgSimilarity = computed(() => {
 
 const filteredResearchers = computed(() => {
   if (!indexData.value?.researchers) {
-    updateDebugInfo({ 
-      step: 'no_researchers_data',
-      filteredCount: 0 
-    })
     return []
   }
   
   let filtered = indexData.value.researchers
-  const originalCount = filtered.length
-  
-  console.log('🔍 Starting filteredResearchers computation...')
-  console.log('🔍 Public researchers loaded:', originalCount)
-  
-  updateDebugInfo({ 
-    step: 'optimized_filtering_start',
-    originalCount: originalCount,
-    publicUsersCount: publicUsers.value.length
-  })
   
   // 検索フィルター（プライバシーフィルターは既に適用済み）
   if (searchQuery.value) {
     const query = searchQuery.value.toLowerCase()
-    const beforeSearchFilter = filtered.length
     
     filtered = filtered.filter(researcher => 
       researcher.name.toLowerCase().includes(query) ||
@@ -529,13 +374,6 @@ const filteredResearchers = computed(() => {
         keyword.toLowerCase().includes(query)
       ))
     )
-    
-    console.log('🔍 After search filter:', beforeSearchFilter, '->', filtered.length)
-    updateDebugInfo({ 
-      step: 'search_filtering_applied',
-      afterSearchFilter: filtered.length,
-      searchQuery: query
-    })
   }
   
   // ソート
@@ -550,19 +388,12 @@ const filteredResearchers = computed(() => {
     }
   })
   
-  console.log('🔍 Final filtered count:', filtered.length)
-  updateDebugInfo({ 
-    step: 'filtering_completed',
-    filteredCount: filtered.length
-  })
-  
   return filtered
 })
 
 // メソッド
 const navigateToResearcher = (researcher) => {
   if (!researcher.has_data) return
-  console.log('Navigating to researcher ID:', researcher.researcher_id)
   navigateTo(`/researcher/${researcher.researcher_id}`)
 }
 
@@ -587,14 +418,7 @@ const getAffiliationTagClass = (affiliationTag) => {
 
 // Firebase準備待ち
 watch(firebaseReady, (ready) => {
-  console.log('📋 Researchers: Firebase ready status changed:', ready)
-  updateDebugInfo({ 
-    step: 'firebase_ready_changed',
-    firebaseReady: ready 
-  })
-  
   if (ready && publicUsers.value.length === 0) {
-    console.log('📋 Researchers: Firebase ready, loading public users...')
     loadPublicUsers()
   }
 })

@@ -9,12 +9,26 @@
       "keywords": [
         "大阪大学"
       ],
-      "total_matches": 6,
-      "max_similarity": 0.7974648535251617,
+      "total_matches": 15,
+      "max_similarity": 0.85,
       "has_data": true,
-      "filename": "researcher_001"
+      "filename": "8D4DC2945A4C02bd"
+    },
+    {
+      "researcher_id": 2,
+      "openalex_id": "702C88A86765a7d0",
+      "name": "日比野　浩",
+      "name_en": "HIBINO Hiroshi",
+      "affiliation": "大阪大学",
+      "keywords": [
+        "材料科学", "工学"
+      ],
+      "total_matches": 15,
+      "max_similarity": 0.88,
+      "has_data": true,
+      "filename": "702C88A86765a7d0"
     }
   ],
-  "last_updated": "2025-06-10T16:55:35.536467",
-  "total_researchers": 1
+  "last_updated": "2025-06-18T18:30:00.000000",
+  "total_researchers": 2
 }

@@ -56,11 +56,6 @@
               管理
             </NuxtLink>
             
-            <!-- デバッグ情報表示 -->
-            <div class="text-xs text-gray-400 px-2">
-              Admin: {{ isAdmin ? 'Yes' : 'No' }} | User: {{ currentUser?.email || 'None' }}
-            </div>
-            
             <!-- ユーザーアカウントメニュー -->
             <div class="relative" v-if="isAuthenticated">
               <button
