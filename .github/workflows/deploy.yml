@@ -93,6 +93,7 @@
 #       - name: Deploy to GitHub Pages
 #         id: deployment
 #         uses: actions/deploy-pages@v4
+# .github/workflows/deploy.yml
 name: Deploy to GitHub Pages
 
 on:
@@ -117,13 +118,13 @@ jobs:
     # 1) ソース取得
     - uses: actions/checkout@v4
 
-    # 2) Node.js & 自動 npm キャッシュ
+    # 2) Node.js & npm キャッシュ
     - uses: actions/setup-node@v4
       with:
         node-version: 20
         cache: npm
 
-    # 3) GitHub Pages 設定
+    # 3) GitHub Pages 用トークンなどを初期化
     - uses: actions/configure-pages@v4
 
     # 4) 依存関係インストール
@@ -139,21 +140,25 @@ jobs:
         NODE_ENV: production
         NODE_OPTIONS: --max-old-space-size=4096
 
-    # 7) アップロード用ディレクトリを作成し、不要物を除外してコピー
-# 7) deploy フォルダにコピー（リンクは展開しない）
-    - name: Prepare artifact (strip node_modules)
+    # 7) deploy ディレクトリ作成　
+    #    -L (--copy-links) で symlink を実ファイルに置き換え
+    #    node_modules を除外
+    - name: Prepare artifact (flatten links & strip node_modules)
       run: |
         rm -rf deploy && mkdir deploy
-        rsync -a .output/public/ deploy/ --delete \
-          --exclude='node_modules/**' \
-          --exclude='.cache/**'
-        # copy-links を外したのでリンクのままコピーされる
-        # ↓ここで node_modules を物理的に削除
+        rsync -aL --delete \
+          --exclude='**/node_modules/**' \
+          .output/public/ deploy/
+        # 念のため残った node_modules を掃除
         find deploy -type d -name node_modules -prune -exec rm -rf {} +
+        # symlink が残っていないか最終チェック（任意）
+        if find deploy -type l | grep -q .; then
+          echo "ERROR: symlink remains in deploy" >&2
+          exit 1
+        fi
         touch deploy/.nojekyll
 
-
-    # 8) サイズ確認（任意）
+    # 8) サイズ確認（オプション）
     - run: du -sh deploy || true
 
     # 9) アーティファクトアップロード
