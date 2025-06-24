@@ -1,0 +1,31 @@
+{
+  "target_researcher": {
+    "name": "管理者",
+    "name_en": null,
+    "id": null,
+    "orcid": null,
+    "affiliation": null,
+    "keywords": null,
+    "abstract": null,
+    "collab_interest": null,
+    "tech_interest": null,
+    "market_interest": null,
+    "research_map": null,
+    "papers": [],
+    "kaken_info": [],
+    "kaken_context": null,
+    "similarity_score": null,
+    "field_tag": null,
+    "affiliation_tag": null
+  },
+  "matched_researchers": [],
+  "theme_proposals": [],
+  "analysis_summary": {
+    "target_researcher_keywords_count": 0,
+    "average_similarity_score": 0.0,
+    "max_similarity_score": 0.0,
+    "total_candidates_analyzed": 0,
+    "analysis_method": "embedding_similarity + keyword_overlap"
+  },
+  "researcher_uid": "YKvWteodckXKVzlkNr8UtFg61aa2"
+}
