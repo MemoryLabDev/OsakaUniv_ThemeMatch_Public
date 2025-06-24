@@ -9,10 +9,10 @@
     "fresh_builds": 1
   },
   "similarity_scores": {
-    "mean": 0.6576514244079591,
-    "median": 0.6576514244079591,
-    "min": 0.6576514244079591,
-    "max": 0.6576514244079591
+    "mean": 0.4965582668781281,
+    "median": 0.4965582668781281,
+    "min": 0.4965582668781281,
+    "max": 0.4965582668781281
   },
   "kaken_statistics": {
     "researchers_with_kaken": 0,
@@ -20,7 +20,7 @@
   },
   "build_info": {
     "force_rebuild": false,
-    "last_build": "2025-06-24T14:03:50.373156",
+    "last_build": "2025-06-24T15:35:08.271507",
     "successful_builds": 1,
     "failed_builds": 0,
     "uid_mappings": 1

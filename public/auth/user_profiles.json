@@ -1,13 +1,13 @@
 {
-  "94Td9g9qLygNyD3wW50JUYEMB5C3": {
-    "uid": "94Td9g9qLygNyD3wW50JUYEMB5C3",
-    "email": "jin_meihua@memorylab.handai.jp",
-    "display_name": "金　美花",
-    "name_en": "JIN MEIHUA",
-    "affiliation": "椿木チエイン",
-    "openalex_id": null,
-    "created_at": 1750741430.372833,
-    "updated_at": 1750741430.372843,
+  "MYqsBBEKvka9ND4pfxQpcTorAlX2": {
+    "uid": "MYqsBBEKvka9ND4pfxQpcTorAlX2",
+    "email": "morita_midori@memorylab.handai.jp",
+    "display_name": "森田　翠",
+    "name_en": "MORITA  MIDORI",
+    "affiliation": "京都府立医科大学",
+    "openalex_id": "a5008706450",
+    "created_at": 1750746908.27068,
+    "updated_at": 1750746908.270687,
     "privacy_settings": {
       "public_profile": false,
       "show_in_search": false,
@@ -16,8 +16,8 @@
     "matching_data": {
       "has_data": true,
       "total_matches": 15,
-      "max_similarity": 0.6576514244079591,
-      "last_updated": "2025-06-24T14:03:50.372844",
+      "max_similarity": 0.4965582668781281,
+      "last_updated": "2025-06-24T15:35:08.270689",
       "cached": false
     },
     "kaken_data": {
