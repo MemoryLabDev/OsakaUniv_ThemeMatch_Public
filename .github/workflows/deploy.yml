@@ -1,3 +1,98 @@
+# name: Deploy to GitHub Pages
+
+# on:
+#   push:
+#     branches: [main, master]
+#   workflow_dispatch:
+
+# permissions:
+#   contents: read
+#   pages: write
+#   id-token: write
+
+# concurrency:
+#   group: pages
+#   cancel-in-progress: false
+
+# jobs:
+#   build:
+#     runs-on: ubuntu-latest
+
+#     steps:
+#       # 1) ソース取得
+#       - name: Checkout repository
+#         uses: actions/checkout@v4
+
+#       # 2) Node.js セットアップ
+#       - name: Set up Node.js
+#         uses: actions/setup-node@v4
+#         with:
+#           node-version: 20
+#           cache: npm
+
+#       # 3) GitHub Pages 設定
+#       - name: Configure GitHub Pages
+#         uses: actions/configure-pages@v4
+
+#       # 4) キャッシュ復元（.output は除外）
+#       - name: Restore npm cache
+#         uses: actions/cache@v4
+#         with:
+#           path: node_modules
+#           key: nuxt-${{ runner.os }}-${{ hashFiles('package-lock.json') }}
+#           restore-keys: nuxt-${{ runner.os }}-
+
+#       # 5) 依存関係インストール
+#       - name: Install dependencies
+#         run: npm ci
+
+#       # 6) 旧ビルドの残骸を削除
+#       - name: Clean previous build
+#         run: rm -rf .output
+
+#       # 7) 静的サイト生成
+#       - name: Generate static site with Nuxt
+#         run: |
+#           echo "==> nuxt generate start"
+#           npx nuxi generate          # Nuxt3／Nuxt2 は npm run generate
+#         env:
+#           NODE_ENV: production
+#           NODE_OPTIONS: --max-old-space-size=4096
+
+#       # 8) ビルド内容の確認（任意）
+#       - name: Inspect build output
+#         run: |
+#           du -sh .output || true
+#           ls -la .output | head -n 20
+#           echo "------ .output/public preview ------"
+#           ls -la .output/public | head -n 20
+
+#       # 9) アーティファクト整形
+#       - name: Prepare artifact for Pages
+#         run: |
+#           mkdir upload
+#           rsync -a --copy-links --delete \
+#                 --exclude='*/node_modules/**' \
+#                 .output/public/ upload/
+#           touch upload/.nojekyll     # Jekyll 無効化
+
+#       # 10) アーティファクトアップロード
+#       - name: Upload Pages artifact
+#         uses: actions/upload-pages-artifact@v3
+#         with:
+#           path: ./upload
+
+#   deploy:
+#     needs: build
+#     runs-on: ubuntu-latest
+#     environment:
+#       name: github-pages
+#       url: ${{ steps.deployment.outputs.page_url }}
+
+#     steps:
+#       - name: Deploy to GitHub Pages
+#         id: deployment
+#         uses: actions/deploy-pages@v4
 name: Deploy to GitHub Pages
 
 on:
@@ -20,76 +115,51 @@ jobs:
 
     steps:
       # 1) ソース取得
-      - name: Checkout repository
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
 
-      # 2) Node.js セットアップ
-      - name: Set up Node.js
-        uses: actions/setup-node@v4
+      # 2) Node.js & 自動 npm キャッシュ
+      - uses: actions/setup-node@v4
         with:
-          node-version: 20
-          cache: npm
+          node-version: 20            # ←必要に応じて変更
+          cache: npm                  # ←npm ci の結果を自動キャッシュ
 
       # 3) GitHub Pages 設定
-      - name: Configure GitHub Pages
-        uses: actions/configure-pages@v4
+      - uses: actions/configure-pages@v4
 
-      # 4) キャッシュ復元（.output は除外）
-      - name: Restore npm cache
-        uses: actions/cache@v4
-        with:
-          path: node_modules
-          key: nuxt-${{ runner.os }}-${{ hashFiles('package-lock.json') }}
-          restore-keys: nuxt-${{ runner.os }}-
+      # 4) 依存関係インストール
+      - run: npm ci
 
-      # 5) 依存関係インストール
-      - name: Install dependencies
-        run: npm ci
+      # 5) ビルド前クリーン
+      - run: rm -rf .output .nuxt .cache
 
-      # 6) 旧ビルドの残骸を削除
-      - name: Clean previous build
-        run: rm -rf .output
-
-      # 7) 静的サイト生成
-      - name: Generate static site with Nuxt
-        run: |
-          echo "==> nuxt generate start"
-          npx nuxi generate          # Nuxt3／Nuxt2 は npm run generate
+      # 6) 静的サイト生成 (Nuxt3)
+      - name: Generate static site
+        run: npx nuxi generate
         env:
           NODE_ENV: production
           NODE_OPTIONS: --max-old-space-size=4096
 
-      # 8) ビルド内容の確認（任意）
-      - name: Inspect build output
-        run: |
-          du -sh .output || true
-          ls -la .output | head -n 20
-          echo "------ .output/public preview ------"
-          ls -la .output/public | head -n 20
+      # 7) 最終サイズ確認（任意）
+      - run: |
+          echo "==> .output/public size"
+          du -sh .output/public || true
 
-      # 9) アーティファクト整形
-      - name: Prepare artifact for Pages
-        run: |
-          mkdir upload
-          rsync -a --copy-links --delete \
-                --exclude='*/node_modules/**' \
-                .output/public/ upload/
-          touch upload/.nojekyll     # Jekyll 無効化
-
-      # 10) アーティファクトアップロード
-      - name: Upload Pages artifact
-        uses: actions/upload-pages-artifact@v3
+      # 8) Pages Artifact アップロード
+      #    ─ .output/public だけを渡すので node_modules 等は含まれない
+      - uses: actions/upload-pages-artifact@v3
         with:
-          path: ./upload
+          path: ./.output/public
+          # 任意: artifact 名を固定したい場合
+          # name: github-pages
 
   deploy:
     needs: build
     runs-on: ubuntu-latest
     environment:
       name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
+      url: ${{ steps.deploy.outputs.page_url }}
 
     steps:
       - name: Deploy to GitHub Pages
-        id: deployment
+        id: deploy
         uses: actions/deploy-pages@v4
