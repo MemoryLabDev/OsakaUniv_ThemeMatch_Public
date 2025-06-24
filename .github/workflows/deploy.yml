@@ -114,43 +114,50 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      # 1) ソース取得
-      - uses: actions/checkout@v4
+    # 1) ソース取得
+    - uses: actions/checkout@v4
 
-      # 2) Node.js & 自動 npm キャッシュ
-      - uses: actions/setup-node@v4
-        with:
-          node-version: 20            # ←必要に応じて変更
-          cache: npm                  # ←npm ci の結果を自動キャッシュ
+    # 2) Node.js & 自動 npm キャッシュ
+    - uses: actions/setup-node@v4
+      with:
+        node-version: 20
+        cache: npm
 
-      # 3) GitHub Pages 設定
-      - uses: actions/configure-pages@v4
+    # 3) GitHub Pages 設定
+    - uses: actions/configure-pages@v4
 
-      # 4) 依存関係インストール
-      - run: npm ci
+    # 4) 依存関係インストール
+    - run: npm ci
 
-      # 5) ビルド前クリーン
-      - run: rm -rf .output .nuxt .cache
+    # 5) 旧生成物を完全削除
+    - run: rm -rf .output .nuxt .cache
 
-      # 6) 静的サイト生成 (Nuxt3)
-      - name: Generate static site
-        run: npx nuxi generate
-        env:
-          NODE_ENV: production
-          NODE_OPTIONS: --max-old-space-size=4096
+    # 6) 静的サイト生成
+    - name: Generate static site
+      run: npx nuxi generate
+      env:
+        NODE_ENV: production
+        NODE_OPTIONS: --max-old-space-size=4096
 
-      # 7) 最終サイズ確認（任意）
-      - run: |
-          echo "==> .output/public size"
-          du -sh .output/public || true
+    # 7) アップロード用ディレクトリを作成し、不要物を除外してコピー
+    - name: Prepare artifact (strip node_modules)
+      run: |
+        mkdir deploy
+        rsync -a .output/public/ deploy/ \
+          --delete \
+          --copy-links \
+          --exclude='*/node_modules/**' \
+          --exclude='*/.cache/**'
+        # GitHub Pages で Jekyll を無効化
+        touch deploy/.nojekyll
 
-      # 8) Pages Artifact アップロード
-      #    ─ .output/public だけを渡すので node_modules 等は含まれない
-      - uses: actions/upload-pages-artifact@v3
-        with:
-          path: ./.output/public
-          # 任意: artifact 名を固定したい場合
-          # name: github-pages
+    # 8) サイズ確認（任意）
+    - run: du -sh deploy || true
+
+    # 9) アーティファクトアップロード
+    - uses: actions/upload-pages-artifact@v3
+      with:
+        path: ./deploy
 
   deploy:
     needs: build
@@ -160,6 +167,6 @@ jobs:
       url: ${{ steps.deploy.outputs.page_url }}
 
     steps:
-      - name: Deploy to GitHub Pages
-        id: deploy
-        uses: actions/deploy-pages@v4
+    - name: Deploy to GitHub Pages
+      id: deploy
+      uses: actions/deploy-pages@v4
