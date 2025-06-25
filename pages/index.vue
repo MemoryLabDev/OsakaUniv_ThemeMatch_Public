@@ -138,11 +138,7 @@
                       <div class="flex items-center justify-center sm:justify-start space-x-4 sm:space-x-6">
                         <div class="text-center">
                           <div class="text-xl sm:text-2xl font-bold text-blue-600">{{ matchingData.kaken_trend_analysis.grant_count }}</div>
-                          <div class="text-xs text-gray-600">助成金件数</div>
-                        </div>
-                        <div v-if="matchingData.kaken_trend_analysis.total_funding > 0" class="text-center">
-                          <div class="text-xl sm:text-2xl font-bold text-green-600">{{ formatFunding(matchingData.kaken_trend_analysis.total_funding) }}</div>
-                          <div class="text-xs text-gray-600">総配分額</div>
+                          <div class="text-xs text-gray-600">参考にした助成金数</div>
                         </div>
                       </div>
                       <span class="inline-flex items-center justify-center px-2 sm:px-3 py-1 rounded-full text-xs sm:text-sm font-medium bg-blue-100 text-blue-800 self-center sm:self-auto">
