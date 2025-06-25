@@ -109,11 +109,15 @@ const proceedToLogin = async () => {
   
   try {
     // Firebase認証を実行
-    const { $auth } = useNuxtApp()
-    await $auth.signInWithEmailAndPassword(credentials.value.email, credentials.value.password)
+    const { login } = useFirebase()
+    const result = await login(credentials.value.email, credentials.value.password)
     
-    // 認証成功後、メインページにリダイレクト
-    await navigateTo('/')
+    if (result.success) {
+      // 認証成功後、メインページにリダイレクト
+      await navigateTo('/')
+    } else {
+      throw new Error(result.error || '認証に失敗しました')
+    }
   } catch (error) {
     console.error('ログインエラー:', error)
     alert('ログインに失敗しました。認証情報を確認してください。')
