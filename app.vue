@@ -13,6 +13,14 @@ useHead({
   ]
 })
 
+// QR認証の処理
+const { processQRAuth } = useQRAuth()
+
+// アプリ起動時にQR認証をチェック
+onMounted(async () => {
+  await processQRAuth()
+})
+
 // ブラウザ拡張機能のエラーを抑制
 if (process.client) {
   window.addEventListener('error', (event) => {
