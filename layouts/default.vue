@@ -31,13 +31,13 @@
             >
               ダッシュボード
             </NuxtLink>
-            <NuxtLink 
+            <!-- <NuxtLink 
               to="/researchers" 
               class="text-gray-600 hover:text-gray-900 px-3 py-2 rounded-md text-sm font-medium transition-colors"
               :class="{ 'text-blue-600 bg-blue-50': $route.path === '/researchers' }"
             >
               公開データの検索
-            </NuxtLink>
+            </NuxtLink> -->
             <NuxtLink 
               to="/stats" 
               class="text-gray-600 hover:text-gray-900 px-3 py-2 rounded-md text-sm font-medium transition-colors"
@@ -160,7 +160,7 @@
             </div>
           </NuxtLink>
           
-          <NuxtLink 
+          <!-- <NuxtLink 
             to="/researchers" 
             @click="isMobileMenuOpen = false"
             class="block px-3 py-3 rounded-md text-base font-medium transition-colors"
@@ -172,7 +172,7 @@
               </svg>
               公開データの検索
             </div>
-          </NuxtLink>
+          </NuxtLink> -->
           
           <NuxtLink 
             to="/stats" 

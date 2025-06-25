@@ -1,13 +1,13 @@
 {
-  "MYqsBBEKvka9ND4pfxQpcTorAlX2": {
-    "uid": "MYqsBBEKvka9ND4pfxQpcTorAlX2",
-    "email": "morita_midori@memorylab.handai.jp",
-    "display_name": "森田　翠",
-    "name_en": "MORITA  MIDORI",
-    "affiliation": "京都府立医科大学",
-    "openalex_id": "a5008706450",
-    "created_at": 1750746908.27068,
-    "updated_at": 1750746908.270687,
+  "SVdkh1BbNhRar8TCdFoivuHWkW73": {
+    "uid": "SVdkh1BbNhRar8TCdFoivuHWkW73",
+    "email": "honda_michinari@memorylab.handai.jp",
+    "display_name": "本田　通済",
+    "name_en": "HONDA　MICHINARI",
+    "affiliation": "池田食研株式会社　バイオプロダクツ新事業企画チーム",
+    "openalex_id": null,
+    "created_at": 1750847377.891849,
+    "updated_at": 1750847377.891852,
     "privacy_settings": {
       "public_profile": false,
       "show_in_search": false,
@@ -16,8 +16,8 @@
     "matching_data": {
       "has_data": true,
       "total_matches": 15,
-      "max_similarity": 0.4965582668781281,
-      "last_updated": "2025-06-24T15:35:08.270689",
+      "max_similarity": 0.7218301355838775,
+      "last_updated": "2025-06-25T19:29:37.891854",
       "cached": false
     },
     "kaken_data": {

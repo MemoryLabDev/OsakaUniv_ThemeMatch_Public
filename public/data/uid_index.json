@@ -1,22 +1,22 @@
 {
-  "MYqsBBEKvka9ND4pfxQpcTorAlX2": {
-    "uid": "MYqsBBEKvka9ND4pfxQpcTorAlX2",
-    "name": "森田　翠",
-    "name_en": "MORITA  MIDORI",
-    "affiliation": "京都府立医科大学",
-    "openalex_id": "a5008706450",
-    "email": "morita_midori@memorylab.handai.jp",
-    "field_tag": "医学",
-    "affiliation_tag": "アカデミア",
+  "SVdkh1BbNhRar8TCdFoivuHWkW73": {
+    "uid": "SVdkh1BbNhRar8TCdFoivuHWkW73",
+    "name": "本田　通済",
+    "name_en": "HONDA　MICHINARI",
+    "affiliation": "池田食研株式会社　バイオプロダクツ新事業企画チーム",
+    "openalex_id": null,
+    "email": "honda_michinari@memorylab.handai.jp",
+    "field_tag": "工学",
+    "affiliation_tag": "企業",
     "has_matching_data": true,
     "total_matches": 15,
-    "max_similarity": 0.4965582668781281,
+    "max_similarity": 0.7218301355838775,
     "has_kaken": false,
     "cached": false,
-    "last_updated": "2025-06-24T15:35:08.266665",
+    "last_updated": "2025-06-25T19:29:37.889579",
     "build_info": {
       "force_rebuild": false,
-      "build_time": "2025-06-24T15:35:08.266674"
+      "build_time": "2025-06-25T19:29:37.889588"
     }
   }
 }
