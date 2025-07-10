@@ -1,28 +1,28 @@
 {
-  "total_researchers": 1,
-  "total_proposals": 15,
+  "total_researchers": 11,
+  "total_proposals": 165,
   "cache_statistics": {
     "hits": 0,
-    "misses": 2,
+    "misses": 12,
     "hit_rate": 0.0,
     "cached_builds": 0,
-    "fresh_builds": 1
+    "fresh_builds": 11
   },
   "similarity_scores": {
-    "mean": 0.7218301355838775,
-    "median": 0.7218301355838775,
-    "min": 0.7218301355838775,
-    "max": 0.7218301355838775
+    "mean": 0.6837203586643392,
+    "median": 0.7588608145713807,
+    "min": 0.4029362410306931,
+    "max": 1.000000238418579
   },
   "kaken_statistics": {
-    "researchers_with_kaken": 0,
-    "kaken_coverage": 0.0
+    "researchers_with_kaken": 2,
+    "kaken_coverage": 0.18181818181818182
   },
   "build_info": {
     "force_rebuild": false,
-    "last_build": "2025-06-25T19:29:37.892184",
-    "successful_builds": 1,
+    "last_build": "2025-07-08T19:32:29.061036",
+    "successful_builds": 11,
     "failed_builds": 0,
-    "uid_mappings": 1
+    "uid_mappings": 11
   }
 }

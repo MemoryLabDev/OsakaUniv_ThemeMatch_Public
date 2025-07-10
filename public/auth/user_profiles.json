@@ -1,13 +1,13 @@
 {
-  "SVdkh1BbNhRar8TCdFoivuHWkW73": {
-    "uid": "SVdkh1BbNhRar8TCdFoivuHWkW73",
-    "email": "honda_michinari@memorylab.handai.jp",
-    "display_name": "本田　通済",
-    "name_en": "HONDA　MICHINARI",
-    "affiliation": "池田食研株式会社　バイオプロダクツ新事業企画チーム",
+  "rfJBhlaEJQXnANKei5ubPZtufmo1": {
+    "uid": "rfJBhlaEJQXnANKei5ubPZtufmo1",
+    "email": "isa_shoma@memorylab.handai.jp",
+    "display_name": "伊佐 匠真",
+    "name_en": "Isa Shoma",
+    "affiliation": "大阪大学工学研究科",
     "openalex_id": null,
-    "created_at": 1750847377.891849,
-    "updated_at": 1750847377.891852,
+    "created_at": 1751970749.060401,
+    "updated_at": 1751970749.060414,
     "privacy_settings": {
       "public_profile": false,
       "show_in_search": false,
@@ -16,8 +16,268 @@
     "matching_data": {
       "has_data": true,
       "total_matches": 15,
-      "max_similarity": 0.7218301355838775,
-      "last_updated": "2025-06-25T19:29:37.891854",
+      "max_similarity": 0.7926657021045685,
+      "last_updated": "2025-07-08T19:32:29.060416",
+      "cached": false
+    },
+    "kaken_data": {
+      "has_kaken": false,
+      "last_updated": null
+    }
+  },
+  "KqvBqG3ve3b7tBek4dH0jp25Vsk1": {
+    "uid": "KqvBqG3ve3b7tBek4dH0jp25Vsk1",
+    "email": "umemura_akira@memorylab.handai.jp",
+    "display_name": "梅村　哲",
+    "name_en": "UMEMURA AKIRA",
+    "affiliation": "日亜化学工業",
+    "openalex_id": null,
+    "created_at": 1751970749.060431,
+    "updated_at": 1751970749.060432,
+    "privacy_settings": {
+      "public_profile": false,
+      "show_in_search": false,
+      "allow_collaboration": true
+    },
+    "matching_data": {
+      "has_data": true,
+      "total_matches": 15,
+      "max_similarity": 0.7040388405323028,
+      "last_updated": "2025-07-08T19:32:29.060433",
+      "cached": false
+    },
+    "kaken_data": {
+      "has_kaken": false,
+      "last_updated": null
+    }
+  },
+  "1lq6AhxeltQ3qIF2LMxhyWx847J3": {
+    "uid": "1lq6AhxeltQ3qIF2LMxhyWx847J3",
+    "email": "masayuki_kohashi@memorylab.handai.jp",
+    "display_name": "小橋　真之",
+    "name_en": "MASAYUKI KOHASHI",
+    "affiliation": "大塚メディカルデバイス株式会社",
+    "openalex_id": "a5065059443",
+    "created_at": 1751970749.060436,
+    "updated_at": 1751970749.060437,
+    "privacy_settings": {
+      "public_profile": false,
+      "show_in_search": false,
+      "allow_collaboration": true
+    },
+    "matching_data": {
+      "has_data": true,
+      "total_matches": 15,
+      "max_similarity": 0.4029362410306931,
+      "last_updated": "2025-07-08T19:32:29.060438",
+      "cached": false
+    },
+    "kaken_data": {
+      "has_kaken": false,
+      "last_updated": null
+    }
+  },
+  "1aHi0kySuiWeUpUf6BIGPDFQD5g2": {
+    "uid": "1aHi0kySuiWeUpUf6BIGPDFQD5g2",
+    "email": "xi_heqi@memorylab.handai.jp",
+    "display_name": "XI HEQI",
+    "name_en": "XI HEQI",
+    "affiliation": "The University of Osaka",
+    "openalex_id": null,
+    "created_at": 1751970749.06044,
+    "updated_at": 1751970749.060441,
+    "privacy_settings": {
+      "public_profile": false,
+      "show_in_search": false,
+      "allow_collaboration": true
+    },
+    "matching_data": {
+      "has_data": true,
+      "total_matches": 15,
+      "max_similarity": 0.4705426633358002,
+      "last_updated": "2025-07-08T19:32:29.060442",
+      "cached": false
+    },
+    "kaken_data": {
+      "has_kaken": false,
+      "last_updated": null
+    }
+  },
+  "k8cIY03VLFUCNksejmYNZPqNlAp2": {
+    "uid": "k8cIY03VLFUCNksejmYNZPqNlAp2",
+    "email": "toyoizumi_teppei@memorylab.handai.jp",
+    "display_name": "豊泉　徹平",
+    "name_en": "Toyoizumi Teppei",
+    "affiliation": "ソニー株式会社　商品設計第5部門　機構設計部4課",
+    "openalex_id": null,
+    "created_at": 1751970749.060444,
+    "updated_at": 1751970749.060445,
+    "privacy_settings": {
+      "public_profile": false,
+      "show_in_search": false,
+      "allow_collaboration": true
+    },
+    "matching_data": {
+      "has_data": true,
+      "total_matches": 15,
+      "max_similarity": 0.7860393226146698,
+      "last_updated": "2025-07-08T19:32:29.060446",
+      "cached": false
+    },
+    "kaken_data": {
+      "has_kaken": false,
+      "last_updated": null
+    }
+  },
+  "3Q1QNA1dXEXasnopTYvAK7SZhgM2": {
+    "uid": "3Q1QNA1dXEXasnopTYvAK7SZhgM2",
+    "email": "toyoda_koji@memorylab.handai.jp",
+    "display_name": "豊田　浩司",
+    "name_en": "TOYODA KOJI",
+    "affiliation": "ソニー株式会社　技術センター　商品設計第５部門　光学設計部",
+    "openalex_id": null,
+    "created_at": 1751970749.060448,
+    "updated_at": 1751970749.060449,
+    "privacy_settings": {
+      "public_profile": false,
+      "show_in_search": false,
+      "allow_collaboration": true
+    },
+    "matching_data": {
+      "has_data": true,
+      "total_matches": 15,
+      "max_similarity": 0.7860393226146698,
+      "last_updated": "2025-07-08T19:32:29.060450",
+      "cached": false
+    },
+    "kaken_data": {
+      "has_kaken": false,
+      "last_updated": null
+    }
+  },
+  "MEnczgtAwBTP4aq7hgvIRlpC8vz2": {
+    "uid": "MEnczgtAwBTP4aq7hgvIRlpC8vz2",
+    "email": "manami_toriyama@memorylab.handai.jp",
+    "display_name": "鳥山 真奈美",
+    "name_en": "Manami Toriyama",
+    "affiliation": "阪大薬",
+    "openalex_id": "a5069969880",
+    "created_at": 1751970749.060452,
+    "updated_at": 1751970749.060453,
+    "privacy_settings": {
+      "public_profile": false,
+      "show_in_search": false,
+      "allow_collaboration": true
+    },
+    "matching_data": {
+      "has_data": true,
+      "total_matches": 15,
+      "max_similarity": 0.4395727813243866,
+      "last_updated": "2025-07-08T19:32:29.060454",
+      "cached": false
+    },
+    "kaken_data": {
+      "has_kaken": true,
+      "last_updated": "2025-07-08T19:32:29.060455"
+    }
+  },
+  "cXRers9jBuNMRmareKqoNgViCYs1": {
+    "uid": "cXRers9jBuNMRmareKqoNgViCYs1",
+    "email": "fujikawa_akua@memorylab.handai.jp",
+    "display_name": "藤川 愛叶",
+    "name_en": "Fujikawa Akua",
+    "affiliation": "徳島大学　矢野研究室",
+    "openalex_id": null,
+    "created_at": 1751970749.060457,
+    "updated_at": 1751970749.060458,
+    "privacy_settings": {
+      "public_profile": false,
+      "show_in_search": false,
+      "allow_collaboration": true
+    },
+    "matching_data": {
+      "has_data": true,
+      "total_matches": 15,
+      "max_similarity": 0.9152169585227966,
+      "last_updated": "2025-07-08T19:32:29.060459",
+      "cached": false
+    },
+    "kaken_data": {
+      "has_kaken": false,
+      "last_updated": null
+    }
+  },
+  "vrOsGI5mL2eB6t5vUQmg42qPnAj1": {
+    "uid": "vrOsGI5mL2eB6t5vUQmg42qPnAj1",
+    "email": "matsushita_tetsuya@memorylab.handai.jp",
+    "display_name": "松下 哲也",
+    "name_en": "MATSUSHITA TETSUYA",
+    "affiliation": "京セラ株式会社",
+    "openalex_id": null,
+    "created_at": 1751970749.06046,
+    "updated_at": 1751970749.060461,
+    "privacy_settings": {
+      "public_profile": false,
+      "show_in_search": false,
+      "allow_collaboration": true
+    },
+    "matching_data": {
+      "has_data": true,
+      "total_matches": 15,
+      "max_similarity": 0.7588608145713807,
+      "last_updated": "2025-07-08T19:32:29.060462",
+      "cached": false
+    },
+    "kaken_data": {
+      "has_kaken": false,
+      "last_updated": null
+    }
+  },
+  "pwwg6zA8CsfxDIUxAJD6MMN1Aez1": {
+    "uid": "pwwg6zA8CsfxDIUxAJD6MMN1Aez1",
+    "email": "chieko_mishima@memorylab.handai.jp",
+    "display_name": "三嶋千恵子",
+    "name_en": "Chieko Mishima",
+    "affiliation": "大阪大学大学院医学系研究科乳腺内分泌外科学",
+    "openalex_id": "a5018490733",
+    "created_at": 1751970749.060464,
+    "updated_at": 1751970749.060465,
+    "privacy_settings": {
+      "public_profile": false,
+      "show_in_search": false,
+      "allow_collaboration": true
+    },
+    "matching_data": {
+      "has_data": true,
+      "total_matches": 15,
+      "max_similarity": 0.4650110602378845,
+      "last_updated": "2025-07-08T19:32:29.060466",
+      "cached": false
+    },
+    "kaken_data": {
+      "has_kaken": true,
+      "last_updated": "2025-07-08T19:32:29.060467"
+    }
+  },
+  "ZlNBpGtdQ2XpjrFLUgb1xSWOxVH2": {
+    "uid": "ZlNBpGtdQ2XpjrFLUgb1xSWOxVH2",
+    "email": "liu_zhaoyang@memorylab.handai.jp",
+    "display_name": "劉　朝陽",
+    "name_en": "LIU ZHAOYANG",
+    "affiliation": "The University of Osaka",
+    "openalex_id": null,
+    "created_at": 1751970749.060468,
+    "updated_at": 1751970749.060469,
+    "privacy_settings": {
+      "public_profile": false,
+      "show_in_search": false,
+      "allow_collaboration": true
+    },
+    "matching_data": {
+      "has_data": true,
+      "total_matches": 15,
+      "max_similarity": 1.000000238418579,
+      "last_updated": "2025-07-08T19:32:29.060470",
       "cached": false
     },
     "kaken_data": {
